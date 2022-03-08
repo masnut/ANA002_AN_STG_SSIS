@@ -1,0 +1,2247 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="2/22/2022 10:48:04 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="AC-EFIORANI3"
+  DTS:CreatorName="ITMASTER\E.Fiorani"
+  DTS:DTSID="{E475A745-EF7D-49A6-8E39-8AB3511684FD}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.2000.170"
+  DTS:LocaleID="1040"
+  DTS:ObjectName="ANEDW_CL004"
+  DTS:PackageType="5"
+  DTS:VersionBuild="45"
+  DTS:VersionGUID="{54096A23-B7C6-4C83-A259-14E194EBD45F}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:PackageParameters>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="8"
+      DTS:DTSID="{DF24A6C2-9398-41FA-B557-D99BABEC3E2A}"
+      DTS:ObjectName="DTFIN_RIF">
+      <DTS:Property
+        DTS:DataType="8"
+        DTS:Name="ParameterValue">31/12/2008</DTS:Property>
+    </DTS:PackageParameter>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="8"
+      DTS:DTSID="{02584846-1173-4D12-925A-59A0686A93C2}"
+      DTS:ObjectName="DTINI_RIF">
+      <DTS:Property
+        DTS:DataType="8"
+        DTS:Name="ParameterValue">01/01/2008</DTS:Property>
+    </DTS:PackageParameter>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="8"
+      DTS:DTSID="{CDA21395-7F3F-4B60-B3E5-4715089F5D5A}"
+      DTS:ObjectName="Schema_Log">
+      <DTS:Property
+        DTS:DataType="8"
+        DTS:Name="ParameterValue">ELT</DTS:Property>
+    </DTS:PackageParameter>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="8"
+      DTS:DTSID="{D5220240-D325-4806-8FBC-6FC4A70118A8}"
+      DTS:ObjectName="Schema_Source">
+      <DTS:Property
+        DTS:DataType="8"
+        DTS:Name="ParameterValue">DPRE_ANSTG</DTS:Property>
+    </DTS:PackageParameter>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="8"
+      DTS:DTSID="{4559FFE6-1B56-40E9-BA82-FAC513412C3A}"
+      DTS:ObjectName="Schema_Target">
+      <DTS:Property
+        DTS:DataType="8"
+        DTS:Name="ParameterValue">DPRE_ANEDW</DTS:Property>
+    </DTS:PackageParameter>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="8"
+      DTS:DTSID="{E965741F-B3C7-47CA-9578-BC7AD3B30F11}"
+      DTS:ObjectName="SQL_INPS_InitialCatalog">
+      <DTS:Property
+        DTS:DataType="8"
+        DTS:Name="ParameterValue">DS05200_ANA002_GP_DWH</DTS:Property>
+    </DTS:PackageParameter>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="8"
+      DTS:DTSID="{F4F31BF5-AA8A-43D2-87CD-59EA76B97947}"
+      DTS:ObjectName="SQL_INPS_Psw"
+      DTS:Sensitive="True">
+      <DTS:Property
+        DTS:Name="ParameterValue">
+        <DTS:Property
+          DTS:DataType="8"
+          DTS:Name="ParameterValue"
+          Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAApQvzHLjht0aEn55lnNQtqQAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAACU6hVyORJpKdfv67xMijlLZfKHkmUO1i/j2zouWDp1tgAAAAAOgAAAAAIAACAAAABqxHdeFKor9II7SgAWE65DkQ6HNeHHOaMvcH4eDLzrryAAAAB3Kd0IJYBzXvzj2jTJst/rkr1rYTDG6YXe2UVUlTNaPkAAAABZQJhTEacdBbV3I6dBq0sku153fWfDUvlZ6ceiTu+x3jJCKmtmI+wmx6K2c7HP8M8Ek1TDhnTbu5m+NNWIjUvj</DTS:Property>
+      </DTS:Property>
+    </DTS:PackageParameter>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="8"
+      DTS:DTSID="{A9E74B97-CA2F-44D7-9ED5-F980C9E16776}"
+      DTS:ObjectName="SQL_INPS_server">
+      <DTS:Property
+        DTS:DataType="8"
+        DTS:Name="ParameterValue">sqlinpssvil305.ser-test.inps</DTS:Property>
+    </DTS:PackageParameter>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="8"
+      DTS:DTSID="{AE4EDEDC-F96D-448D-B480-A371D5AA4275}"
+      DTS:ObjectName="SQL_INPS_usr">
+      <DTS:Property
+        DTS:DataType="8"
+        DTS:Name="ParameterValue">DBDS0520000</DTS:Property>
+    </DTS:PackageParameter>
+  </DTS:PackageParameters>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{974C78DC-4BE8-43E9-8F50-762D3F2EED2D}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="&quot;(select max(DT_INI_LETTURA) from &quot; +   @[$Project::Schema_Log] + &quot;.STATUS where NR_FK_AREA_ID = 1 and CD_LIVELLO = 'EDW' and FL_RUN_SN ='S')&quot;"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="DT_STATUS">
+      <DTS:VariableValue
+        DTS:DataType="8">(select max(DT_INI_LETTURA) from ELT.STATUS where NR_FK_AREA_ID = 1 and CD_LIVELLO = 'EDW' and FL_RUN_SN ='S')</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{2C706F5D-3140-4B7F-88C4-CC886B69E4D4}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="@[$Project::Schema_Target] + &quot;.TF_KNDIP_DIPENDENTE_CL&quot;"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="Insert_Target01">
+      <DTS:VariableValue
+        DTS:DataType="8">DPRE_ANEDW.TF_KNDIP_DIPENDENTE_CL</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{606EA2ED-1EB2-49B0-8521-15192493722D}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="@[$Project::Schema_Target] + &quot;.TF_KNCAC_CAPCOM_CL&quot;"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="Insert_Target02">
+      <DTS:VariableValue
+        DTS:DataType="8">DPRE_ANEDW.TF_KNCAC_CAPCOM_CL</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{7C85F42D-EC1E-46EE-B1C1-26BB915CFD91}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="@[$Project::Schema_Target] + &quot;.TF_KNSEI_SEDE_INPS_CL&quot;"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="Insert_Target03">
+      <DTS:VariableValue
+        DTS:DataType="8">DPRE_ANEDW.TF_KNSEI_SEDE_INPS_CL</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{242458FC-EFBF-4122-BED2-00F65BF72635}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="&quot;select KNA30_NR_ID_BDPS ,KNA30_DT_ASSUNZIONE, KNA30_CD_TITSTUDIO ,KNA30_SD_DESCR_TITSTUDIO ,KNA30_DT_RIF FROM &quot;+ @[$Project::Schema_Source] +&quot;.TS_KNA30_DIPENDENTE_CL WHERE KNA30_DT_RIF &gt;=&quot;+ @[User::DT_STATUS]"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="Select_Source01">
+      <DTS:VariableValue
+        DTS:DataType="8">select KNA30_NR_ID_BDPS ,KNA30_DT_ASSUNZIONE, KNA30_CD_TITSTUDIO ,KNA30_SD_DESCR_TITSTUDIO ,KNA30_DT_RIF FROM DPRE_ANSTG.TS_KNA30_DIPENDENTE_CL WHERE KNA30_DT_RIF &gt;=(select max(DT_INI_LETTURA) from ELT.STATUS where NR_FK_AREA_ID = 1 and CD_LIVELLO = 'EDW' and FL_RUN_SN ='S')</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{34F20BFF-5710-4552-A8C7-904817E09DB7}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="&quot;select KNA29_NR_SEQ_CAPCOM ,KNA29_NR_SEQ_CAP_BDCP,KNA29_NR_SEQ_COM_BDLC ,KNA29_DT_INIZ ,KNA29_DT_FINE ,KNA29_DT_RIF FROM &quot;+ @[$Project::Schema_Source] +&quot;.TS_KNA29_CAPCOM_CL WHERE KNA29_DT_RIF &gt;=&quot;+ @[User::DT_STATUS]"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="Select_Source02">
+      <DTS:VariableValue
+        DTS:DataType="8">select KNA29_NR_SEQ_CAPCOM ,KNA29_NR_SEQ_CAP_BDCP,KNA29_NR_SEQ_COM_BDLC ,KNA29_DT_INIZ ,KNA29_DT_FINE ,KNA29_DT_RIF FROM DPRE_ANSTG.TS_KNA29_CAPCOM_CL WHERE KNA29_DT_RIF &gt;=(select max(DT_INI_LETTURA) from ELT.STATUS where NR_FK_AREA_ID = 1 and CD_LIVELLO = 'EDW' and FL_RUN_SN ='S')</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{2CE39F82-7068-473F-9DC9-F76775BEB019}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="&quot;SELECT &#xA;KNSED.KNSED_NR_SEQ_COMPSEDE_PK, &#xA;KNA20.KNA20_DT_INIZ, &#xA;KNA20.KNA20_DT_FINE, &#xA;KNA20.KNA20_CD_PROV_WD, &#xA;KNA20.KNA20_CD_ZONA_WD, &#xA;KNA20.KNA20_CD_CENTRO_OPER_WD, &#xA;KNA20.KNA20_CD_SEDE_META_WD, &#xA;KNA20.KNA20_CD_REG_VE, &#xA;KNA20.KNA20_CD_SEDE_VE, &#xA;KNA20.KNA20_CD_ZONA_VE, &#xA;KNA20.KNA20_CD_CENTRO_OPER_VE, &#xA;KNA20.KNA20_DT_RIF &#xA;FROM &quot;+ @[$Project::Schema_Source] +&quot;.TS_KNA20_SEDE_INPS_CL KNA20 join &quot;+ @[$Project::Schema_Target] +&quot;.TF_KNSED_COMPSEDE_CL KNSED &#xA;on KNA20.KNA20_CD_SEDE = KNSED.KNSED_CD_SEDE &#xA;WHERE CONVERT( date,KNSED.KNSED_DT_FINE, 126) = CONVERT( date,'9999/12/31', 126)AND KNA20.KNA20_DT_RIF &gt;=&quot;+ @[User::DT_STATUS]"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="Select_Source03">
+      <DTS:VariableValue
+        DTS:DataType="8">SELECT 
+KNSED.KNSED_NR_SEQ_COMPSEDE_PK, 
+KNA20.KNA20_DT_INIZ, 
+KNA20.KNA20_DT_FINE, 
+KNA20.KNA20_CD_PROV_WD, 
+KNA20.KNA20_CD_ZONA_WD, 
+KNA20.KNA20_CD_CENTRO_OPER_WD, 
+KNA20.KNA20_CD_SEDE_META_WD, 
+KNA20.KNA20_CD_REG_VE, 
+KNA20.KNA20_CD_SEDE_VE, 
+KNA20.KNA20_CD_ZONA_VE, 
+KNA20.KNA20_CD_CENTRO_OPER_VE, 
+KNA20.KNA20_DT_RIF 
+FROM DPRE_ANSTG.TS_KNA20_SEDE_INPS_CL KNA20 join DPRE_ANEDW.TF_KNSED_COMPSEDE_CL KNSED 
+on KNA20.KNA20_CD_SEDE = KNSED.KNSED_CD_SEDE 
+WHERE CONVERT( date,KNSED.KNSED_DT_FINE, 126) = CONVERT( date,'9999/12/31', 126)AND KNA20.KNA20_DT_RIF &gt;=(select max(DT_INI_LETTURA) from ELT.STATUS where NR_FK_AREA_ID = 1 and CD_LIVELLO = 'EDW' and FL_RUN_SN ='S')</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\End Status"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Attività Esegui SQL"
+      DTS:DTSID="{02ecaf6e-f0d5-4b55-abc8-88b37a058714}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="End Status"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{FC7512B7-7177-4111-B69B-C52974713116}"
+          SQLTask:SqlStatementSource="exec ELT.[END_STATUS] 1, 'EDW'" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Log Errori"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Attività Esegui SQL"
+      DTS:DTSID="{5009bf82-9c49-4c22-88e6-f24efe2db1c6}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Log Errori"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{FC7512B7-7177-4111-B69B-C52974713116}"
+          SQLTask:SqlStatementSource="exec ELT.[INS_LOG_ERRORI] 1, 'EDW' , 'Errore DTSX'" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Start Status"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Attività Esegui SQL"
+      DTS:DTSID="{3483322c-34f8-4d6f-be23-a83d1f19e98b}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Start Status"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{FC7512B7-7177-4111-B69B-C52974713116}"
+          SQLTask:SqlStatementSource="EXEC ELT.START_STATUS 1, 'EDW'" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\TF_KNSEI_SEDE_INPS_CL"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Attività Flusso di dati"
+      DTS:DTSID="{f44c701e-d91d-4160-b2ce-2addc06a1835}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="TF_KNSEI_SEDE_INPS_CL"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:PropertyExpression
+        DTS:Name="[Ricerca Chiave].[SqlCommandParam]">"select  
+KNSEI_NR_KNSED_NR_SEQ_COMPSEDE_PK,
+KNSEI_DT_INIZ_PK
+from "+ @[$Project::Schema_Target]+".TF_KNSEI_SEDE_INPS_CL"</DTS:PropertyExpression>
+      <DTS:PropertyExpression
+        DTS:Name="[Aggiornamento campi].[SqlCommand]">"UPDATE "+ @[$Project::Schema_Target] +".TF_KNSEI_SEDE_INPS_CL
+   SET KNSEI_DT_FINE = ?
+      ,KNSEI_CD_PROV_WD = ?
+      ,KNSEI_CD_ZONA_WD = ?
+      ,KNSEI_CD_CENTRO_OPER_WD = ?
+      ,KNSEI_CD_SEDE_META_WD = ?
+      ,KNSEI_CD_REG_VE = ?
+      ,KNSEI_CD_SEDE_VE = ?
+      ,KNSEI_CD_ZONA_VE = ?
+      ,KNSEI_CD_CENTRO_OPER_VE = ?
+      ,KNSEI_DT_RIF = ?
+      ,KNSEI_DT_DWH_AGGIORN = ?
+     WHERE KNSEI_NR_KNSED_NR_SEQ_COMPSEDE_PK = ? AND KNSEI_DT_INIZ_PK = ?"</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\TF_KNSEI_SEDE_INPS_CL\Aggiornamento campi"
+              componentClassID="Microsoft.OLEDBCommand"
+              contactInfo="Comando OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tutti i diritti sono riservati; http://www.microsoft.com/sql/support;2"
+              description="Esegue un'istruzione SQL per ogni riga di un flusso di dati. Ad esempio, chiamare una stored procedure 'new employee setup' per ogni riga della tabella 'new employees'. Nota: l'esecuzione di un'istruzione SQL per ogni riga di un flusso di dati di grandi dimensioni può richiedere molto tempo."
+              name="Aggiornamento campi"
+              usesDispositions="true"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Numero di secondi prima del timeout di un comando. Il valore 0 indica nessun timeout."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Comando SQL da eseguire."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">UPDATE DPRE_ANEDW.TF_KNSEI_SEDE_INPS_CL
+   SET KNSEI_DT_FINE = ?
+      ,KNSEI_CD_PROV_WD = ?
+      ,KNSEI_CD_ZONA_WD = ?
+      ,KNSEI_CD_CENTRO_OPER_WD = ?
+      ,KNSEI_CD_SEDE_META_WD = ?
+      ,KNSEI_CD_REG_VE = ?
+      ,KNSEI_CD_SEDE_VE = ?
+      ,KNSEI_CD_ZONA_VE = ?
+      ,KNSEI_CD_CENTRO_OPER_VE = ?
+      ,KNSEI_DT_RIF = ?
+      ,KNSEI_DT_DWH_AGGIORN = ?
+     WHERE KNSEI_NR_KNSED_NR_SEQ_COMPSEDE_PK = ? AND KNSEI_DT_INIZ_PK = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifica la tabella codici della colonna da utilizzare quando l'origine dati non rende disponibili informazioni sulla tabella codici."
+                  name="DefaultCodePage">1252</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\TF_KNSEI_SEDE_INPS_CL\Aggiornamento campi.Connections[OleDbConnection]"
+                  connectionManagerID="{FC7512B7-7177-4111-B69B-C52974713116}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[SqlServer_INPS]"
+                  description="Connessione di run-time OLE DB utilizzata per accedere al database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\TF_KNSEI_SEDE_INPS_CL\Aggiornamento campi.Inputs[Input comando OLE DB]"
+                  errorOrTruncationOperation="Esecuzione comando"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Input comando OLE DB">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\TF_KNSEI_SEDE_INPS_CL\Aggiornamento campi.Inputs[Input comando OLE DB].Columns[KNA20_DT_FINE]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="KNA20_DT_FINE"
+                      externalMetadataColumnId="Package\TF_KNSEI_SEDE_INPS_CL\Aggiornamento campi.Inputs[Input comando OLE DB].ExternalColumns[Param_0]"
+                      lineageId="Package\TF_KNSEI_SEDE_INPS_CL\Extract_Source.Outputs[Output origine OLE DB].Columns[KNA20_DT_FINE]" />
+                    <inputColumn
+                      refId="Package\TF_KNSEI_SEDE_INPS_CL\Aggiornamento campi.Inputs[Input comando OLE DB].Columns[KNA20_CD_PROV_WD]"
+                      cachedDataType="wstr"
+                      cachedLength="3"
+                      cachedName="KNA20_CD_PROV_WD"
+                      externalMetadataColumnId="Package\TF_KNSEI_SEDE_INPS_CL\Aggiornamento campi.Inputs[Input comando OLE DB].ExternalColumns[Param_1]"
+                      lineageId="Package\TF_KNSEI_SEDE_INPS_CL\Extract_Source.Outputs[Output origine OLE DB].Columns[KNA20_CD_PROV_WD]" />
+                    <inputColumn
+                      refId="Package\TF_KNSEI_SEDE_INPS_CL\Aggiornamento campi.Inputs[Input comando OLE DB].Columns[KNA20_CD_ZONA_WD]"
+                      cachedDataType="wstr"
+                      cachedLength="3"
+                      cachedName="KNA20_CD_ZONA_WD"
+                      externalMetadataColumnId="Package\TF_KNSEI_SEDE_INPS_CL\Aggiornamento campi.Inputs[Input comando OLE DB].ExternalColumns[Param_2]"
+                      lineageId="Package\TF_KNSEI_SEDE_INPS_CL\Extract_Source.Outputs[Output origine OLE DB].Columns[KNA20_CD_ZONA_WD]" />
+                    <inputColumn
+                      refId="Package\TF_KNSEI_SEDE_INPS_CL\Aggiornamento campi.Inputs[Input comando OLE DB].Columns[KNA20_CD_CENTRO_OPER_WD]"
+                      cachedDataType="wstr"
+                      cachedLength="3"
+                      cachedName="KNA20_CD_CENTRO_OPER_WD"
+                      externalMetadataColumnId="Package\TF_KNSEI_SEDE_INPS_CL\Aggiornamento campi.Inputs[Input comando OLE DB].ExternalColumns[Param_3]"
+                      lineageId="Package\TF_KNSEI_SEDE_INPS_CL\Extract_Source.Outputs[Output origine OLE DB].Columns[KNA20_CD_CENTRO_OPER_WD]" />
+                    <inputColumn
+                      refId="Package\TF_KNSEI_SEDE_INPS_CL\Aggiornamento campi.Inputs[Input comando OLE DB].Columns[KNA20_DT_INIZ]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="KNA20_DT_INIZ"
+                      externalMetadataColumnId="Package\TF_KNSEI_SEDE_INPS_CL\Aggiornamento campi.Inputs[Input comando OLE DB].ExternalColumns[Param_12]"
+                      lineageId="Package\TF_KNSEI_SEDE_INPS_CL\Extract_Source.Outputs[Output origine OLE DB].Columns[KNA20_DT_INIZ]" />
+                    <inputColumn
+                      refId="Package\TF_KNSEI_SEDE_INPS_CL\Aggiornamento campi.Inputs[Input comando OLE DB].Columns[KNSED_NR_SEQ_COMPSEDE_PK]"
+                      cachedDataType="numeric"
+                      cachedName="KNSED_NR_SEQ_COMPSEDE_PK"
+                      cachedPrecision="12"
+                      externalMetadataColumnId="Package\TF_KNSEI_SEDE_INPS_CL\Aggiornamento campi.Inputs[Input comando OLE DB].ExternalColumns[Param_11]"
+                      lineageId="Package\TF_KNSEI_SEDE_INPS_CL\Extract_Source.Outputs[Output origine OLE DB].Columns[KNSED_NR_SEQ_COMPSEDE_PK]" />
+                    <inputColumn
+                      refId="Package\TF_KNSEI_SEDE_INPS_CL\Aggiornamento campi.Inputs[Input comando OLE DB].Columns[DWH_AGGIORN]"
+                      cachedDataType="date"
+                      cachedName="DWH_AGGIORN"
+                      externalMetadataColumnId="Package\TF_KNSEI_SEDE_INPS_CL\Aggiornamento campi.Inputs[Input comando OLE DB].ExternalColumns[Param_10]"
+                      lineageId="Package\TF_KNSEI_SEDE_INPS_CL\Colonna derivata.Outputs[Output colonna derivata].Columns[DWH_AGGIORN]" />
+                    <inputColumn
+                      refId="Package\TF_KNSEI_SEDE_INPS_CL\Aggiornamento campi.Inputs[Input comando OLE DB].Columns[KNA20_DT_RIF]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="KNA20_DT_RIF"
+                      externalMetadataColumnId="Package\TF_KNSEI_SEDE_INPS_CL\Aggiornamento campi.Inputs[Input comando OLE DB].ExternalColumns[Param_9]"
+                      lineageId="Package\TF_KNSEI_SEDE_INPS_CL\Extract_Source.Outputs[Output origine OLE DB].Columns[KNA20_DT_RIF]" />
+                    <inputColumn
+                      refId="Package\TF_KNSEI_SEDE_INPS_CL\Aggiornamento campi.Inputs[Input comando OLE DB].Columns[KNA20_CD_CENTRO_OPER_VE]"
+                      cachedDataType="wstr"
+                      cachedLength="2"
+                      cachedName="KNA20_CD_CENTRO_OPER_VE"
+                      externalMetadataColumnId="Package\TF_KNSEI_SEDE_INPS_CL\Aggiornamento campi.Inputs[Input comando OLE DB].ExternalColumns[Param_8]"
+                      lineageId="Package\TF_KNSEI_SEDE_INPS_CL\Extract_Source.Outputs[Output origine OLE DB].Columns[KNA20_CD_CENTRO_OPER_VE]" />
+                    <inputColumn
+                      refId="Package\TF_KNSEI_SEDE_INPS_CL\Aggiornamento campi.Inputs[Input comando OLE DB].Columns[KNA20_CD_ZONA_VE]"
+                      cachedDataType="wstr"
+                      cachedLength="2"
+                      cachedName="KNA20_CD_ZONA_VE"
+                      externalMetadataColumnId="Package\TF_KNSEI_SEDE_INPS_CL\Aggiornamento campi.Inputs[Input comando OLE DB].ExternalColumns[Param_7]"
+                      lineageId="Package\TF_KNSEI_SEDE_INPS_CL\Extract_Source.Outputs[Output origine OLE DB].Columns[KNA20_CD_ZONA_VE]" />
+                    <inputColumn
+                      refId="Package\TF_KNSEI_SEDE_INPS_CL\Aggiornamento campi.Inputs[Input comando OLE DB].Columns[KNA20_CD_SEDE_VE]"
+                      cachedDataType="wstr"
+                      cachedLength="2"
+                      cachedName="KNA20_CD_SEDE_VE"
+                      externalMetadataColumnId="Package\TF_KNSEI_SEDE_INPS_CL\Aggiornamento campi.Inputs[Input comando OLE DB].ExternalColumns[Param_6]"
+                      lineageId="Package\TF_KNSEI_SEDE_INPS_CL\Extract_Source.Outputs[Output origine OLE DB].Columns[KNA20_CD_SEDE_VE]" />
+                    <inputColumn
+                      refId="Package\TF_KNSEI_SEDE_INPS_CL\Aggiornamento campi.Inputs[Input comando OLE DB].Columns[KNA20_CD_REG_VE]"
+                      cachedDataType="wstr"
+                      cachedLength="2"
+                      cachedName="KNA20_CD_REG_VE"
+                      externalMetadataColumnId="Package\TF_KNSEI_SEDE_INPS_CL\Aggiornamento campi.Inputs[Input comando OLE DB].ExternalColumns[Param_5]"
+                      lineageId="Package\TF_KNSEI_SEDE_INPS_CL\Extract_Source.Outputs[Output origine OLE DB].Columns[KNA20_CD_REG_VE]" />
+                    <inputColumn
+                      refId="Package\TF_KNSEI_SEDE_INPS_CL\Aggiornamento campi.Inputs[Input comando OLE DB].Columns[KNA20_CD_SEDE_META_WD]"
+                      cachedDataType="wstr"
+                      cachedLength="4"
+                      cachedName="KNA20_CD_SEDE_META_WD"
+                      externalMetadataColumnId="Package\TF_KNSEI_SEDE_INPS_CL\Aggiornamento campi.Inputs[Input comando OLE DB].ExternalColumns[Param_4]"
+                      lineageId="Package\TF_KNSEI_SEDE_INPS_CL\Extract_Source.Outputs[Output origine OLE DB].Columns[KNA20_CD_SEDE_META_WD]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\TF_KNSEI_SEDE_INPS_CL\Aggiornamento campi.Inputs[Input comando OLE DB].ExternalColumns[Param_0]"
+                      dataType="dbTimeStamp"
+                      name="Param_0">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Informazioni sui parametri. Corrisponde ai valori DBPARAMFLAGSENUM OLE DB."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\TF_KNSEI_SEDE_INPS_CL\Aggiornamento campi.Inputs[Input comando OLE DB].ExternalColumns[Param_1]"
+                      dataType="wstr"
+                      length="3"
+                      name="Param_1">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Informazioni sui parametri. Corrisponde ai valori DBPARAMFLAGSENUM OLE DB."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\TF_KNSEI_SEDE_INPS_CL\Aggiornamento campi.Inputs[Input comando OLE DB].ExternalColumns[Param_2]"
+                      dataType="wstr"
+                      length="3"
+                      name="Param_2">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Informazioni sui parametri. Corrisponde ai valori DBPARAMFLAGSENUM OLE DB."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\TF_KNSEI_SEDE_INPS_CL\Aggiornamento campi.Inputs[Input comando OLE DB].ExternalColumns[Param_3]"
+                      dataType="wstr"
+                      length="3"
+                      name="Param_3">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Informazioni sui parametri. Corrisponde ai valori DBPARAMFLAGSENUM OLE DB."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\TF_KNSEI_SEDE_INPS_CL\Aggiornamento campi.Inputs[Input comando OLE DB].ExternalColumns[Param_4]"
+                      dataType="wstr"
+                      length="4"
+                      name="Param_4">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Informazioni sui parametri. Corrisponde ai valori DBPARAMFLAGSENUM OLE DB."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\TF_KNSEI_SEDE_INPS_CL\Aggiornamento campi.Inputs[Input comando OLE DB].ExternalColumns[Param_5]"
+                      dataType="wstr"
+                      length="2"
+                      name="Param_5">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Informazioni sui parametri. Corrisponde ai valori DBPARAMFLAGSENUM OLE DB."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\TF_KNSEI_SEDE_INPS_CL\Aggiornamento campi.Inputs[Input comando OLE DB].ExternalColumns[Param_6]"
+                      dataType="wstr"
+                      length="2"
+                      name="Param_6">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Informazioni sui parametri. Corrisponde ai valori DBPARAMFLAGSENUM OLE DB."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\TF_KNSEI_SEDE_INPS_CL\Aggiornamento campi.Inputs[Input comando OLE DB].ExternalColumns[Param_7]"
+                      dataType="wstr"
+                      length="2"
+                      name="Param_7">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Informazioni sui parametri. Corrisponde ai valori DBPARAMFLAGSENUM OLE DB."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\TF_KNSEI_SEDE_INPS_CL\Aggiornamento campi.Inputs[Input comando OLE DB].ExternalColumns[Param_8]"
+                      dataType="wstr"
+                      length="2"
+                      name="Param_8">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Informazioni sui parametri. Corrisponde ai valori DBPARAMFLAGSENUM OLE DB."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\TF_KNSEI_SEDE_INPS_CL\Aggiornamento campi.Inputs[Input comando OLE DB].ExternalColumns[Param_9]"
+                      dataType="dbTimeStamp"
+                      name="Param_9">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Informazioni sui parametri. Corrisponde ai valori DBPARAMFLAGSENUM OLE DB."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\TF_KNSEI_SEDE_INPS_CL\Aggiornamento campi.Inputs[Input comando OLE DB].ExternalColumns[Param_10]"
+                      dataType="dbTimeStamp"
+                      name="Param_10">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Informazioni sui parametri. Corrisponde ai valori DBPARAMFLAGSENUM OLE DB."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\TF_KNSEI_SEDE_INPS_CL\Aggiornamento campi.Inputs[Input comando OLE DB].ExternalColumns[Param_11]"
+                      dataType="numeric"
+                      name="Param_11"
+                      precision="12">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Informazioni sui parametri. Corrisponde ai valori DBPARAMFLAGSENUM OLE DB."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\TF_KNSEI_SEDE_INPS_CL\Aggiornamento campi.Inputs[Input comando OLE DB].ExternalColumns[Param_12]"
+                      dataType="dbTimeStamp"
+                      name="Param_12">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Informazioni sui parametri. Corrisponde ai valori DBPARAMFLAGSENUM OLE DB."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\TF_KNSEI_SEDE_INPS_CL\Aggiornamento campi.Outputs[Output comando OLE DB]"
+                  exclusionGroup="1"
+                  name="Output comando OLE DB"
+                  synchronousInputId="Package\TF_KNSEI_SEDE_INPS_CL\Aggiornamento campi.Inputs[Input comando OLE DB]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\TF_KNSEI_SEDE_INPS_CL\Aggiornamento campi.Outputs[Output errori comando OLE DB]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Output errori comando OLE DB"
+                  synchronousInputId="Package\TF_KNSEI_SEDE_INPS_CL\Aggiornamento campi.Inputs[Input comando OLE DB]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\TF_KNSEI_SEDE_INPS_CL\Aggiornamento campi.Outputs[Output errori comando OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\TF_KNSEI_SEDE_INPS_CL\Aggiornamento campi.Outputs[Output errori comando OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\TF_KNSEI_SEDE_INPS_CL\Aggiornamento campi.Outputs[Output errori comando OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\TF_KNSEI_SEDE_INPS_CL\Aggiornamento campi.Outputs[Output errori comando OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\TF_KNSEI_SEDE_INPS_CL\Colonna derivata"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Colonna derivata;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tutti i diritti sono riservati; http://www.microsoft.com/sql/support;0"
+              description="Crea nuovi valori di colonna applicando espressioni alle colonne di input della trasformazione. Creare nuove colonne oppure sovrascrivere quelle esistenti. Ad esempio, concatenare i valori delle colonne 'first name' e 'last name' per creare una colonna 'full name'."
+              name="Colonna derivata"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\TF_KNSEI_SEDE_INPS_CL\Colonna derivata.Inputs[Input colonna derivata]"
+                  description="Input della trasformazione Colonna derivata"
+                  name="Input colonna derivata">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\TF_KNSEI_SEDE_INPS_CL\Colonna derivata.Outputs[Output colonna derivata]"
+                  description="Output predefinito della trasformazione Colonna derivata"
+                  exclusionGroup="1"
+                  name="Output colonna derivata"
+                  synchronousInputId="Package\TF_KNSEI_SEDE_INPS_CL\Colonna derivata.Inputs[Input colonna derivata]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\TF_KNSEI_SEDE_INPS_CL\Colonna derivata.Outputs[Output colonna derivata].Columns[DWH_AGGIORN]"
+                      dataType="date"
+                      errorOrTruncationOperation="Calcolo"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\TF_KNSEI_SEDE_INPS_CL\Colonna derivata.Outputs[Output colonna derivata].Columns[DWH_AGGIORN]"
+                      name="DWH_AGGIORN"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Espressione colonna derivata"
+                          name="Expression">@[System::StartTime]</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Espressione descrittiva colonna derivata"
+                          expressionType="Notify"
+                          name="FriendlyExpression">@[System::StartTime]</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\TF_KNSEI_SEDE_INPS_CL\Colonna derivata.Outputs[Output errori colonna derivata]"
+                  description="Output degli errori della trasformazione Colonna derivata"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Output errori colonna derivata"
+                  synchronousInputId="Package\TF_KNSEI_SEDE_INPS_CL\Colonna derivata.Inputs[Input colonna derivata]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\TF_KNSEI_SEDE_INPS_CL\Colonna derivata.Outputs[Output errori colonna derivata].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\TF_KNSEI_SEDE_INPS_CL\Colonna derivata.Outputs[Output errori colonna derivata].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\TF_KNSEI_SEDE_INPS_CL\Colonna derivata.Outputs[Output errori colonna derivata].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\TF_KNSEI_SEDE_INPS_CL\Colonna derivata.Outputs[Output errori colonna derivata].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\TF_KNSEI_SEDE_INPS_CL\Colonna derivata 1"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Colonna derivata;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tutti i diritti sono riservati; http://www.microsoft.com/sql/support;0"
+              description="Crea nuovi valori di colonna applicando espressioni alle colonne di input della trasformazione. Creare nuove colonne oppure sovrascrivere quelle esistenti. Ad esempio, concatenare i valori delle colonne 'first name' e 'last name' per creare una colonna 'full name'."
+              name="Colonna derivata 1"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\TF_KNSEI_SEDE_INPS_CL\Colonna derivata 1.Inputs[Input colonna derivata]"
+                  description="Input della trasformazione Colonna derivata"
+                  name="Input colonna derivata">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\TF_KNSEI_SEDE_INPS_CL\Colonna derivata 1.Outputs[Output colonna derivata]"
+                  description="Output predefinito della trasformazione Colonna derivata"
+                  exclusionGroup="1"
+                  name="Output colonna derivata"
+                  synchronousInputId="Package\TF_KNSEI_SEDE_INPS_CL\Colonna derivata 1.Inputs[Input colonna derivata]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\TF_KNSEI_SEDE_INPS_CL\Colonna derivata 1.Outputs[Output colonna derivata].Columns[DWH_UTENTE]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Calcolo"
+                      errorRowDisposition="FailComponent"
+                      length="18"
+                      lineageId="Package\TF_KNSEI_SEDE_INPS_CL\Colonna derivata 1.Outputs[Output colonna derivata].Columns[DWH_UTENTE]"
+                      name="DWH_UTENTE"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Espressione colonna derivata"
+                          name="Expression">@[System::UserName]</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Espressione descrittiva colonna derivata"
+                          expressionType="Notify"
+                          name="FriendlyExpression">@[System::UserName]</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\TF_KNSEI_SEDE_INPS_CL\Colonna derivata 1.Outputs[Output colonna derivata].Columns[DWH_INS]"
+                      dataType="date"
+                      errorOrTruncationOperation="Calcolo"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\TF_KNSEI_SEDE_INPS_CL\Colonna derivata 1.Outputs[Output colonna derivata].Columns[DWH_INS]"
+                      name="DWH_INS"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Espressione colonna derivata"
+                          name="Expression">@[System::StartTime]</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Espressione descrittiva colonna derivata"
+                          expressionType="Notify"
+                          name="FriendlyExpression">@[System::StartTime]</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\TF_KNSEI_SEDE_INPS_CL\Colonna derivata 1.Outputs[Output colonna derivata].Columns[DWH_APPLIC]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Calcolo"
+                      errorRowDisposition="FailComponent"
+                      length="5"
+                      lineageId="Package\TF_KNSEI_SEDE_INPS_CL\Colonna derivata 1.Outputs[Output colonna derivata].Columns[DWH_APPLIC]"
+                      name="DWH_APPLIC"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Espressione colonna derivata"
+                          name="Expression">"ANEDW"</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Espressione descrittiva colonna derivata"
+                          expressionType="Notify"
+                          name="FriendlyExpression">"ANEDW"</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\TF_KNSEI_SEDE_INPS_CL\Colonna derivata 1.Outputs[Output errori colonna derivata]"
+                  description="Output degli errori della trasformazione Colonna derivata"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Output errori colonna derivata"
+                  synchronousInputId="Package\TF_KNSEI_SEDE_INPS_CL\Colonna derivata 1.Inputs[Input colonna derivata]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\TF_KNSEI_SEDE_INPS_CL\Colonna derivata 1.Outputs[Output errori colonna derivata].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\TF_KNSEI_SEDE_INPS_CL\Colonna derivata 1.Outputs[Output errori colonna derivata].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\TF_KNSEI_SEDE_INPS_CL\Colonna derivata 1.Outputs[Output errori colonna derivata].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\TF_KNSEI_SEDE_INPS_CL\Colonna derivata 1.Outputs[Output errori colonna derivata].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\TF_KNSEI_SEDE_INPS_CL\Destinazione OLE DB"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="Destinazione OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tutti i diritti sono riservati; http://www.microsoft.com/sql/support;4"
+              description="Destinazione OLE DB"
+              name="Destinazione OLE DB"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Numero di secondi prima del timeout di un comando. Il valore 0 indica nessun timeout."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifica il nome dell'oggetto di database utilizzato per aprire un set di righe."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Specifica la variabile contenente il nome dell'oggetto di database utilizzato per aprire un set di righe."
+                  name="OpenRowsetVariable">User::Insert_Target03</property>
+                <property
+                  dataType="System.String"
+                  description="Comando SQL da eseguire."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifica la tabella codici della colonna da utilizzare quando l'origine dati non rende disponibili informazioni sulla tabella codici."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forza l'utilizzo del valore della proprietà DefaultCodePage per la descrizione di dati di tipo carattere."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifica la modalità utilizzata per accedere al database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">4</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica se i valori specificati per le colonne Identity verranno copiati nella destinazione. Se false, i valori delle colonne Identity verranno generati automaticamente nella destinazione. Applicabile solo se è abilitato il caricamento rapido."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica se per le colonne con valori Null, tali valori verranno inseriti nella destinazione. Se false, per le colonne con valori Null verranno inseriti i valori predefiniti corrispondenti nella destinazione. Applicabile solo se è attivato il caricamento rapido."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifica le opzioni da utilizzare con il caricamento rapido. Applicabile solo se è attivato il caricamento rapido."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifica se vengono eseguiti commit durante l'inserimento dei dati. Il valore 0 indica che verrà eseguito un solo commit al termine dell'inserimento dei dati. Applicabile solo se è attivato il caricamento rapido."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\TF_KNSEI_SEDE_INPS_CL\Destinazione OLE DB.Connections[OleDbConnection]"
+                  connectionManagerID="{FC7512B7-7177-4111-B69B-C52974713116}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[SqlServer_INPS]"
+                  description="Connessione di run-time OLE DB utilizzata per accedere al database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\TF_KNSEI_SEDE_INPS_CL\Destinazione OLE DB.Inputs[Input destinazione OLE DB]"
+                  errorOrTruncationOperation="Inserimento"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Input destinazione OLE DB">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\TF_KNSEI_SEDE_INPS_CL\Destinazione OLE DB.Inputs[Input destinazione OLE DB].Columns[KNSED_NR_SEQ_COMPSEDE_PK]"
+                      cachedDataType="numeric"
+                      cachedName="KNSED_NR_SEQ_COMPSEDE_PK"
+                      cachedPrecision="12"
+                      externalMetadataColumnId="Package\TF_KNSEI_SEDE_INPS_CL\Destinazione OLE DB.Inputs[Input destinazione OLE DB].ExternalColumns[KNSEI_NR_KNSED_NR_SEQ_COMPSEDE_PK]"
+                      lineageId="Package\TF_KNSEI_SEDE_INPS_CL\Extract_Source.Outputs[Output origine OLE DB].Columns[KNSED_NR_SEQ_COMPSEDE_PK]" />
+                    <inputColumn
+                      refId="Package\TF_KNSEI_SEDE_INPS_CL\Destinazione OLE DB.Inputs[Input destinazione OLE DB].Columns[KNA20_DT_INIZ]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="KNA20_DT_INIZ"
+                      externalMetadataColumnId="Package\TF_KNSEI_SEDE_INPS_CL\Destinazione OLE DB.Inputs[Input destinazione OLE DB].ExternalColumns[KNSEI_DT_INIZ_PK]"
+                      lineageId="Package\TF_KNSEI_SEDE_INPS_CL\Extract_Source.Outputs[Output origine OLE DB].Columns[KNA20_DT_INIZ]" />
+                    <inputColumn
+                      refId="Package\TF_KNSEI_SEDE_INPS_CL\Destinazione OLE DB.Inputs[Input destinazione OLE DB].Columns[KNA20_DT_FINE]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="KNA20_DT_FINE"
+                      externalMetadataColumnId="Package\TF_KNSEI_SEDE_INPS_CL\Destinazione OLE DB.Inputs[Input destinazione OLE DB].ExternalColumns[KNSEI_DT_FINE]"
+                      lineageId="Package\TF_KNSEI_SEDE_INPS_CL\Extract_Source.Outputs[Output origine OLE DB].Columns[KNA20_DT_FINE]" />
+                    <inputColumn
+                      refId="Package\TF_KNSEI_SEDE_INPS_CL\Destinazione OLE DB.Inputs[Input destinazione OLE DB].Columns[KNA20_CD_PROV_WD]"
+                      cachedDataType="wstr"
+                      cachedLength="3"
+                      cachedName="KNA20_CD_PROV_WD"
+                      externalMetadataColumnId="Package\TF_KNSEI_SEDE_INPS_CL\Destinazione OLE DB.Inputs[Input destinazione OLE DB].ExternalColumns[KNSEI_CD_PROV_WD]"
+                      lineageId="Package\TF_KNSEI_SEDE_INPS_CL\Extract_Source.Outputs[Output origine OLE DB].Columns[KNA20_CD_PROV_WD]" />
+                    <inputColumn
+                      refId="Package\TF_KNSEI_SEDE_INPS_CL\Destinazione OLE DB.Inputs[Input destinazione OLE DB].Columns[KNA20_CD_ZONA_WD]"
+                      cachedDataType="wstr"
+                      cachedLength="3"
+                      cachedName="KNA20_CD_ZONA_WD"
+                      externalMetadataColumnId="Package\TF_KNSEI_SEDE_INPS_CL\Destinazione OLE DB.Inputs[Input destinazione OLE DB].ExternalColumns[KNSEI_CD_ZONA_WD]"
+                      lineageId="Package\TF_KNSEI_SEDE_INPS_CL\Extract_Source.Outputs[Output origine OLE DB].Columns[KNA20_CD_ZONA_WD]" />
+                    <inputColumn
+                      refId="Package\TF_KNSEI_SEDE_INPS_CL\Destinazione OLE DB.Inputs[Input destinazione OLE DB].Columns[KNA20_CD_CENTRO_OPER_WD]"
+                      cachedDataType="wstr"
+                      cachedLength="3"
+                      cachedName="KNA20_CD_CENTRO_OPER_WD"
+                      externalMetadataColumnId="Package\TF_KNSEI_SEDE_INPS_CL\Destinazione OLE DB.Inputs[Input destinazione OLE DB].ExternalColumns[KNSEI_CD_CENTRO_OPER_WD]"
+                      lineageId="Package\TF_KNSEI_SEDE_INPS_CL\Extract_Source.Outputs[Output origine OLE DB].Columns[KNA20_CD_CENTRO_OPER_WD]" />
+                    <inputColumn
+                      refId="Package\TF_KNSEI_SEDE_INPS_CL\Destinazione OLE DB.Inputs[Input destinazione OLE DB].Columns[KNA20_CD_SEDE_META_WD]"
+                      cachedDataType="wstr"
+                      cachedLength="4"
+                      cachedName="KNA20_CD_SEDE_META_WD"
+                      externalMetadataColumnId="Package\TF_KNSEI_SEDE_INPS_CL\Destinazione OLE DB.Inputs[Input destinazione OLE DB].ExternalColumns[KNSEI_CD_SEDE_META_WD]"
+                      lineageId="Package\TF_KNSEI_SEDE_INPS_CL\Extract_Source.Outputs[Output origine OLE DB].Columns[KNA20_CD_SEDE_META_WD]" />
+                    <inputColumn
+                      refId="Package\TF_KNSEI_SEDE_INPS_CL\Destinazione OLE DB.Inputs[Input destinazione OLE DB].Columns[KNA20_CD_REG_VE]"
+                      cachedDataType="wstr"
+                      cachedLength="2"
+                      cachedName="KNA20_CD_REG_VE"
+                      externalMetadataColumnId="Package\TF_KNSEI_SEDE_INPS_CL\Destinazione OLE DB.Inputs[Input destinazione OLE DB].ExternalColumns[KNSEI_CD_REG_VE]"
+                      lineageId="Package\TF_KNSEI_SEDE_INPS_CL\Extract_Source.Outputs[Output origine OLE DB].Columns[KNA20_CD_REG_VE]" />
+                    <inputColumn
+                      refId="Package\TF_KNSEI_SEDE_INPS_CL\Destinazione OLE DB.Inputs[Input destinazione OLE DB].Columns[KNA20_CD_SEDE_VE]"
+                      cachedDataType="wstr"
+                      cachedLength="2"
+                      cachedName="KNA20_CD_SEDE_VE"
+                      externalMetadataColumnId="Package\TF_KNSEI_SEDE_INPS_CL\Destinazione OLE DB.Inputs[Input destinazione OLE DB].ExternalColumns[KNSEI_CD_SEDE_VE]"
+                      lineageId="Package\TF_KNSEI_SEDE_INPS_CL\Extract_Source.Outputs[Output origine OLE DB].Columns[KNA20_CD_SEDE_VE]" />
+                    <inputColumn
+                      refId="Package\TF_KNSEI_SEDE_INPS_CL\Destinazione OLE DB.Inputs[Input destinazione OLE DB].Columns[KNA20_CD_ZONA_VE]"
+                      cachedDataType="wstr"
+                      cachedLength="2"
+                      cachedName="KNA20_CD_ZONA_VE"
+                      externalMetadataColumnId="Package\TF_KNSEI_SEDE_INPS_CL\Destinazione OLE DB.Inputs[Input destinazione OLE DB].ExternalColumns[KNSEI_CD_ZONA_VE]"
+                      lineageId="Package\TF_KNSEI_SEDE_INPS_CL\Extract_Source.Outputs[Output origine OLE DB].Columns[KNA20_CD_ZONA_VE]" />
+                    <inputColumn
+                      refId="Package\TF_KNSEI_SEDE_INPS_CL\Destinazione OLE DB.Inputs[Input destinazione OLE DB].Columns[KNA20_CD_CENTRO_OPER_VE]"
+                      cachedDataType="wstr"
+                      cachedLength="2"
+                      cachedName="KNA20_CD_CENTRO_OPER_VE"
+                      externalMetadataColumnId="Package\TF_KNSEI_SEDE_INPS_CL\Destinazione OLE DB.Inputs[Input destinazione OLE DB].ExternalColumns[KNSEI_CD_CENTRO_OPER_VE]"
+                      lineageId="Package\TF_KNSEI_SEDE_INPS_CL\Extract_Source.Outputs[Output origine OLE DB].Columns[KNA20_CD_CENTRO_OPER_VE]" />
+                    <inputColumn
+                      refId="Package\TF_KNSEI_SEDE_INPS_CL\Destinazione OLE DB.Inputs[Input destinazione OLE DB].Columns[KNA20_DT_RIF]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="KNA20_DT_RIF"
+                      externalMetadataColumnId="Package\TF_KNSEI_SEDE_INPS_CL\Destinazione OLE DB.Inputs[Input destinazione OLE DB].ExternalColumns[KNSEI_DT_RIF]"
+                      lineageId="Package\TF_KNSEI_SEDE_INPS_CL\Extract_Source.Outputs[Output origine OLE DB].Columns[KNA20_DT_RIF]" />
+                    <inputColumn
+                      refId="Package\TF_KNSEI_SEDE_INPS_CL\Destinazione OLE DB.Inputs[Input destinazione OLE DB].Columns[DWH_UTENTE]"
+                      cachedDataType="wstr"
+                      cachedLength="18"
+                      cachedName="DWH_UTENTE"
+                      externalMetadataColumnId="Package\TF_KNSEI_SEDE_INPS_CL\Destinazione OLE DB.Inputs[Input destinazione OLE DB].ExternalColumns[KNSEI_CD_DWH_UTENTE]"
+                      lineageId="Package\TF_KNSEI_SEDE_INPS_CL\Colonna derivata 1.Outputs[Output colonna derivata].Columns[DWH_UTENTE]" />
+                    <inputColumn
+                      refId="Package\TF_KNSEI_SEDE_INPS_CL\Destinazione OLE DB.Inputs[Input destinazione OLE DB].Columns[DWH_INS]"
+                      cachedDataType="date"
+                      cachedName="DWH_INS"
+                      externalMetadataColumnId="Package\TF_KNSEI_SEDE_INPS_CL\Destinazione OLE DB.Inputs[Input destinazione OLE DB].ExternalColumns[KNSEI_DT_DWH_INS]"
+                      lineageId="Package\TF_KNSEI_SEDE_INPS_CL\Colonna derivata 1.Outputs[Output colonna derivata].Columns[DWH_INS]" />
+                    <inputColumn
+                      refId="Package\TF_KNSEI_SEDE_INPS_CL\Destinazione OLE DB.Inputs[Input destinazione OLE DB].Columns[DWH_APPLIC]"
+                      cachedDataType="wstr"
+                      cachedLength="5"
+                      cachedName="DWH_APPLIC"
+                      externalMetadataColumnId="Package\TF_KNSEI_SEDE_INPS_CL\Destinazione OLE DB.Inputs[Input destinazione OLE DB].ExternalColumns[KNSEI_CD_DWH_APPLIC]"
+                      lineageId="Package\TF_KNSEI_SEDE_INPS_CL\Colonna derivata 1.Outputs[Output colonna derivata].Columns[DWH_APPLIC]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\TF_KNSEI_SEDE_INPS_CL\Destinazione OLE DB.Inputs[Input destinazione OLE DB].ExternalColumns[KNSEI_NR_KNSED_NR_SEQ_COMPSEDE_PK]"
+                      dataType="numeric"
+                      name="KNSEI_NR_KNSED_NR_SEQ_COMPSEDE_PK"
+                      precision="12" />
+                    <externalMetadataColumn
+                      refId="Package\TF_KNSEI_SEDE_INPS_CL\Destinazione OLE DB.Inputs[Input destinazione OLE DB].ExternalColumns[KNSEI_DT_INIZ_PK]"
+                      dataType="dbTimeStamp"
+                      name="KNSEI_DT_INIZ_PK" />
+                    <externalMetadataColumn
+                      refId="Package\TF_KNSEI_SEDE_INPS_CL\Destinazione OLE DB.Inputs[Input destinazione OLE DB].ExternalColumns[KNSEI_DT_FINE]"
+                      dataType="dbTimeStamp"
+                      name="KNSEI_DT_FINE" />
+                    <externalMetadataColumn
+                      refId="Package\TF_KNSEI_SEDE_INPS_CL\Destinazione OLE DB.Inputs[Input destinazione OLE DB].ExternalColumns[KNSEI_CD_PROV_WD]"
+                      dataType="wstr"
+                      length="3"
+                      name="KNSEI_CD_PROV_WD" />
+                    <externalMetadataColumn
+                      refId="Package\TF_KNSEI_SEDE_INPS_CL\Destinazione OLE DB.Inputs[Input destinazione OLE DB].ExternalColumns[KNSEI_CD_ZONA_WD]"
+                      dataType="wstr"
+                      length="3"
+                      name="KNSEI_CD_ZONA_WD" />
+                    <externalMetadataColumn
+                      refId="Package\TF_KNSEI_SEDE_INPS_CL\Destinazione OLE DB.Inputs[Input destinazione OLE DB].ExternalColumns[KNSEI_CD_CENTRO_OPER_WD]"
+                      dataType="wstr"
+                      length="3"
+                      name="KNSEI_CD_CENTRO_OPER_WD" />
+                    <externalMetadataColumn
+                      refId="Package\TF_KNSEI_SEDE_INPS_CL\Destinazione OLE DB.Inputs[Input destinazione OLE DB].ExternalColumns[KNSEI_CD_UNITA_PROC_WD]"
+                      dataType="wstr"
+                      length="3"
+                      name="KNSEI_CD_UNITA_PROC_WD" />
+                    <externalMetadataColumn
+                      refId="Package\TF_KNSEI_SEDE_INPS_CL\Destinazione OLE DB.Inputs[Input destinazione OLE DB].ExternalColumns[KNSEI_CD_SEDE_META_WD]"
+                      dataType="wstr"
+                      length="4"
+                      name="KNSEI_CD_SEDE_META_WD" />
+                    <externalMetadataColumn
+                      refId="Package\TF_KNSEI_SEDE_INPS_CL\Destinazione OLE DB.Inputs[Input destinazione OLE DB].ExternalColumns[KNSEI_CD_REG_VE]"
+                      dataType="wstr"
+                      length="2"
+                      name="KNSEI_CD_REG_VE" />
+                    <externalMetadataColumn
+                      refId="Package\TF_KNSEI_SEDE_INPS_CL\Destinazione OLE DB.Inputs[Input destinazione OLE DB].ExternalColumns[KNSEI_CD_SEDE_VE]"
+                      dataType="wstr"
+                      length="2"
+                      name="KNSEI_CD_SEDE_VE" />
+                    <externalMetadataColumn
+                      refId="Package\TF_KNSEI_SEDE_INPS_CL\Destinazione OLE DB.Inputs[Input destinazione OLE DB].ExternalColumns[KNSEI_CD_ZONA_VE]"
+                      dataType="wstr"
+                      length="2"
+                      name="KNSEI_CD_ZONA_VE" />
+                    <externalMetadataColumn
+                      refId="Package\TF_KNSEI_SEDE_INPS_CL\Destinazione OLE DB.Inputs[Input destinazione OLE DB].ExternalColumns[KNSEI_CD_CENTRO_OPER_VE]"
+                      dataType="wstr"
+                      length="2"
+                      name="KNSEI_CD_CENTRO_OPER_VE" />
+                    <externalMetadataColumn
+                      refId="Package\TF_KNSEI_SEDE_INPS_CL\Destinazione OLE DB.Inputs[Input destinazione OLE DB].ExternalColumns[KNSEI_CD_CDC_VE]"
+                      dataType="wstr"
+                      length="10"
+                      name="KNSEI_CD_CDC_VE" />
+                    <externalMetadataColumn
+                      refId="Package\TF_KNSEI_SEDE_INPS_CL\Destinazione OLE DB.Inputs[Input destinazione OLE DB].ExternalColumns[KNSEI_DT_RIF]"
+                      dataType="dbTimeStamp"
+                      name="KNSEI_DT_RIF" />
+                    <externalMetadataColumn
+                      refId="Package\TF_KNSEI_SEDE_INPS_CL\Destinazione OLE DB.Inputs[Input destinazione OLE DB].ExternalColumns[KNSEI_NR_KNSED_SEQCOMPSEDE_RIF]"
+                      dataType="numeric"
+                      name="KNSEI_NR_KNSED_SEQCOMPSEDE_RIF"
+                      precision="12" />
+                    <externalMetadataColumn
+                      refId="Package\TF_KNSEI_SEDE_INPS_CL\Destinazione OLE DB.Inputs[Input destinazione OLE DB].ExternalColumns[KNSEI_CD_DWH_UTENTE]"
+                      dataType="wstr"
+                      length="100"
+                      name="KNSEI_CD_DWH_UTENTE" />
+                    <externalMetadataColumn
+                      refId="Package\TF_KNSEI_SEDE_INPS_CL\Destinazione OLE DB.Inputs[Input destinazione OLE DB].ExternalColumns[KNSEI_DT_DWH_ANNULL]"
+                      dataType="dbTimeStamp"
+                      name="KNSEI_DT_DWH_ANNULL" />
+                    <externalMetadataColumn
+                      refId="Package\TF_KNSEI_SEDE_INPS_CL\Destinazione OLE DB.Inputs[Input destinazione OLE DB].ExternalColumns[KNSEI_DT_DWH_INS]"
+                      dataType="dbTimeStamp"
+                      name="KNSEI_DT_DWH_INS" />
+                    <externalMetadataColumn
+                      refId="Package\TF_KNSEI_SEDE_INPS_CL\Destinazione OLE DB.Inputs[Input destinazione OLE DB].ExternalColumns[KNSEI_DT_DWH_AGGIORN]"
+                      dataType="dbTimeStamp"
+                      name="KNSEI_DT_DWH_AGGIORN" />
+                    <externalMetadataColumn
+                      refId="Package\TF_KNSEI_SEDE_INPS_CL\Destinazione OLE DB.Inputs[Input destinazione OLE DB].ExternalColumns[KNSEI_CD_DWH_APPLIC]"
+                      dataType="wstr"
+                      length="100"
+                      name="KNSEI_CD_DWH_APPLIC" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\TF_KNSEI_SEDE_INPS_CL\Destinazione OLE DB.Outputs[Output errori destinazione OLE DB]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Output errori destinazione OLE DB"
+                  synchronousInputId="Package\TF_KNSEI_SEDE_INPS_CL\Destinazione OLE DB.Inputs[Input destinazione OLE DB]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\TF_KNSEI_SEDE_INPS_CL\Destinazione OLE DB.Outputs[Output errori destinazione OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\TF_KNSEI_SEDE_INPS_CL\Destinazione OLE DB.Outputs[Output errori destinazione OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\TF_KNSEI_SEDE_INPS_CL\Destinazione OLE DB.Outputs[Output errori destinazione OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\TF_KNSEI_SEDE_INPS_CL\Destinazione OLE DB.Outputs[Output errori destinazione OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\TF_KNSEI_SEDE_INPS_CL\Extract_Source"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="Origine OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tutti i diritti sono riservati; http://www.microsoft.com/sql/support;7"
+              description="Origine OLE DB"
+              name="Extract_Source"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Numero di secondi prima del timeout di un comando. Il valore 0 indica nessun timeout."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifica il nome dell'oggetto di database utilizzato per aprire un set di righe."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Specifica la variabile contenente il nome dell'oggetto di database utilizzato per aprire un set di righe."
+                  name="OpenRowsetVariable">User::Select_Source01</property>
+                <property
+                  dataType="System.String"
+                  description="Comando SQL da eseguire."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="Variabile che contiene il comando SQL da eseguire."
+                  name="SqlCommandVariable">User::Select_Source03</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifica la tabella codici della colonna da utilizzare quando l'origine dati non rende disponibili informazioni sulla tabella codici."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forza l'utilizzo del valore della proprietà DefaultCodePage per la descrizione di dati di tipo carattere."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifica la modalità utilizzata per accedere al database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.String"
+                  description="Mapping tra i parametri nel comando SQL e le variabili."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\TF_KNSEI_SEDE_INPS_CL\Extract_Source.Connections[OleDbConnection]"
+                  connectionManagerID="{FC7512B7-7177-4111-B69B-C52974713116}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[SqlServer_INPS]"
+                  description="Connessione di run-time OLE DB utilizzata per accedere al database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\TF_KNSEI_SEDE_INPS_CL\Extract_Source.Outputs[Output origine OLE DB]"
+                  name="Output origine OLE DB">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\TF_KNSEI_SEDE_INPS_CL\Extract_Source.Outputs[Output origine OLE DB].Columns[KNSED_NR_SEQ_COMPSEDE_PK]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversione"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\TF_KNSEI_SEDE_INPS_CL\Extract_Source.Outputs[Output origine OLE DB].ExternalColumns[KNSED_NR_SEQ_COMPSEDE_PK]"
+                      lineageId="Package\TF_KNSEI_SEDE_INPS_CL\Extract_Source.Outputs[Output origine OLE DB].Columns[KNSED_NR_SEQ_COMPSEDE_PK]"
+                      name="KNSED_NR_SEQ_COMPSEDE_PK"
+                      precision="12"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\TF_KNSEI_SEDE_INPS_CL\Extract_Source.Outputs[Output origine OLE DB].Columns[KNA20_DT_INIZ]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversione"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\TF_KNSEI_SEDE_INPS_CL\Extract_Source.Outputs[Output origine OLE DB].ExternalColumns[KNA20_DT_INIZ]"
+                      lineageId="Package\TF_KNSEI_SEDE_INPS_CL\Extract_Source.Outputs[Output origine OLE DB].Columns[KNA20_DT_INIZ]"
+                      name="KNA20_DT_INIZ"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\TF_KNSEI_SEDE_INPS_CL\Extract_Source.Outputs[Output origine OLE DB].Columns[KNA20_DT_FINE]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversione"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\TF_KNSEI_SEDE_INPS_CL\Extract_Source.Outputs[Output origine OLE DB].ExternalColumns[KNA20_DT_FINE]"
+                      lineageId="Package\TF_KNSEI_SEDE_INPS_CL\Extract_Source.Outputs[Output origine OLE DB].Columns[KNA20_DT_FINE]"
+                      name="KNA20_DT_FINE"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\TF_KNSEI_SEDE_INPS_CL\Extract_Source.Outputs[Output origine OLE DB].Columns[KNA20_CD_PROV_WD]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversione"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\TF_KNSEI_SEDE_INPS_CL\Extract_Source.Outputs[Output origine OLE DB].ExternalColumns[KNA20_CD_PROV_WD]"
+                      length="3"
+                      lineageId="Package\TF_KNSEI_SEDE_INPS_CL\Extract_Source.Outputs[Output origine OLE DB].Columns[KNA20_CD_PROV_WD]"
+                      name="KNA20_CD_PROV_WD"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\TF_KNSEI_SEDE_INPS_CL\Extract_Source.Outputs[Output origine OLE DB].Columns[KNA20_CD_ZONA_WD]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversione"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\TF_KNSEI_SEDE_INPS_CL\Extract_Source.Outputs[Output origine OLE DB].ExternalColumns[KNA20_CD_ZONA_WD]"
+                      length="3"
+                      lineageId="Package\TF_KNSEI_SEDE_INPS_CL\Extract_Source.Outputs[Output origine OLE DB].Columns[KNA20_CD_ZONA_WD]"
+                      name="KNA20_CD_ZONA_WD"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\TF_KNSEI_SEDE_INPS_CL\Extract_Source.Outputs[Output origine OLE DB].Columns[KNA20_CD_CENTRO_OPER_WD]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversione"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\TF_KNSEI_SEDE_INPS_CL\Extract_Source.Outputs[Output origine OLE DB].ExternalColumns[KNA20_CD_CENTRO_OPER_WD]"
+                      length="3"
+                      lineageId="Package\TF_KNSEI_SEDE_INPS_CL\Extract_Source.Outputs[Output origine OLE DB].Columns[KNA20_CD_CENTRO_OPER_WD]"
+                      name="KNA20_CD_CENTRO_OPER_WD"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\TF_KNSEI_SEDE_INPS_CL\Extract_Source.Outputs[Output origine OLE DB].Columns[KNA20_CD_SEDE_META_WD]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversione"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\TF_KNSEI_SEDE_INPS_CL\Extract_Source.Outputs[Output origine OLE DB].ExternalColumns[KNA20_CD_SEDE_META_WD]"
+                      length="4"
+                      lineageId="Package\TF_KNSEI_SEDE_INPS_CL\Extract_Source.Outputs[Output origine OLE DB].Columns[KNA20_CD_SEDE_META_WD]"
+                      name="KNA20_CD_SEDE_META_WD"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\TF_KNSEI_SEDE_INPS_CL\Extract_Source.Outputs[Output origine OLE DB].Columns[KNA20_CD_REG_VE]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversione"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\TF_KNSEI_SEDE_INPS_CL\Extract_Source.Outputs[Output origine OLE DB].ExternalColumns[KNA20_CD_REG_VE]"
+                      length="2"
+                      lineageId="Package\TF_KNSEI_SEDE_INPS_CL\Extract_Source.Outputs[Output origine OLE DB].Columns[KNA20_CD_REG_VE]"
+                      name="KNA20_CD_REG_VE"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\TF_KNSEI_SEDE_INPS_CL\Extract_Source.Outputs[Output origine OLE DB].Columns[KNA20_CD_SEDE_VE]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversione"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\TF_KNSEI_SEDE_INPS_CL\Extract_Source.Outputs[Output origine OLE DB].ExternalColumns[KNA20_CD_SEDE_VE]"
+                      length="2"
+                      lineageId="Package\TF_KNSEI_SEDE_INPS_CL\Extract_Source.Outputs[Output origine OLE DB].Columns[KNA20_CD_SEDE_VE]"
+                      name="KNA20_CD_SEDE_VE"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\TF_KNSEI_SEDE_INPS_CL\Extract_Source.Outputs[Output origine OLE DB].Columns[KNA20_CD_ZONA_VE]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversione"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\TF_KNSEI_SEDE_INPS_CL\Extract_Source.Outputs[Output origine OLE DB].ExternalColumns[KNA20_CD_ZONA_VE]"
+                      length="2"
+                      lineageId="Package\TF_KNSEI_SEDE_INPS_CL\Extract_Source.Outputs[Output origine OLE DB].Columns[KNA20_CD_ZONA_VE]"
+                      name="KNA20_CD_ZONA_VE"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\TF_KNSEI_SEDE_INPS_CL\Extract_Source.Outputs[Output origine OLE DB].Columns[KNA20_CD_CENTRO_OPER_VE]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversione"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\TF_KNSEI_SEDE_INPS_CL\Extract_Source.Outputs[Output origine OLE DB].ExternalColumns[KNA20_CD_CENTRO_OPER_VE]"
+                      length="2"
+                      lineageId="Package\TF_KNSEI_SEDE_INPS_CL\Extract_Source.Outputs[Output origine OLE DB].Columns[KNA20_CD_CENTRO_OPER_VE]"
+                      name="KNA20_CD_CENTRO_OPER_VE"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\TF_KNSEI_SEDE_INPS_CL\Extract_Source.Outputs[Output origine OLE DB].Columns[KNA20_DT_RIF]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversione"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\TF_KNSEI_SEDE_INPS_CL\Extract_Source.Outputs[Output origine OLE DB].ExternalColumns[KNA20_DT_RIF]"
+                      lineageId="Package\TF_KNSEI_SEDE_INPS_CL\Extract_Source.Outputs[Output origine OLE DB].Columns[KNA20_DT_RIF]"
+                      name="KNA20_DT_RIF"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\TF_KNSEI_SEDE_INPS_CL\Extract_Source.Outputs[Output origine OLE DB].ExternalColumns[KNSED_NR_SEQ_COMPSEDE_PK]"
+                      dataType="numeric"
+                      name="KNSED_NR_SEQ_COMPSEDE_PK"
+                      precision="12" />
+                    <externalMetadataColumn
+                      refId="Package\TF_KNSEI_SEDE_INPS_CL\Extract_Source.Outputs[Output origine OLE DB].ExternalColumns[KNA20_DT_INIZ]"
+                      dataType="dbTimeStamp"
+                      name="KNA20_DT_INIZ" />
+                    <externalMetadataColumn
+                      refId="Package\TF_KNSEI_SEDE_INPS_CL\Extract_Source.Outputs[Output origine OLE DB].ExternalColumns[KNA20_DT_FINE]"
+                      dataType="dbTimeStamp"
+                      name="KNA20_DT_FINE" />
+                    <externalMetadataColumn
+                      refId="Package\TF_KNSEI_SEDE_INPS_CL\Extract_Source.Outputs[Output origine OLE DB].ExternalColumns[KNA20_CD_PROV_WD]"
+                      dataType="wstr"
+                      length="3"
+                      name="KNA20_CD_PROV_WD" />
+                    <externalMetadataColumn
+                      refId="Package\TF_KNSEI_SEDE_INPS_CL\Extract_Source.Outputs[Output origine OLE DB].ExternalColumns[KNA20_CD_ZONA_WD]"
+                      dataType="wstr"
+                      length="3"
+                      name="KNA20_CD_ZONA_WD" />
+                    <externalMetadataColumn
+                      refId="Package\TF_KNSEI_SEDE_INPS_CL\Extract_Source.Outputs[Output origine OLE DB].ExternalColumns[KNA20_CD_CENTRO_OPER_WD]"
+                      dataType="wstr"
+                      length="3"
+                      name="KNA20_CD_CENTRO_OPER_WD" />
+                    <externalMetadataColumn
+                      refId="Package\TF_KNSEI_SEDE_INPS_CL\Extract_Source.Outputs[Output origine OLE DB].ExternalColumns[KNA20_CD_SEDE_META_WD]"
+                      dataType="wstr"
+                      length="4"
+                      name="KNA20_CD_SEDE_META_WD" />
+                    <externalMetadataColumn
+                      refId="Package\TF_KNSEI_SEDE_INPS_CL\Extract_Source.Outputs[Output origine OLE DB].ExternalColumns[KNA20_CD_REG_VE]"
+                      dataType="wstr"
+                      length="2"
+                      name="KNA20_CD_REG_VE" />
+                    <externalMetadataColumn
+                      refId="Package\TF_KNSEI_SEDE_INPS_CL\Extract_Source.Outputs[Output origine OLE DB].ExternalColumns[KNA20_CD_SEDE_VE]"
+                      dataType="wstr"
+                      length="2"
+                      name="KNA20_CD_SEDE_VE" />
+                    <externalMetadataColumn
+                      refId="Package\TF_KNSEI_SEDE_INPS_CL\Extract_Source.Outputs[Output origine OLE DB].ExternalColumns[KNA20_CD_ZONA_VE]"
+                      dataType="wstr"
+                      length="2"
+                      name="KNA20_CD_ZONA_VE" />
+                    <externalMetadataColumn
+                      refId="Package\TF_KNSEI_SEDE_INPS_CL\Extract_Source.Outputs[Output origine OLE DB].ExternalColumns[KNA20_CD_CENTRO_OPER_VE]"
+                      dataType="wstr"
+                      length="2"
+                      name="KNA20_CD_CENTRO_OPER_VE" />
+                    <externalMetadataColumn
+                      refId="Package\TF_KNSEI_SEDE_INPS_CL\Extract_Source.Outputs[Output origine OLE DB].ExternalColumns[KNA20_DT_RIF]"
+                      dataType="dbTimeStamp"
+                      name="KNA20_DT_RIF" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\TF_KNSEI_SEDE_INPS_CL\Extract_Source.Outputs[Output errori origine OLE DB]"
+                  isErrorOut="true"
+                  name="Output errori origine OLE DB">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\TF_KNSEI_SEDE_INPS_CL\Extract_Source.Outputs[Output errori origine OLE DB].Columns[KNSED_NR_SEQ_COMPSEDE_PK]"
+                      dataType="numeric"
+                      lineageId="Package\TF_KNSEI_SEDE_INPS_CL\Extract_Source.Outputs[Output errori origine OLE DB].Columns[KNSED_NR_SEQ_COMPSEDE_PK]"
+                      name="KNSED_NR_SEQ_COMPSEDE_PK"
+                      precision="12" />
+                    <outputColumn
+                      refId="Package\TF_KNSEI_SEDE_INPS_CL\Extract_Source.Outputs[Output errori origine OLE DB].Columns[KNA20_DT_INIZ]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\TF_KNSEI_SEDE_INPS_CL\Extract_Source.Outputs[Output errori origine OLE DB].Columns[KNA20_DT_INIZ]"
+                      name="KNA20_DT_INIZ" />
+                    <outputColumn
+                      refId="Package\TF_KNSEI_SEDE_INPS_CL\Extract_Source.Outputs[Output errori origine OLE DB].Columns[KNA20_DT_FINE]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\TF_KNSEI_SEDE_INPS_CL\Extract_Source.Outputs[Output errori origine OLE DB].Columns[KNA20_DT_FINE]"
+                      name="KNA20_DT_FINE" />
+                    <outputColumn
+                      refId="Package\TF_KNSEI_SEDE_INPS_CL\Extract_Source.Outputs[Output errori origine OLE DB].Columns[KNA20_CD_PROV_WD]"
+                      dataType="wstr"
+                      length="3"
+                      lineageId="Package\TF_KNSEI_SEDE_INPS_CL\Extract_Source.Outputs[Output errori origine OLE DB].Columns[KNA20_CD_PROV_WD]"
+                      name="KNA20_CD_PROV_WD" />
+                    <outputColumn
+                      refId="Package\TF_KNSEI_SEDE_INPS_CL\Extract_Source.Outputs[Output errori origine OLE DB].Columns[KNA20_CD_ZONA_WD]"
+                      dataType="wstr"
+                      length="3"
+                      lineageId="Package\TF_KNSEI_SEDE_INPS_CL\Extract_Source.Outputs[Output errori origine OLE DB].Columns[KNA20_CD_ZONA_WD]"
+                      name="KNA20_CD_ZONA_WD" />
+                    <outputColumn
+                      refId="Package\TF_KNSEI_SEDE_INPS_CL\Extract_Source.Outputs[Output errori origine OLE DB].Columns[KNA20_CD_CENTRO_OPER_WD]"
+                      dataType="wstr"
+                      length="3"
+                      lineageId="Package\TF_KNSEI_SEDE_INPS_CL\Extract_Source.Outputs[Output errori origine OLE DB].Columns[KNA20_CD_CENTRO_OPER_WD]"
+                      name="KNA20_CD_CENTRO_OPER_WD" />
+                    <outputColumn
+                      refId="Package\TF_KNSEI_SEDE_INPS_CL\Extract_Source.Outputs[Output errori origine OLE DB].Columns[KNA20_CD_SEDE_META_WD]"
+                      dataType="wstr"
+                      length="4"
+                      lineageId="Package\TF_KNSEI_SEDE_INPS_CL\Extract_Source.Outputs[Output errori origine OLE DB].Columns[KNA20_CD_SEDE_META_WD]"
+                      name="KNA20_CD_SEDE_META_WD" />
+                    <outputColumn
+                      refId="Package\TF_KNSEI_SEDE_INPS_CL\Extract_Source.Outputs[Output errori origine OLE DB].Columns[KNA20_CD_REG_VE]"
+                      dataType="wstr"
+                      length="2"
+                      lineageId="Package\TF_KNSEI_SEDE_INPS_CL\Extract_Source.Outputs[Output errori origine OLE DB].Columns[KNA20_CD_REG_VE]"
+                      name="KNA20_CD_REG_VE" />
+                    <outputColumn
+                      refId="Package\TF_KNSEI_SEDE_INPS_CL\Extract_Source.Outputs[Output errori origine OLE DB].Columns[KNA20_CD_SEDE_VE]"
+                      dataType="wstr"
+                      length="2"
+                      lineageId="Package\TF_KNSEI_SEDE_INPS_CL\Extract_Source.Outputs[Output errori origine OLE DB].Columns[KNA20_CD_SEDE_VE]"
+                      name="KNA20_CD_SEDE_VE" />
+                    <outputColumn
+                      refId="Package\TF_KNSEI_SEDE_INPS_CL\Extract_Source.Outputs[Output errori origine OLE DB].Columns[KNA20_CD_ZONA_VE]"
+                      dataType="wstr"
+                      length="2"
+                      lineageId="Package\TF_KNSEI_SEDE_INPS_CL\Extract_Source.Outputs[Output errori origine OLE DB].Columns[KNA20_CD_ZONA_VE]"
+                      name="KNA20_CD_ZONA_VE" />
+                    <outputColumn
+                      refId="Package\TF_KNSEI_SEDE_INPS_CL\Extract_Source.Outputs[Output errori origine OLE DB].Columns[KNA20_CD_CENTRO_OPER_VE]"
+                      dataType="wstr"
+                      length="2"
+                      lineageId="Package\TF_KNSEI_SEDE_INPS_CL\Extract_Source.Outputs[Output errori origine OLE DB].Columns[KNA20_CD_CENTRO_OPER_VE]"
+                      name="KNA20_CD_CENTRO_OPER_VE" />
+                    <outputColumn
+                      refId="Package\TF_KNSEI_SEDE_INPS_CL\Extract_Source.Outputs[Output errori origine OLE DB].Columns[KNA20_DT_RIF]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\TF_KNSEI_SEDE_INPS_CL\Extract_Source.Outputs[Output errori origine OLE DB].Columns[KNA20_DT_RIF]"
+                      name="KNA20_DT_RIF" />
+                    <outputColumn
+                      refId="Package\TF_KNSEI_SEDE_INPS_CL\Extract_Source.Outputs[Output errori origine OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\TF_KNSEI_SEDE_INPS_CL\Extract_Source.Outputs[Output errori origine OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\TF_KNSEI_SEDE_INPS_CL\Extract_Source.Outputs[Output errori origine OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\TF_KNSEI_SEDE_INPS_CL\Extract_Source.Outputs[Output errori origine OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\TF_KNSEI_SEDE_INPS_CL\Ricerca Chiave"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Ricerca;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tutti i diritti sono riservati; http://www.microsoft.com/sql/support;6"
+              description="Crea un join delle colonne aggiuntive al flusso di dati cercando valori in una tabella. Ad esempio, creare un join della colonna 'employee id' alla tabella dei dipendenti per ottenere data di assunzione e nome del dipendente. Questa trasformazione è consigliata quando la memoria disponibile è sufficiente per la tabella di ricerca."
+              name="Ricerca Chiave"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifica l'istruzione SQL che genera la tabella di ricerca."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select  
+KNSEI_NR_KNSED_NR_SEQ_COMPSEDE_PK,
+KNSEI_DT_INIZ_PK
+from DPRE_ANEDW.TF_KNSEI_SEDE_INPS_CL</property>
+                <property
+                  dataType="System.String"
+                  description="Specifica un'istruzione SQL che utilizza parametri per generare la tabella di ricerca."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select  
+KNSEI_NR_KNSED_NR_SEQ_COMPSEDE_PK,
+KNSEI_DT_INIZ_PK
+from DPRE_ANEDW.TF_KNSEI_SEDE_INPS_CL</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifica il tipo di connessione utilizzata per accedere al set di dati di riferimento."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifica il tipo di cache della tabella di ricerca."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifica il modo in cui la trasformazione Ricerca gestisce le righe senza voci corrispondenti nel set di dati di riferimento."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifica la percentuale della cache allocata per le righe senza voci corrispondenti nel set di dati di riferimento."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Utilizzo massimo della memoria per la cache dei riferimenti in una piattaforma a 32 bit."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Utilizzo massimo della memoria per la cache dei riferimenti in una piattaforma a 64 bit."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indica se fare riferimento ai metadati in un formato XML."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="KNSEI_NR_KNSED_NR_SEQ_COMPSEDE_PK" dataType="DT_NUMERIC" length="0" precision="12" scale="0" codePage="0"/&gt;&lt;referenceColumn name="KNSEI_DT_INIZ_PK" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Specifica l'elenco di identificatori di derivazione corrispondenti ai parametri utilizzati dall'istruzione SQL nella proprietà SQLCommand. Le voci nell'elenco sono separate da punti e virgola."
+                  name="ParameterMap">#{Package\TF_KNSEI_SEDE_INPS_CL\Extract_Source.Outputs[Output origine OLE DB].Columns[KNSED_NR_SEQ_COMPSEDE_PK]};#{Package\TF_KNSEI_SEDE_INPS_CL\Extract_Source.Outputs[Output origine OLE DB].Columns[KNA20_DT_INIZ]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifica la tabella codici della colonna da utilizzare quando l'origine dati non rende disponibili informazioni sulla tabella codici."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determina se le chiavi duplicate nei dati di riferimento devono essere considerate come errori in caso di utilizzo della modalità di Full cache."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\TF_KNSEI_SEDE_INPS_CL\Ricerca Chiave.Connections[OleDbConnection]"
+                  connectionManagerID="{FC7512B7-7177-4111-B69B-C52974713116}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[SqlServer_INPS]"
+                  description="Gestione connessione utilizzata per accedere ai dati di ricerca."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\TF_KNSEI_SEDE_INPS_CL\Ricerca Chiave.Inputs[Input ricerca]"
+                  name="Input ricerca">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\TF_KNSEI_SEDE_INPS_CL\Ricerca Chiave.Inputs[Input ricerca].Columns[KNSED_NR_SEQ_COMPSEDE_PK]"
+                      cachedDataType="numeric"
+                      cachedName="KNSED_NR_SEQ_COMPSEDE_PK"
+                      cachedPrecision="12"
+                      lineageId="Package\TF_KNSEI_SEDE_INPS_CL\Extract_Source.Outputs[Output origine OLE DB].Columns[KNSED_NR_SEQ_COMPSEDE_PK]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifica la colonna nella tabella di riferimento a cui viene unita in join una colonna."
+                          name="JoinToReferenceColumn">KNSEI_NR_KNSED_NR_SEQ_COMPSEDE_PK</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifica la colonna nella tabella di riferimento da cui viene copiata una colonna."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\TF_KNSEI_SEDE_INPS_CL\Ricerca Chiave.Inputs[Input ricerca].Columns[KNA20_DT_INIZ]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="KNA20_DT_INIZ"
+                      lineageId="Package\TF_KNSEI_SEDE_INPS_CL\Extract_Source.Outputs[Output origine OLE DB].Columns[KNA20_DT_INIZ]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifica la colonna nella tabella di riferimento a cui viene unita in join una colonna."
+                          name="JoinToReferenceColumn">KNSEI_DT_INIZ_PK</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifica la colonna nella tabella di riferimento da cui viene copiata una colonna."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\TF_KNSEI_SEDE_INPS_CL\Ricerca Chiave.Outputs[Output corrispondenza ricerca]"
+                  errorOrTruncationOperation="Ricerca"
+                  exclusionGroup="1"
+                  name="Output corrispondenza ricerca"
+                  synchronousInputId="Package\TF_KNSEI_SEDE_INPS_CL\Ricerca Chiave.Inputs[Input ricerca]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\TF_KNSEI_SEDE_INPS_CL\Ricerca Chiave.Outputs[Output nessuna corrispondenza ricerca]"
+                  description="Output ricerca che gestisce le righe senza voci corrispondenti nel set di dati di riferimento. Usare questo output quando la proprietà NoMatchBehavior è impostata su &quot;Invia le righe senza voci corrispondenti all'output nessuna corrispondenza&quot;."
+                  exclusionGroup="1"
+                  name="Output nessuna corrispondenza ricerca"
+                  synchronousInputId="Package\TF_KNSEI_SEDE_INPS_CL\Ricerca Chiave.Inputs[Input ricerca]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\TF_KNSEI_SEDE_INPS_CL\Ricerca Chiave.Outputs[Output errori ricerca]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Output errori ricerca"
+                  synchronousInputId="Package\TF_KNSEI_SEDE_INPS_CL\Ricerca Chiave.Inputs[Input ricerca]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\TF_KNSEI_SEDE_INPS_CL\Ricerca Chiave.Outputs[Output errori ricerca].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\TF_KNSEI_SEDE_INPS_CL\Ricerca Chiave.Outputs[Output errori ricerca].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\TF_KNSEI_SEDE_INPS_CL\Ricerca Chiave.Outputs[Output errori ricerca].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\TF_KNSEI_SEDE_INPS_CL\Ricerca Chiave.Outputs[Output errori ricerca].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\TF_KNSEI_SEDE_INPS_CL.Paths[Output colonna derivata]"
+              endId="Package\TF_KNSEI_SEDE_INPS_CL\Aggiornamento campi.Inputs[Input comando OLE DB]"
+              name="Output colonna derivata"
+              startId="Package\TF_KNSEI_SEDE_INPS_CL\Colonna derivata.Outputs[Output colonna derivata]" />
+            <path
+              refId="Package\TF_KNSEI_SEDE_INPS_CL.Paths[Output colonna derivata1]"
+              endId="Package\TF_KNSEI_SEDE_INPS_CL\Destinazione OLE DB.Inputs[Input destinazione OLE DB]"
+              name="Output colonna derivata"
+              startId="Package\TF_KNSEI_SEDE_INPS_CL\Colonna derivata 1.Outputs[Output colonna derivata]" />
+            <path
+              refId="Package\TF_KNSEI_SEDE_INPS_CL.Paths[Output corrispondenza ricerca]"
+              endId="Package\TF_KNSEI_SEDE_INPS_CL\Colonna derivata.Inputs[Input colonna derivata]"
+              name="Output corrispondenza ricerca"
+              startId="Package\TF_KNSEI_SEDE_INPS_CL\Ricerca Chiave.Outputs[Output corrispondenza ricerca]" />
+            <path
+              refId="Package\TF_KNSEI_SEDE_INPS_CL.Paths[Output nessuna corrispondenza ricerca]"
+              endId="Package\TF_KNSEI_SEDE_INPS_CL\Colonna derivata 1.Inputs[Input colonna derivata]"
+              name="Output nessuna corrispondenza ricerca"
+              startId="Package\TF_KNSEI_SEDE_INPS_CL\Ricerca Chiave.Outputs[Output nessuna corrispondenza ricerca]" />
+            <path
+              refId="Package\TF_KNSEI_SEDE_INPS_CL.Paths[Output origine OLE DB]"
+              endId="Package\TF_KNSEI_SEDE_INPS_CL\Ricerca Chiave.Inputs[Input ricerca]"
+              name="Output origine OLE DB"
+              startId="Package\TF_KNSEI_SEDE_INPS_CL\Extract_Source.Outputs[Output origine OLE DB]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Vincolo]"
+      DTS:CreationName=""
+      DTS:DTSID="{9044BB13-5558-4800-B628-472BCC3DCA3F}"
+      DTS:From="Package\Start Status"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Vincolo"
+      DTS:To="Package\TF_KNSEI_SEDE_INPS_CL" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Vincolo 5]"
+      DTS:CreationName=""
+      DTS:DTSID="{182FB994-0EAF-4BEA-9FCC-14F5DDC5572A}"
+      DTS:From="Package\TF_KNSEI_SEDE_INPS_CL"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Vincolo 5"
+      DTS:To="Package\End Status" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Vincolo 6]"
+      DTS:CreationName=""
+      DTS:DTSID="{67A7926F-0DB7-46A2-ADBD-D5AC1F4463BA}"
+      DTS:From="Package\TF_KNSEI_SEDE_INPS_CL"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Vincolo 6"
+      DTS:To="Package\Log Errori"
+      DTS:Value="1" />
+  </DTS:PrecedenceConstraints>
+  <DTS:EventHandlers>
+    <DTS:EventHandler
+      DTS:refId="Package.EventHandlers[OnError]"
+      DTS:CreationName="OnError"
+      DTS:DTSID="{3F09F2B7-B76D-4F83-B22E-A76AD4C88A8D}"
+      DTS:EventID="0"
+      DTS:EventName="OnError"
+      DTS:LocaleID="-1">
+      <DTS:Variables>
+        <DTS:Variable
+          DTS:CreationName=""
+          DTS:Description="Proprietà di propagazione dell'evento"
+          DTS:DTSID="{8828E180-4EB7-46FB-B18D-486C3457A006}"
+          DTS:IncludeInDebugDump="6789"
+          DTS:Namespace="System"
+          DTS:ObjectName="Propagate">
+          <DTS:VariableValue
+            DTS:DataType="11">-1</DTS:VariableValue>
+        </DTS:Variable>
+      </DTS:Variables>
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package.EventHandlers[OnError]\On Error Log"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Attività Esegui SQL"
+          DTS:DTSID="{727dae21-38a5-48c4-8860-3bd4c7f64fcb}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="On Error Log"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:PropertyExpression
+            DTS:Name="SqlStatementSource">"EXEC " + @[$Project::Schema_Log] + ".ELT_prPckError ?, ?, ?, 0, ?, ?"</DTS:PropertyExpression>
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{FC7512B7-7177-4111-B69B-C52974713116}"
+              SQLTask:SqlStatementSource="EXEC ELT.ELT_prPckError ?, ?, ?, 0, ?, ?" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="1"
+                SQLTask:DtsVariableName="System::SourceID"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="100" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="2"
+                SQLTask:DtsVariableName="System::ExecutionInstanceGUID"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="72"
+                SQLTask:ParameterSize="100" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="System::PackageName"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="100" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="3"
+                SQLTask:DtsVariableName="System::ErrorDescription"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="1000" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="4"
+                SQLTask:DtsVariableName="System::PackageID"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="100" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+    </DTS:EventHandler>
+    <DTS:EventHandler
+      DTS:refId="Package.EventHandlers[OnPostExecute]"
+      DTS:CreationName="OnPostExecute"
+      DTS:DTSID="{D3F87E0B-3039-458D-BFF4-BB40F3F90DE1}"
+      DTS:EventID="1076494336"
+      DTS:EventName="OnPostExecute"
+      DTS:LocaleID="-1">
+      <DTS:Variables>
+        <DTS:Variable
+          DTS:CreationName=""
+          DTS:Description="Proprietà di propagazione dell'evento"
+          DTS:DTSID="{53520F16-013D-41FB-BEDF-6DD31B356E77}"
+          DTS:IncludeInDebugDump="6789"
+          DTS:Namespace="System"
+          DTS:ObjectName="Propagate">
+          <DTS:VariableValue
+            DTS:DataType="11">-1</DTS:VariableValue>
+        </DTS:Variable>
+      </DTS:Variables>
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package.EventHandlers[OnPostExecute]\On Post Execute Log"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Attività Esegui SQL"
+          DTS:DTSID="{a55fa53b-5e9c-4b23-ba7a-fb16db9ef45d}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="On Post Execute Log"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:PropertyExpression
+            DTS:Name="SqlStatementSource">"EXEC " + @[$Project::Schema_Log] +".ELT_prPckEnd ?, ?, ?,1, 'Success'"</DTS:PropertyExpression>
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{FC7512B7-7177-4111-B69B-C52974713116}"
+              SQLTask:SqlStatementSource="EXEC ELT.ELT_prPckEnd ?, ?, ?,1, 'Success'" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="1"
+                SQLTask:DtsVariableName="System::SourceID"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="100" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="2"
+                SQLTask:DtsVariableName="System::ExecutionInstanceGUID"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="72"
+                SQLTask:ParameterSize="100" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="System::PackageID"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="100" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+    </DTS:EventHandler>
+    <DTS:EventHandler
+      DTS:refId="Package.EventHandlers[OnPreExecute]"
+      DTS:CreationName="OnPreExecute"
+      DTS:DTSID="{8557E725-3A11-46CA-AFDB-6F532995AAAA}"
+      DTS:EventID="516"
+      DTS:EventName="OnPreExecute"
+      DTS:LocaleID="-1">
+      <DTS:Variables>
+        <DTS:Variable
+          DTS:CreationName=""
+          DTS:Description="Proprietà di propagazione dell'evento"
+          DTS:DTSID="{96E6EFCB-0E81-4C6A-BAB1-0088505A81E3}"
+          DTS:IncludeInDebugDump="6789"
+          DTS:Namespace="System"
+          DTS:ObjectName="Propagate">
+          <DTS:VariableValue
+            DTS:DataType="11">-1</DTS:VariableValue>
+        </DTS:Variable>
+      </DTS:Variables>
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package.EventHandlers[OnPreExecute]\On Pre Execute Log"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Attività Esegui SQL"
+          DTS:DTSID="{709f4c97-bcde-41b9-87c8-f35ba1c4bdd5}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="On Pre Execute Log"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:PropertyExpression
+            DTS:Name="SqlStatementSource">"EXEC " +  @[$Project::Schema_Log] +  ".ELT_prPckStart ?, ?, ?, ?, ?, ?"</DTS:PropertyExpression>
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{FC7512B7-7177-4111-B69B-C52974713116}"
+              SQLTask:SqlStatementSource="EXEC ELT.ELT_prPckStart ?, ?, ?, ?, ?, ?" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="2"
+                SQLTask:DtsVariableName="System::SourceName"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="50" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="3"
+                SQLTask:DtsVariableName="System::ExecutionInstanceGUID"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="72"
+                SQLTask:ParameterSize="50" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="System::PackageName"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="100" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="1"
+                SQLTask:DtsVariableName="System::SourceParentGUID"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="72"
+                SQLTask:ParameterSize="50" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="4"
+                SQLTask:DtsVariableName="System::SourceID"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="100" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="5"
+                SQLTask:DtsVariableName="System::PackageID"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="100" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+    </DTS:EventHandler>
+  </DTS:EventHandlers>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--Questa sezione CDATA contiene le informazioni sul layout del pacchetto e include informazioni quali coordinate (x,y), larghezza e altezza.-->
+<!--Se si modifica manualmente la sezione e si commette un errore, è possibile eliminarla. -->
+<!--Sarà comunque possibile caricare manualmente il pacchetto, ma le informazioni precedenti sul layout verranno perse e gli elementi verranno nuovamente disposti nell'area di progettazione all'interno dell'apposita finestra.-->
+<Objects
+  Version="8">
+  <!--Ogni nodo seguente conterrà proprietà che non influiscono sul comportamento di runtime.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="132.8,41.6"
+          Id="Package\End Status"
+          TopLeft="107,479" />
+        <NodeLayout
+          Size="127.2,41.6"
+          Id="Package\Log Errori"
+          TopLeft="610.16666948133,243.533333409097" />
+        <NodeLayout
+          Size="136,41.6"
+          Id="Package\Start Status"
+          TopLeft="108,57" />
+        <NodeLayout
+          Size="219.2,41.6"
+          Id="Package\TF_KNSEI_SEDE_INPS_CL"
+          TopLeft="77,341" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Vincolo]"
+          TopLeft="176,98.6">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-24.6,242.4"
+              Start="0,0"
+              End="-24.6,234.9">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,140.386086956522" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,140.386086956522"
+                    Point2="0,144.386086956522"
+                    Point3="-4,144.386086956522" />
+                  <mssgle:LineSegment
+                    End="-20.6,144.386086956522" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-20.6,144.386086956522"
+                    Point2="-24.6,144.386086956522"
+                    Point3="-24.6,148.386086956522" />
+                  <mssgle:LineSegment
+                    End="-24.6,234.9" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Vincolo 5]"
+          TopLeft="186.5,383">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-13,96"
+              Start="0,0"
+              End="-13,88.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,44" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,44"
+                    Point2="0,48"
+                    Point3="-4,48" />
+                  <mssgle:LineSegment
+                    End="-9,48" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-9,48"
+                    Point2="-13,48"
+                    Point3="-13,52" />
+                  <mssgle:LineSegment
+                    End="-13,88.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Vincolo 6]"
+          TopLeft="221.8,341">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="451.966669481331,-55.8666665909025"
+              Start="0,0"
+              End="451.966669481331,-48.3666665909025">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,-18.5895651867562" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,-18.5895651867562"
+                    Point2="0,-22.5895651867562"
+                    Point3="4,-22.5895651867562" />
+                  <mssgle:LineSegment
+                    End="447.966669481331,-22.5895651867562" />
+                  <mssgle:CubicBezierSegment
+                    Point1="447.966669481331,-22.5895651867562"
+                    Point2="451.966669481331,-22.5895651867562"
+                    Point3="451.966669481331,-26.5895651867562" />
+                  <mssgle:LineSegment
+                    End="451.966669481331,-48.3666665909025" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="194.531303490665,-17.5895651867562,62.9040625,11.384765625"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <DtsEventHandler
+    design-time-name="Package.EventHandlers[OnError]">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="138.4,41.6"
+          Id="Package.EventHandlers[OnError]\On Error Log"
+          TopLeft="388,260" />
+      </GraphLayout>
+    </LayoutInfo>
+  </DtsEventHandler>
+  <DtsEventHandler
+    design-time-name="Package.EventHandlers[OnPostExecute]">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="176,41.6"
+          Id="Package.EventHandlers[OnPostExecute]\On Post Execute Log"
+          TopLeft="60,60" />
+      </GraphLayout>
+    </LayoutInfo>
+  </DtsEventHandler>
+  <DtsEventHandler
+    design-time-name="Package.EventHandlers[OnPreExecute]">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="171.2,41.6"
+          Id="Package.EventHandlers[OnPreExecute]\On Pre Execute Log"
+          TopLeft="60,60" />
+      </GraphLayout>
+    </LayoutInfo>
+  </DtsEventHandler>
+  <TaskHost
+    design-time-name="Package\TF_KNSEI_SEDE_INPS_CL">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="148.8,41.6"
+          Id="Package\TF_KNSEI_SEDE_INPS_CL\Ricerca Chiave"
+          TopLeft="129,153" />
+        <NodeLayout
+          Size="171.2,41.6"
+          Id="Package\TF_KNSEI_SEDE_INPS_CL\Colonna derivata 1"
+          TopLeft="366,288" />
+        <NodeLayout
+          Size="149.6,41.6"
+          Id="Package\TF_KNSEI_SEDE_INPS_CL\Extract_Source"
+          TopLeft="127.83333330022,29.2666666528914" />
+        <NodeLayout
+          Size="185.6,41.6"
+          Id="Package\TF_KNSEI_SEDE_INPS_CL\Destinazione OLE DB"
+          TopLeft="607.83333330022,290" />
+        <NodeLayout
+          Size="185.6,41.6"
+          Id="Package\TF_KNSEI_SEDE_INPS_CL\Aggiornamento campi"
+          TopLeft="103,433" />
+        <NodeLayout
+          Size="161.6,41.6"
+          Id="Package\TF_KNSEI_SEDE_INPS_CL\Colonna derivata"
+          TopLeft="114,329" />
+        <EdgeLayout
+          Id="Package\TF_KNSEI_SEDE_INPS_CL.Paths[Output origine OLE DB]"
+          TopLeft="203.01666665011,70.8666666528914">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,82.1333333471086"
+              Start="0,0"
+              End="0,74.6333333471086">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,74.6333333471086" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\TF_KNSEI_SEDE_INPS_CL.Paths[Output nessuna corrispondenza ricerca]"
+          TopLeft="226.866666666667,194.6">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="224.733333333333,93.4"
+              Start="0,0"
+              End="224.733333333333,85.9">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,33.956170212766" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,33.956170212766"
+                    Point2="0,37.956170212766"
+                    Point3="4,37.956170212766" />
+                  <mssgle:LineSegment
+                    End="220.733333333333,37.956170212766" />
+                  <mssgle:CubicBezierSegment
+                    Point1="220.733333333333,37.956170212766"
+                    Point2="224.733333333333,37.956170212766"
+                    Point3="224.733333333333,41.956170212766" />
+                  <mssgle:LineSegment
+                    End="224.733333333333,85.9" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="25.9307877604167,42.956170212766,172.8717578125,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\TF_KNSEI_SEDE_INPS_CL.Paths[Output corrispondenza ricerca]"
+          TopLeft="179.933333333333,194.6">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="14.8666666666667,134.4"
+              Start="0,0"
+              End="14.8666666666667,126.9">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,50.6178723404255" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,50.6178723404255"
+                    Point2="0,54.6178723404255"
+                    Point3="4,54.6178723404255" />
+                  <mssgle:LineSegment
+                    End="10.8666666666667,54.6178723404255" />
+                  <mssgle:CubicBezierSegment
+                    Point1="10.8666666666667,54.6178723404255"
+                    Point2="14.8666666666667,54.6178723404255"
+                    Point3="14.8666666666667,58.6178723404255" />
+                  <mssgle:LineSegment
+                    End="14.8666666666667,126.9" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-59.3525455729167,59.6178723404255,133.5717578125,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\TF_KNSEI_SEDE_INPS_CL.Paths[Output colonna derivata1]"
+          TopLeft="537.2,309.8">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="70.6333333002195,0"
+              Start="0,0"
+              End="63.1333333002195,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="63.1333333002195,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\TF_KNSEI_SEDE_INPS_CL.Paths[Output colonna derivata]"
+          TopLeft="195.5,371">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,62"
+              Start="0,0"
+              End="0,54.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,54.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\TF_KNSEI_SEDE_INPS_CL\Ricerca Chiave">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string"></Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\TF_KNSEI_SEDE_INPS_CL\Extract_Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\TF_KNSEI_SEDE_INPS_CL\Destinazione OLE DB">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

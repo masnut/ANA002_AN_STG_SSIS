@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="SqlServer_INPS"
+  DTS:DTSID="{FC7512B7-7177-4111-B69B-C52974713116}"
+  DTS:CreationName="OLEDB">
+  <DTS:PropertyExpression
+    DTS:Name="InitialCatalog">@[$Project::SQL_INPS_InitialCatalog]</DTS:PropertyExpression>
+  <DTS:PropertyExpression
+    DTS:Name="Password">@[$Project::SQL_INPS_Psw]</DTS:PropertyExpression>
+  <DTS:PropertyExpression
+    DTS:Name="ServerName">@[$Project::SQL_INPS_server]</DTS:PropertyExpression>
+  <DTS:PropertyExpression
+    DTS:Name="UserName">@[$Project::SQL_INPS_usr]</DTS:PropertyExpression>
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectRetryCount="1"
+      DTS:ConnectRetryInterval="5"
+      DTS:ConnectionString="Data Source=sqlinpssvil305.ser-test.inps;User ID=DBDS0520000;Initial Catalog=DS05200_ANA002_GP_DWH;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;">
+      <DTS:Password
+        DTS:Name="Password"
+        Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAApQvzHLjht0aEn55lnNQtqQAAAAACAAAAAAAQZgAAAAEAACAAAADlbONITdd3KrbEe31sMfAitQqlFl8y8nXZIKhPTAzKQQAAAAAOgAAAAAIAACAAAACy4YgGNcu+LYtKVyIh9nBQfkOCam9dPY2Sk6qEKJ1S1oAAAACK0T7WCIDmDsjUaqCb3oow+xB3mxOzS7tFZIaXF7APVI7vt8eKVF14de05FY/9Zr0afn50Uc3lMivn5wzM3S8y6wcvt4ftiMLJ8/SAuFFWwgyLDqzUM2UISz+dl9JX7CFSO9ygb5vtgOcly8alt8Qs9opDmQ6u/tCy+TI+8v9CYUAAAACL6Mh6ZDn0RU+uw+S05bG5twAMqOpDKb62fWr5/HQVQcRa1idCPwiQPRpm5aZzE7a57UgQFaqoCCxH4A7dzD5b</DTS:Password>
+    </DTS:ConnectionManager>
+  </DTS:ObjectData>
+</DTS:ConnectionManager>

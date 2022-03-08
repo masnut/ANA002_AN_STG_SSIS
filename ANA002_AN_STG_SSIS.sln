@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31729.503
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{159641D6-6404-4A2A-AE62-294DE0FE8301}") = "ANA002_AN_STG_SSIS", "ANA002_AN_STG_SSIS\ANA002_AN_STG_SSIS.dtproj", "{1C0A00AD-F727-4568-BA92-897AD4A7BF03}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Development|Default = Development|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1C0A00AD-F727-4568-BA92-897AD4A7BF03}.Development|Default.ActiveCfg = Development
+		{1C0A00AD-F727-4568-BA92-897AD4A7BF03}.Development|Default.Build.0 = Development
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {24913AA4-7BA5-4943-93DA-DE97884C5BEA}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,1855 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="12/6/2021 4:16:25 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="AC-FTRIPODI1"
+  DTS:CreatorName="ITMASTER\F.Tripodi"
+  DTS:DTSID="{099E2697-EBAC-4614-B8CD-9B605AFB45FB}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.2000.170"
+  DTS:LocaleID="1040"
+  DTS:ObjectName="ANSTG_002"
+  DTS:PackageType="5"
+  DTS:VersionBuild="118"
+  DTS:VersionGUID="{6CD25E5D-9684-4345-B479-F01F1BFC14E2}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{41422212-C884-40F4-AC32-03E3564B5A37}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="@[$Project::Schema_Target] + &quot;.TM_KNATC_ATECO_CT&quot;"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="Insert_Target01">
+      <DTS:VariableValue
+        DTS:DataType="8">DPRE_ANEDW.TM_KNATC_ATECO_CT</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{CF40B5AE-6165-46D8-96D0-B8F96F1C0787}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="@[$Project::Schema_Target] + &quot;.TM_KNCAP_CAP_CT&quot;"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="Insert_Target02">
+      <DTS:VariableValue
+        DTS:DataType="8">DPRE_ANEDW.TM_KNCAP_CAP_CT</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{BD8796B0-0A8A-421F-A13E-1B2496626640}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="&quot;SELECT KNA03_CD_ATECO, KNA03_LD_DESCR_ATECO, KNA03_DT_INIZ, KNA03_DT_FINE, KNA03_DT_RIFERIMENTO FROM &quot;+ @[$Project::Schema_Source] +&quot;.TS_KNA03_ATECO_CT&quot;"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="SelectSource01">
+      <DTS:VariableValue
+        DTS:DataType="8">SELECT KNA03_CD_ATECO, KNA03_LD_DESCR_ATECO, KNA03_DT_INIZ, KNA03_DT_FINE, KNA03_DT_RIFERIMENTO FROM DPRE_ANSTG.TS_KNA03_ATECO_CT</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{BFE302A1-E997-4BA5-B30A-622490827D63}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="&quot;SELECT KNA25_NR_SEQ_CAP, KNA25_CD_CAP, KNA25_DT_INIZ, KNA25_DT_FINE, KNA25_DT_RIF FROM &quot;+ @[$Project::Schema_Source] +&quot;.TS_KNA25_CAP_CL&quot;"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="SelectSource02">
+      <DTS:VariableValue
+        DTS:DataType="8">SELECT KNA25_NR_SEQ_CAP, KNA25_CD_CAP, KNA25_DT_INIZ, KNA25_DT_FINE, KNA25_DT_RIF FROM DPRE_ANSTG.TS_KNA25_CAP_CL</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\01 - TM_KNATC_ATECO_CT"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Contenitore Sequenza"
+      DTS:DTSID="{8b821310-19f8-4c9a-9e55-dac661e47ff3}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="01 - TM_KNATC_ATECO_CT">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\01 - TM_KNATC_ATECO_CT\Esegui Delete Tipologiche"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Attività Esegui SQL"
+          DTS:DTSID="{dada7173-0720-45d5-9e58-37c5aceb57d1}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Esegui Delete Tipologiche"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:PropertyExpression
+            DTS:Name="SqlStatementSource">"Delete " +   @[$Project::Schema_Target] + ".TM_KNATC_ATECO_CT  where KNATC_NR_SEQ_ATECO_PK  &lt;&gt;'-1'"</DTS:PropertyExpression>
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{FC7512B7-7177-4111-B69B-C52974713116}"
+              SQLTask:SqlStatementSource="Delete DPRE_ANEDW.TM_KNATC_ATECO_CT  where KNATC_NR_SEQ_ATECO_PK  &lt;&gt;'-1'" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Attività Flusso di dati"
+          DTS:DTSID="{f1c1b81b-badb-46fd-8b0b-d8811e16ff93}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="INSERT TM_KNATC_ATECO_CT"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT\Colonna derivata"
+                  componentClassID="Microsoft.DerivedColumn"
+                  contactInfo="Colonna derivata;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tutti i diritti sono riservati; http://www.microsoft.com/sql/support;0"
+                  description="Crea nuovi valori di colonna applicando espressioni alle colonne di input della trasformazione. Creare nuove colonne oppure sovrascrivere quelle esistenti. Ad esempio, concatenare i valori delle colonne 'first name' e 'last name' per creare una colonna 'full name'."
+                  name="Colonna derivata"
+                  usesDispositions="true">
+                  <inputs>
+                    <input
+                      refId="Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT\Colonna derivata.Inputs[Input colonna derivata]"
+                      description="Input della trasformazione Colonna derivata"
+                      name="Input colonna derivata">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT\Colonna derivata.Inputs[Input colonna derivata].Columns[KNA03_DT_INIZ]"
+                          cachedDataType="wstr"
+                          cachedLength="260"
+                          cachedName="KNA03_DT_INIZ"
+                          lineageId="Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT\Sorgente Oracle INPS.Outputs[Output origine OLE DB].Columns[KNA03_DT_INIZ]" />
+                        <inputColumn
+                          refId="Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT\Colonna derivata.Inputs[Input colonna derivata].Columns[KNA03_DT_FINE]"
+                          cachedDataType="dbTimeStamp"
+                          cachedName="KNA03_DT_FINE"
+                          lineageId="Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT\Sorgente Oracle INPS.Outputs[Output origine OLE DB].Columns[KNA03_DT_FINE]" />
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT\Colonna derivata.Outputs[Output colonna derivata]"
+                      description="Output predefinito della trasformazione Colonna derivata"
+                      exclusionGroup="1"
+                      name="Output colonna derivata"
+                      synchronousInputId="Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT\Colonna derivata.Inputs[Input colonna derivata]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT\Colonna derivata.Outputs[Output colonna derivata].Columns[DWH_UTENTE]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Calcolo"
+                          errorRowDisposition="FailComponent"
+                          length="18"
+                          lineageId="Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT\Colonna derivata.Outputs[Output colonna derivata].Columns[DWH_UTENTE]"
+                          name="DWH_UTENTE"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Espressione colonna derivata"
+                              name="Expression">@[System::UserName]</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Espressione descrittiva colonna derivata"
+                              expressionType="Notify"
+                              name="FriendlyExpression">@[System::UserName]</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT\Colonna derivata.Outputs[Output colonna derivata].Columns[DWH_INS]"
+                          dataType="date"
+                          errorOrTruncationOperation="Calcolo"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT\Colonna derivata.Outputs[Output colonna derivata].Columns[DWH_INS]"
+                          name="DWH_INS"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Espressione colonna derivata"
+                              name="Expression">@[System::StartTime]</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Espressione descrittiva colonna derivata"
+                              expressionType="Notify"
+                              name="FriendlyExpression">@[System::StartTime]</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT\Colonna derivata.Outputs[Output colonna derivata].Columns[DWH_APPLIC]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Calcolo"
+                          errorRowDisposition="FailComponent"
+                          length="5"
+                          lineageId="Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT\Colonna derivata.Outputs[Output colonna derivata].Columns[DWH_APPLIC]"
+                          name="DWH_APPLIC"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Espressione colonna derivata"
+                              name="Expression">"ANEDW"</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Espressione descrittiva colonna derivata"
+                              expressionType="Notify"
+                              name="FriendlyExpression">"ANEDW"</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT\Colonna derivata.Outputs[Output colonna derivata].Columns[var_DATA_INIZ]"
+                          dataType="dbDate"
+                          errorOrTruncationOperation="Calcolo"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT\Colonna derivata.Outputs[Output colonna derivata].Columns[var_DATA_INIZ]"
+                          name="var_DATA_INIZ"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Espressione colonna derivata"
+                              name="Expression">[ISNULL](#{Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT\Sorgente Oracle INPS.Outputs[Output origine OLE DB].Columns[KNA03_DT_INIZ]}) ? (DT_DBDATE)#{Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT\Sorgente Oracle INPS.Outputs[Output origine OLE DB].Columns[KNA03_DT_INIZ]} : (DT_DBDATE)"31-12-9999"</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Espressione descrittiva colonna derivata"
+                              expressionType="Notify"
+                              name="FriendlyExpression">ISNULL(KNA03_DT_INIZ) ? (DT_DBDATE)KNA03_DT_INIZ : (DT_DBDATE)"31-12-9999"</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT\Colonna derivata.Outputs[Output colonna derivata].Columns[var_DATA_FINE]"
+                          dataType="dbDate"
+                          errorOrTruncationOperation="Calcolo"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT\Colonna derivata.Outputs[Output colonna derivata].Columns[var_DATA_FINE]"
+                          name="var_DATA_FINE"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Espressione colonna derivata"
+                              name="Expression">[ISNULL](#{Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT\Sorgente Oracle INPS.Outputs[Output origine OLE DB].Columns[KNA03_DT_FINE]}) ? (DT_DBDATE)#{Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT\Sorgente Oracle INPS.Outputs[Output origine OLE DB].Columns[KNA03_DT_FINE]} : (DT_DBDATE)"31-12-9999"</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Espressione descrittiva colonna derivata"
+                              expressionType="Notify"
+                              name="FriendlyExpression">ISNULL(KNA03_DT_FINE) ? (DT_DBDATE)KNA03_DT_FINE : (DT_DBDATE)"31-12-9999"</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT\Colonna derivata.Outputs[Output errori colonna derivata]"
+                      description="Output degli errori della trasformazione Colonna derivata"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Output errori colonna derivata"
+                      synchronousInputId="Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT\Colonna derivata.Inputs[Input colonna derivata]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT\Colonna derivata.Outputs[Output errori colonna derivata].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT\Colonna derivata.Outputs[Output errori colonna derivata].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT\Colonna derivata.Outputs[Output errori colonna derivata].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT\Colonna derivata.Outputs[Output errori colonna derivata].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT\Destinazione SqlServer INPS"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="Destinazione OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tutti i diritti sono riservati; http://www.microsoft.com/sql/support;4"
+                  description="Destinazione OLE DB"
+                  name="Destinazione SqlServer INPS"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="Numero di secondi prima del timeout di un comando. Il valore 0 indica nessun timeout."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifica il nome dell'oggetto di database utilizzato per aprire un set di righe."
+                      name="OpenRowset">[DPRE_STG].[TS_RSCDE_DETERMINAZIONE_CL]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifica la variabile contenente il nome dell'oggetto di database utilizzato per aprire un set di righe."
+                      name="OpenRowsetVariable">User::Insert_Target01</property>
+                    <property
+                      dataType="System.String"
+                      description="Comando SQL da eseguire."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifica la tabella codici della colonna da utilizzare quando l'origine dati non rende disponibili informazioni sulla tabella codici."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forza l'utilizzo del valore della proprietà DefaultCodePage per la descrizione di dati di tipo carattere."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifica la modalità utilizzata per accedere al database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">4</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indica se i valori specificati per le colonne Identity verranno copiati nella destinazione. Se false, i valori delle colonne Identity verranno generati automaticamente nella destinazione. Applicabile solo se è abilitato il caricamento rapido."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indica se per le colonne con valori Null, tali valori verranno inseriti nella destinazione. Se false, per le colonne con valori Null verranno inseriti i valori predefiniti corrispondenti nella destinazione. Applicabile solo se è attivato il caricamento rapido."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifica le opzioni da utilizzare con il caricamento rapido. Applicabile solo se è attivato il caricamento rapido."
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifica se vengono eseguiti commit durante l'inserimento dei dati. Il valore 0 indica che verrà eseguito un solo commit al termine dell'inserimento dei dati. Applicabile solo se è attivato il caricamento rapido."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT\Destinazione SqlServer INPS.Connections[OleDbConnection]"
+                      connectionManagerID="{FC7512B7-7177-4111-B69B-C52974713116}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[SqlServer_INPS]"
+                      description="Connessione di run-time OLE DB utilizzata per accedere al database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT\Destinazione SqlServer INPS.Inputs[Input destinazione OLE DB]"
+                      errorOrTruncationOperation="Inserimento"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="Input destinazione OLE DB">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT\Destinazione SqlServer INPS.Inputs[Input destinazione OLE DB].Columns[DWH_UTENTE]"
+                          cachedDataType="wstr"
+                          cachedLength="18"
+                          cachedName="DWH_UTENTE"
+                          externalMetadataColumnId="Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT\Destinazione SqlServer INPS.Inputs[Input destinazione OLE DB].ExternalColumns[KNATC_CD_DWH_UTENTE]"
+                          lineageId="Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT\Colonna derivata.Outputs[Output colonna derivata].Columns[DWH_UTENTE]" />
+                        <inputColumn
+                          refId="Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT\Destinazione SqlServer INPS.Inputs[Input destinazione OLE DB].Columns[DWH_INS]"
+                          cachedDataType="date"
+                          cachedName="DWH_INS"
+                          externalMetadataColumnId="Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT\Destinazione SqlServer INPS.Inputs[Input destinazione OLE DB].ExternalColumns[KNATC_DT_DWH_INS]"
+                          lineageId="Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT\Colonna derivata.Outputs[Output colonna derivata].Columns[DWH_INS]" />
+                        <inputColumn
+                          refId="Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT\Destinazione SqlServer INPS.Inputs[Input destinazione OLE DB].Columns[DWH_APPLIC]"
+                          cachedDataType="wstr"
+                          cachedLength="5"
+                          cachedName="DWH_APPLIC"
+                          externalMetadataColumnId="Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT\Destinazione SqlServer INPS.Inputs[Input destinazione OLE DB].ExternalColumns[KNATC_CD_DWH_APPLIC]"
+                          lineageId="Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT\Colonna derivata.Outputs[Output colonna derivata].Columns[DWH_APPLIC]" />
+                        <inputColumn
+                          refId="Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT\Destinazione SqlServer INPS.Inputs[Input destinazione OLE DB].Columns[KNA03_CD_ATECO]"
+                          cachedDataType="wstr"
+                          cachedLength="5"
+                          cachedName="KNA03_CD_ATECO"
+                          externalMetadataColumnId="Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT\Destinazione SqlServer INPS.Inputs[Input destinazione OLE DB].ExternalColumns[KNATC_SD_CD_SOURCEATC]"
+                          lineageId="Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT\Sorgente Oracle INPS.Outputs[Output origine OLE DB].Columns[KNA03_CD_ATECO]" />
+                        <inputColumn
+                          refId="Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT\Destinazione SqlServer INPS.Inputs[Input destinazione OLE DB].Columns[var_DATA_INIZ]"
+                          cachedDataType="dbDate"
+                          cachedName="var_DATA_INIZ"
+                          externalMetadataColumnId="Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT\Destinazione SqlServer INPS.Inputs[Input destinazione OLE DB].ExternalColumns[KNATC_DT_INIZ]"
+                          lineageId="Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT\Colonna derivata.Outputs[Output colonna derivata].Columns[var_DATA_INIZ]" />
+                        <inputColumn
+                          refId="Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT\Destinazione SqlServer INPS.Inputs[Input destinazione OLE DB].Columns[var_DATA_FINE]"
+                          cachedDataType="dbDate"
+                          cachedName="var_DATA_FINE"
+                          externalMetadataColumnId="Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT\Destinazione SqlServer INPS.Inputs[Input destinazione OLE DB].ExternalColumns[KNATC_DT_FINE]"
+                          lineageId="Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT\Colonna derivata.Outputs[Output colonna derivata].Columns[var_DATA_FINE]" />
+                        <inputColumn
+                          refId="Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT\Destinazione SqlServer INPS.Inputs[Input destinazione OLE DB].Columns[KNA03_LD_DESCR_ATECO]"
+                          cachedDataType="wstr"
+                          cachedLength="260"
+                          cachedName="KNA03_LD_DESCR_ATECO"
+                          externalMetadataColumnId="Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT\Destinazione SqlServer INPS.Inputs[Input destinazione OLE DB].ExternalColumns[KNATC_LD_DESCR_ATECO]"
+                          lineageId="Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT\Sorgente Oracle INPS.Outputs[Output origine OLE DB].Columns[KNA03_LD_DESCR_ATECO]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT\Destinazione SqlServer INPS.Inputs[Input destinazione OLE DB].ExternalColumns[KNATC_NR_SEQ_ATECO_PK]"
+                          dataType="numeric"
+                          name="KNATC_NR_SEQ_ATECO_PK"
+                          precision="12" />
+                        <externalMetadataColumn
+                          refId="Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT\Destinazione SqlServer INPS.Inputs[Input destinazione OLE DB].ExternalColumns[KNATC_SD_CD_SOURCEATC]"
+                          dataType="wstr"
+                          length="5"
+                          name="KNATC_SD_CD_SOURCEATC" />
+                        <externalMetadataColumn
+                          refId="Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT\Destinazione SqlServer INPS.Inputs[Input destinazione OLE DB].ExternalColumns[KNATC_LD_DESCR_ATECO]"
+                          dataType="wstr"
+                          length="260"
+                          name="KNATC_LD_DESCR_ATECO" />
+                        <externalMetadataColumn
+                          refId="Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT\Destinazione SqlServer INPS.Inputs[Input destinazione OLE DB].ExternalColumns[KNATC_DT_INIZ]"
+                          dataType="dbTimeStamp"
+                          name="KNATC_DT_INIZ" />
+                        <externalMetadataColumn
+                          refId="Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT\Destinazione SqlServer INPS.Inputs[Input destinazione OLE DB].ExternalColumns[KNATC_DT_FINE]"
+                          dataType="dbTimeStamp"
+                          name="KNATC_DT_FINE" />
+                        <externalMetadataColumn
+                          refId="Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT\Destinazione SqlServer INPS.Inputs[Input destinazione OLE DB].ExternalColumns[KNATC_CD_DWH_UTENTE]"
+                          dataType="wstr"
+                          length="100"
+                          name="KNATC_CD_DWH_UTENTE" />
+                        <externalMetadataColumn
+                          refId="Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT\Destinazione SqlServer INPS.Inputs[Input destinazione OLE DB].ExternalColumns[KNATC_DT_DWH_ANNULL]"
+                          dataType="dbTimeStamp"
+                          name="KNATC_DT_DWH_ANNULL" />
+                        <externalMetadataColumn
+                          refId="Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT\Destinazione SqlServer INPS.Inputs[Input destinazione OLE DB].ExternalColumns[KNATC_DT_DWH_INS]"
+                          dataType="dbTimeStamp"
+                          name="KNATC_DT_DWH_INS" />
+                        <externalMetadataColumn
+                          refId="Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT\Destinazione SqlServer INPS.Inputs[Input destinazione OLE DB].ExternalColumns[KNATC_DT_DWH_AGGIORN]"
+                          dataType="dbTimeStamp"
+                          name="KNATC_DT_DWH_AGGIORN" />
+                        <externalMetadataColumn
+                          refId="Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT\Destinazione SqlServer INPS.Inputs[Input destinazione OLE DB].ExternalColumns[KNATC_CD_DWH_APPLIC]"
+                          dataType="wstr"
+                          length="100"
+                          name="KNATC_CD_DWH_APPLIC" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT\Destinazione SqlServer INPS.Outputs[Output errori destinazione OLE DB]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Output errori destinazione OLE DB"
+                      synchronousInputId="Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT\Destinazione SqlServer INPS.Inputs[Input destinazione OLE DB]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT\Destinazione SqlServer INPS.Outputs[Output errori destinazione OLE DB].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT\Destinazione SqlServer INPS.Outputs[Output errori destinazione OLE DB].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT\Destinazione SqlServer INPS.Outputs[Output errori destinazione OLE DB].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT\Destinazione SqlServer INPS.Outputs[Output errori destinazione OLE DB].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT\Sorgente Oracle INPS"
+                  componentClassID="Microsoft.OLEDBSource"
+                  contactInfo="Origine OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tutti i diritti sono riservati; http://www.microsoft.com/sql/support;7"
+                  description="Origine OLE DB"
+                  name="Sorgente Oracle INPS"
+                  usesDispositions="true"
+                  version="7">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="Numero di secondi prima del timeout di un comando. Il valore 0 indica nessun timeout."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifica il nome dell'oggetto di database utilizzato per aprire un set di righe."
+                      name="OpenRowset"></property>
+                    <property
+                      dataType="System.String"
+                      description="Specifica la variabile contenente il nome dell'oggetto di database utilizzato per aprire un set di righe."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="Comando SQL da eseguire."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.String"
+                      description="Variabile che contiene il comando SQL da eseguire."
+                      name="SqlCommandVariable">User::SelectSource01</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifica la tabella codici della colonna da utilizzare quando l'origine dati non rende disponibili informazioni sulla tabella codici."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forza l'utilizzo del valore della proprietà DefaultCodePage per la descrizione di dati di tipo carattere."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifica la modalità utilizzata per accedere al database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">3</property>
+                    <property
+                      dataType="System.String"
+                      description="Mapping tra i parametri nel comando SQL e le variabili."
+                      name="ParameterMapping"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT\Sorgente Oracle INPS.Connections[OleDbConnection]"
+                      connectionManagerID="{FC7512B7-7177-4111-B69B-C52974713116}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[SqlServer_INPS]"
+                      description="Connessione di run-time OLE DB utilizzata per accedere al database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT\Sorgente Oracle INPS.Outputs[Output origine OLE DB]"
+                      name="Output origine OLE DB">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT\Sorgente Oracle INPS.Outputs[Output origine OLE DB].Columns[KNA03_CD_ATECO]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversione"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT\Sorgente Oracle INPS.Outputs[Output origine OLE DB].ExternalColumns[KNA03_CD_ATECO]"
+                          length="5"
+                          lineageId="Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT\Sorgente Oracle INPS.Outputs[Output origine OLE DB].Columns[KNA03_CD_ATECO]"
+                          name="KNA03_CD_ATECO"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT\Sorgente Oracle INPS.Outputs[Output origine OLE DB].Columns[KNA03_DT_INIZ]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversione"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT\Sorgente Oracle INPS.Outputs[Output origine OLE DB].ExternalColumns[KNA03_DT_INIZ]"
+                          length="260"
+                          lineageId="Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT\Sorgente Oracle INPS.Outputs[Output origine OLE DB].Columns[KNA03_DT_INIZ]"
+                          name="KNA03_DT_INIZ"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT\Sorgente Oracle INPS.Outputs[Output origine OLE DB].Columns[KNA03_DT_FINE]"
+                          dataType="dbTimeStamp"
+                          errorOrTruncationOperation="Conversione"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT\Sorgente Oracle INPS.Outputs[Output origine OLE DB].ExternalColumns[KNA03_DT_FINE]"
+                          lineageId="Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT\Sorgente Oracle INPS.Outputs[Output origine OLE DB].Columns[KNA03_DT_FINE]"
+                          name="KNA03_DT_FINE"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT\Sorgente Oracle INPS.Outputs[Output origine OLE DB].Columns[KNA03_DT_RIFERIMENTO]"
+                          dataType="dbTimeStamp"
+                          errorOrTruncationOperation="Conversione"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT\Sorgente Oracle INPS.Outputs[Output origine OLE DB].ExternalColumns[KNA03_DT_RIFERIMENTO]"
+                          lineageId="Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT\Sorgente Oracle INPS.Outputs[Output origine OLE DB].Columns[KNA03_DT_RIFERIMENTO]"
+                          name="KNA03_DT_RIFERIMENTO"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT\Sorgente Oracle INPS.Outputs[Output origine OLE DB].Columns[KNA03_LD_DESCR_ATECO]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversione"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT\Sorgente Oracle INPS.Outputs[Output origine OLE DB].ExternalColumns[KNA03_LD_DESCR_ATECO]"
+                          length="260"
+                          lineageId="Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT\Sorgente Oracle INPS.Outputs[Output origine OLE DB].Columns[KNA03_LD_DESCR_ATECO]"
+                          name="KNA03_LD_DESCR_ATECO"
+                          truncationRowDisposition="FailComponent" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT\Sorgente Oracle INPS.Outputs[Output origine OLE DB].ExternalColumns[KNA03_CD_ATECO]"
+                          dataType="wstr"
+                          length="5"
+                          name="KNA03_CD_ATECO" />
+                        <externalMetadataColumn
+                          refId="Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT\Sorgente Oracle INPS.Outputs[Output origine OLE DB].ExternalColumns[KNA03_DT_INIZ]"
+                          dataType="dbTimeStamp"
+                          name="KNA03_DT_INIZ" />
+                        <externalMetadataColumn
+                          refId="Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT\Sorgente Oracle INPS.Outputs[Output origine OLE DB].ExternalColumns[KNA03_DT_FINE]"
+                          dataType="dbTimeStamp"
+                          name="KNA03_DT_FINE" />
+                        <externalMetadataColumn
+                          refId="Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT\Sorgente Oracle INPS.Outputs[Output origine OLE DB].ExternalColumns[KNA03_DT_RIFERIMENTO]"
+                          dataType="dbTimeStamp"
+                          name="KNA03_DT_RIFERIMENTO" />
+                        <externalMetadataColumn
+                          refId="Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT\Sorgente Oracle INPS.Outputs[Output origine OLE DB].ExternalColumns[KNA03_LD_DESCR_ATECO]"
+                          dataType="wstr"
+                          length="260"
+                          name="KNA03_LD_DESCR_ATECO" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT\Sorgente Oracle INPS.Outputs[Output errori origine OLE DB]"
+                      isErrorOut="true"
+                      name="Output errori origine OLE DB">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT\Sorgente Oracle INPS.Outputs[Output errori origine OLE DB].Columns[KNA03_CD_ATECO]"
+                          dataType="wstr"
+                          length="5"
+                          lineageId="Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT\Sorgente Oracle INPS.Outputs[Output errori origine OLE DB].Columns[KNA03_CD_ATECO]"
+                          name="KNA03_CD_ATECO" />
+                        <outputColumn
+                          refId="Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT\Sorgente Oracle INPS.Outputs[Output errori origine OLE DB].Columns[KNA03_LD_DESCR_ATECO]"
+                          dataType="wstr"
+                          length="260"
+                          lineageId="Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT\Sorgente Oracle INPS.Outputs[Output errori origine OLE DB].Columns[KNA03_LD_DESCR_ATECO]"
+                          name="KNA03_LD_DESCR_ATECO" />
+                        <outputColumn
+                          refId="Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT\Sorgente Oracle INPS.Outputs[Output errori origine OLE DB].Columns[KNA03_DT_INIZ]"
+                          dataType="dbTimeStamp"
+                          lineageId="Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT\Sorgente Oracle INPS.Outputs[Output errori origine OLE DB].Columns[KNA03_DT_INIZ]"
+                          name="KNA03_DT_INIZ" />
+                        <outputColumn
+                          refId="Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT\Sorgente Oracle INPS.Outputs[Output errori origine OLE DB].Columns[KNA03_DT_FINE]"
+                          dataType="dbTimeStamp"
+                          lineageId="Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT\Sorgente Oracle INPS.Outputs[Output errori origine OLE DB].Columns[KNA03_DT_FINE]"
+                          name="KNA03_DT_FINE" />
+                        <outputColumn
+                          refId="Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT\Sorgente Oracle INPS.Outputs[Output errori origine OLE DB].Columns[KNA03_DT_RIFERIMENTO]"
+                          dataType="dbTimeStamp"
+                          lineageId="Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT\Sorgente Oracle INPS.Outputs[Output errori origine OLE DB].Columns[KNA03_DT_RIFERIMENTO]"
+                          name="KNA03_DT_RIFERIMENTO" />
+                        <outputColumn
+                          refId="Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT\Sorgente Oracle INPS.Outputs[Output errori origine OLE DB].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT\Sorgente Oracle INPS.Outputs[Output errori origine OLE DB].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT\Sorgente Oracle INPS.Outputs[Output errori origine OLE DB].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT\Sorgente Oracle INPS.Outputs[Output errori origine OLE DB].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT.Paths[Output colonna derivata]"
+                  endId="Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT\Destinazione SqlServer INPS.Inputs[Input destinazione OLE DB]"
+                  name="Output colonna derivata"
+                  startId="Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT\Colonna derivata.Outputs[Output colonna derivata]" />
+                <path
+                  refId="Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT.Paths[Output origine OLE DB]"
+                  endId="Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT\Colonna derivata.Inputs[Input colonna derivata]"
+                  name="Output origine OLE DB"
+                  startId="Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT\Sorgente Oracle INPS.Outputs[Output origine OLE DB]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\01 - TM_KNATC_ATECO_CT.PrecedenceConstraints[Vincolo]"
+          DTS:CreationName=""
+          DTS:DTSID="{43779EAA-87CE-4B7E-A039-4A80F8CBDF76}"
+          DTS:From="Package\01 - TM_KNATC_ATECO_CT\Esegui Delete Tipologiche"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Vincolo"
+          DTS:To="Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\02 - TM_KNCAP_CAP_CT"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Contenitore Sequenza"
+      DTS:DTSID="{b8da04ad-6b52-4e11-ad93-b3f760504219}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="02 - TM_KNCAP_CAP_CT">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\02 - TM_KNCAP_CAP_CT\Esegui Delete Tipologiche"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Attività Esegui SQL"
+          DTS:DTSID="{c54ff525-b86f-435b-acad-32bb5fadf818}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Esegui Delete Tipologiche"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="1">
+          <DTS:Variables />
+          <DTS:PropertyExpression
+            DTS:Name="SqlStatementSource">"Delete " +   @[$Project::Schema_Target] + ".TM_KNCAP_CAP_CT  where KNCAP_NR_CAP_PK  &lt;&gt;'-1'"</DTS:PropertyExpression>
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{FC7512B7-7177-4111-B69B-C52974713116}"
+              SQLTask:SqlStatementSource="Delete DPRE_ANEDW.TM_KNCAP_CAP_CT  where KNCAP_NR_CAP_PK  &lt;&gt;'-1'" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\02 - TM_KNCAP_CAP_CT\INSERT TM_KNCAP_CAP_CT"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Attività Flusso di dati"
+          DTS:DTSID="{be817e83-0d3f-423a-9409-88b3f997c373}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="INSERT TM_KNCAP_CAP_CT"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\02 - TM_KNCAP_CAP_CT\INSERT TM_KNCAP_CAP_CT\Colonna derivata"
+                  componentClassID="Microsoft.DerivedColumn"
+                  contactInfo="Colonna derivata;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tutti i diritti sono riservati; http://www.microsoft.com/sql/support;0"
+                  description="Crea nuovi valori di colonna applicando espressioni alle colonne di input della trasformazione. Creare nuove colonne oppure sovrascrivere quelle esistenti. Ad esempio, concatenare i valori delle colonne 'first name' e 'last name' per creare una colonna 'full name'."
+                  name="Colonna derivata"
+                  usesDispositions="true">
+                  <inputs>
+                    <input
+                      refId="Package\02 - TM_KNCAP_CAP_CT\INSERT TM_KNCAP_CAP_CT\Colonna derivata.Inputs[Input colonna derivata]"
+                      description="Input della trasformazione Colonna derivata"
+                      name="Input colonna derivata">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\02 - TM_KNCAP_CAP_CT\INSERT TM_KNCAP_CAP_CT\Colonna derivata.Inputs[Input colonna derivata].Columns[KNA25_DT_INIZ]"
+                          cachedDataType="dbTimeStamp"
+                          cachedName="KNA25_DT_INIZ"
+                          lineageId="Package\02 - TM_KNCAP_CAP_CT\INSERT TM_KNCAP_CAP_CT\Sorgente Oracle INPS.Outputs[Output origine OLE DB].Columns[KNA25_DT_INIZ]" />
+                        <inputColumn
+                          refId="Package\02 - TM_KNCAP_CAP_CT\INSERT TM_KNCAP_CAP_CT\Colonna derivata.Inputs[Input colonna derivata].Columns[KNA25_DT_FINE]"
+                          cachedDataType="dbTimeStamp"
+                          cachedName="KNA25_DT_FINE"
+                          lineageId="Package\02 - TM_KNCAP_CAP_CT\INSERT TM_KNCAP_CAP_CT\Sorgente Oracle INPS.Outputs[Output origine OLE DB].Columns[KNA25_DT_FINE]" />
+                        <inputColumn
+                          refId="Package\02 - TM_KNCAP_CAP_CT\INSERT TM_KNCAP_CAP_CT\Colonna derivata.Inputs[Input colonna derivata].Columns[KNA25_DT_RIF]"
+                          cachedDataType="dbTimeStamp"
+                          cachedName="KNA25_DT_RIF"
+                          lineageId="Package\02 - TM_KNCAP_CAP_CT\INSERT TM_KNCAP_CAP_CT\Sorgente Oracle INPS.Outputs[Output origine OLE DB].Columns[KNA25_DT_RIF]" />
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\02 - TM_KNCAP_CAP_CT\INSERT TM_KNCAP_CAP_CT\Colonna derivata.Outputs[Output colonna derivata]"
+                      description="Output predefinito della trasformazione Colonna derivata"
+                      exclusionGroup="1"
+                      name="Output colonna derivata"
+                      synchronousInputId="Package\02 - TM_KNCAP_CAP_CT\INSERT TM_KNCAP_CAP_CT\Colonna derivata.Inputs[Input colonna derivata]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\02 - TM_KNCAP_CAP_CT\INSERT TM_KNCAP_CAP_CT\Colonna derivata.Outputs[Output colonna derivata].Columns[DWH_UTENTE]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Calcolo"
+                          errorRowDisposition="FailComponent"
+                          length="18"
+                          lineageId="Package\02 - TM_KNCAP_CAP_CT\INSERT TM_KNCAP_CAP_CT\Colonna derivata.Outputs[Output colonna derivata].Columns[DWH_UTENTE]"
+                          name="DWH_UTENTE"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Espressione colonna derivata"
+                              name="Expression">@[System::UserName]</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Espressione descrittiva colonna derivata"
+                              expressionType="Notify"
+                              name="FriendlyExpression">@[System::UserName]</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\02 - TM_KNCAP_CAP_CT\INSERT TM_KNCAP_CAP_CT\Colonna derivata.Outputs[Output colonna derivata].Columns[DWH_INS]"
+                          dataType="date"
+                          errorOrTruncationOperation="Calcolo"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\02 - TM_KNCAP_CAP_CT\INSERT TM_KNCAP_CAP_CT\Colonna derivata.Outputs[Output colonna derivata].Columns[DWH_INS]"
+                          name="DWH_INS"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Espressione colonna derivata"
+                              name="Expression">@[System::StartTime]</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Espressione descrittiva colonna derivata"
+                              expressionType="Notify"
+                              name="FriendlyExpression">@[System::StartTime]</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\02 - TM_KNCAP_CAP_CT\INSERT TM_KNCAP_CAP_CT\Colonna derivata.Outputs[Output colonna derivata].Columns[DWH_APPLIC]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Calcolo"
+                          errorRowDisposition="FailComponent"
+                          length="5"
+                          lineageId="Package\02 - TM_KNCAP_CAP_CT\INSERT TM_KNCAP_CAP_CT\Colonna derivata.Outputs[Output colonna derivata].Columns[DWH_APPLIC]"
+                          name="DWH_APPLIC"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Espressione colonna derivata"
+                              name="Expression">"ANSTG"</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Espressione descrittiva colonna derivata"
+                              expressionType="Notify"
+                              name="FriendlyExpression">"ANSTG"</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\02 - TM_KNCAP_CAP_CT\INSERT TM_KNCAP_CAP_CT\Colonna derivata.Outputs[Output colonna derivata].Columns[var_DATA_INIZ]"
+                          dataType="dbDate"
+                          errorOrTruncationOperation="Calcolo"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\02 - TM_KNCAP_CAP_CT\INSERT TM_KNCAP_CAP_CT\Colonna derivata.Outputs[Output colonna derivata].Columns[var_DATA_INIZ]"
+                          name="var_DATA_INIZ"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Espressione colonna derivata"
+                              name="Expression">(DT_DBDATE)#{Package\02 - TM_KNCAP_CAP_CT\INSERT TM_KNCAP_CAP_CT\Sorgente Oracle INPS.Outputs[Output origine OLE DB].Columns[KNA25_DT_INIZ]}</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Espressione descrittiva colonna derivata"
+                              expressionType="Notify"
+                              name="FriendlyExpression">(DT_DBDATE)KNA25_DT_INIZ</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\02 - TM_KNCAP_CAP_CT\INSERT TM_KNCAP_CAP_CT\Colonna derivata.Outputs[Output colonna derivata].Columns[var_DATA_FINE]"
+                          dataType="dbDate"
+                          errorOrTruncationOperation="Calcolo"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\02 - TM_KNCAP_CAP_CT\INSERT TM_KNCAP_CAP_CT\Colonna derivata.Outputs[Output colonna derivata].Columns[var_DATA_FINE]"
+                          name="var_DATA_FINE"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Espressione colonna derivata"
+                              name="Expression">[ISNULL](#{Package\02 - TM_KNCAP_CAP_CT\INSERT TM_KNCAP_CAP_CT\Sorgente Oracle INPS.Outputs[Output origine OLE DB].Columns[KNA25_DT_FINE]}) ? (DT_DBDATE)#{Package\02 - TM_KNCAP_CAP_CT\INSERT TM_KNCAP_CAP_CT\Sorgente Oracle INPS.Outputs[Output origine OLE DB].Columns[KNA25_DT_FINE]} : (DT_DBDATE)"31-12-9999"</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Espressione descrittiva colonna derivata"
+                              expressionType="Notify"
+                              name="FriendlyExpression">ISNULL(KNA25_DT_FINE) ? (DT_DBDATE)KNA25_DT_FINE : (DT_DBDATE)"31-12-9999"</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\02 - TM_KNCAP_CAP_CT\INSERT TM_KNCAP_CAP_CT\Colonna derivata.Outputs[Output colonna derivata].Columns[var_DATA_RIF]"
+                          dataType="dbTimeStamp"
+                          errorOrTruncationOperation="Calcolo"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\02 - TM_KNCAP_CAP_CT\INSERT TM_KNCAP_CAP_CT\Colonna derivata.Outputs[Output colonna derivata].Columns[var_DATA_RIF]"
+                          name="var_DATA_RIF"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Espressione colonna derivata"
+                              name="Expression">[ISNULL](#{Package\02 - TM_KNCAP_CAP_CT\INSERT TM_KNCAP_CAP_CT\Sorgente Oracle INPS.Outputs[Output origine OLE DB].Columns[KNA25_DT_RIF]}) ? (DT_DBDATE)#{Package\02 - TM_KNCAP_CAP_CT\INSERT TM_KNCAP_CAP_CT\Sorgente Oracle INPS.Outputs[Output origine OLE DB].Columns[KNA25_DT_RIF]} : [GETDATE]()</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Espressione descrittiva colonna derivata"
+                              expressionType="Notify"
+                              name="FriendlyExpression">ISNULL(KNA25_DT_RIF) ? (DT_DBDATE)KNA25_DT_RIF : GETDATE()</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\02 - TM_KNCAP_CAP_CT\INSERT TM_KNCAP_CAP_CT\Colonna derivata.Outputs[Output errori colonna derivata]"
+                      description="Output degli errori della trasformazione Colonna derivata"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Output errori colonna derivata"
+                      synchronousInputId="Package\02 - TM_KNCAP_CAP_CT\INSERT TM_KNCAP_CAP_CT\Colonna derivata.Inputs[Input colonna derivata]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\02 - TM_KNCAP_CAP_CT\INSERT TM_KNCAP_CAP_CT\Colonna derivata.Outputs[Output errori colonna derivata].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\02 - TM_KNCAP_CAP_CT\INSERT TM_KNCAP_CAP_CT\Colonna derivata.Outputs[Output errori colonna derivata].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\02 - TM_KNCAP_CAP_CT\INSERT TM_KNCAP_CAP_CT\Colonna derivata.Outputs[Output errori colonna derivata].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\02 - TM_KNCAP_CAP_CT\INSERT TM_KNCAP_CAP_CT\Colonna derivata.Outputs[Output errori colonna derivata].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\02 - TM_KNCAP_CAP_CT\INSERT TM_KNCAP_CAP_CT\Destinazione SqlServer INPS"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="Destinazione OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tutti i diritti sono riservati; http://www.microsoft.com/sql/support;4"
+                  description="Destinazione OLE DB"
+                  name="Destinazione SqlServer INPS"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="Numero di secondi prima del timeout di un comando. Il valore 0 indica nessun timeout."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifica il nome dell'oggetto di database utilizzato per aprire un set di righe."
+                      name="OpenRowset">[DPRE_STG].[TS_RSCDE_DETERMINAZIONE_CL]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifica la variabile contenente il nome dell'oggetto di database utilizzato per aprire un set di righe."
+                      name="OpenRowsetVariable">User::Insert_Target02</property>
+                    <property
+                      dataType="System.String"
+                      description="Comando SQL da eseguire."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifica la tabella codici della colonna da utilizzare quando l'origine dati non rende disponibili informazioni sulla tabella codici."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forza l'utilizzo del valore della proprietà DefaultCodePage per la descrizione di dati di tipo carattere."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifica la modalità utilizzata per accedere al database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">4</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indica se i valori specificati per le colonne Identity verranno copiati nella destinazione. Se false, i valori delle colonne Identity verranno generati automaticamente nella destinazione. Applicabile solo se è abilitato il caricamento rapido."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indica se per le colonne con valori Null, tali valori verranno inseriti nella destinazione. Se false, per le colonne con valori Null verranno inseriti i valori predefiniti corrispondenti nella destinazione. Applicabile solo se è attivato il caricamento rapido."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifica le opzioni da utilizzare con il caricamento rapido. Applicabile solo se è attivato il caricamento rapido."
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifica se vengono eseguiti commit durante l'inserimento dei dati. Il valore 0 indica che verrà eseguito un solo commit al termine dell'inserimento dei dati. Applicabile solo se è attivato il caricamento rapido."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\02 - TM_KNCAP_CAP_CT\INSERT TM_KNCAP_CAP_CT\Destinazione SqlServer INPS.Connections[OleDbConnection]"
+                      connectionManagerID="{FC7512B7-7177-4111-B69B-C52974713116}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[SqlServer_INPS]"
+                      description="Connessione di run-time OLE DB utilizzata per accedere al database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\02 - TM_KNCAP_CAP_CT\INSERT TM_KNCAP_CAP_CT\Destinazione SqlServer INPS.Inputs[Input destinazione OLE DB]"
+                      errorOrTruncationOperation="Inserimento"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="Input destinazione OLE DB">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\02 - TM_KNCAP_CAP_CT\INSERT TM_KNCAP_CAP_CT\Destinazione SqlServer INPS.Inputs[Input destinazione OLE DB].Columns[var_DATA_INIZ]"
+                          cachedDataType="dbDate"
+                          cachedName="var_DATA_INIZ"
+                          externalMetadataColumnId="Package\02 - TM_KNCAP_CAP_CT\INSERT TM_KNCAP_CAP_CT\Destinazione SqlServer INPS.Inputs[Input destinazione OLE DB].ExternalColumns[KNCAP_DT_INIZ]"
+                          lineageId="Package\02 - TM_KNCAP_CAP_CT\INSERT TM_KNCAP_CAP_CT\Colonna derivata.Outputs[Output colonna derivata].Columns[var_DATA_INIZ]" />
+                        <inputColumn
+                          refId="Package\02 - TM_KNCAP_CAP_CT\INSERT TM_KNCAP_CAP_CT\Destinazione SqlServer INPS.Inputs[Input destinazione OLE DB].Columns[var_DATA_FINE]"
+                          cachedDataType="dbDate"
+                          cachedName="var_DATA_FINE"
+                          externalMetadataColumnId="Package\02 - TM_KNCAP_CAP_CT\INSERT TM_KNCAP_CAP_CT\Destinazione SqlServer INPS.Inputs[Input destinazione OLE DB].ExternalColumns[KNCAP_DT_FINE]"
+                          lineageId="Package\02 - TM_KNCAP_CAP_CT\INSERT TM_KNCAP_CAP_CT\Colonna derivata.Outputs[Output colonna derivata].Columns[var_DATA_FINE]" />
+                        <inputColumn
+                          refId="Package\02 - TM_KNCAP_CAP_CT\INSERT TM_KNCAP_CAP_CT\Destinazione SqlServer INPS.Inputs[Input destinazione OLE DB].Columns[DWH_UTENTE]"
+                          cachedDataType="wstr"
+                          cachedLength="18"
+                          cachedName="DWH_UTENTE"
+                          externalMetadataColumnId="Package\02 - TM_KNCAP_CAP_CT\INSERT TM_KNCAP_CAP_CT\Destinazione SqlServer INPS.Inputs[Input destinazione OLE DB].ExternalColumns[KNCAP_CD_DWH_UTENTE]"
+                          lineageId="Package\02 - TM_KNCAP_CAP_CT\INSERT TM_KNCAP_CAP_CT\Colonna derivata.Outputs[Output colonna derivata].Columns[DWH_UTENTE]" />
+                        <inputColumn
+                          refId="Package\02 - TM_KNCAP_CAP_CT\INSERT TM_KNCAP_CAP_CT\Destinazione SqlServer INPS.Inputs[Input destinazione OLE DB].Columns[DWH_INS]"
+                          cachedDataType="date"
+                          cachedName="DWH_INS"
+                          externalMetadataColumnId="Package\02 - TM_KNCAP_CAP_CT\INSERT TM_KNCAP_CAP_CT\Destinazione SqlServer INPS.Inputs[Input destinazione OLE DB].ExternalColumns[KNCAP_DT_DWH_INS]"
+                          lineageId="Package\02 - TM_KNCAP_CAP_CT\INSERT TM_KNCAP_CAP_CT\Colonna derivata.Outputs[Output colonna derivata].Columns[DWH_INS]" />
+                        <inputColumn
+                          refId="Package\02 - TM_KNCAP_CAP_CT\INSERT TM_KNCAP_CAP_CT\Destinazione SqlServer INPS.Inputs[Input destinazione OLE DB].Columns[DWH_APPLIC]"
+                          cachedDataType="wstr"
+                          cachedLength="5"
+                          cachedName="DWH_APPLIC"
+                          externalMetadataColumnId="Package\02 - TM_KNCAP_CAP_CT\INSERT TM_KNCAP_CAP_CT\Destinazione SqlServer INPS.Inputs[Input destinazione OLE DB].ExternalColumns[KNCAP_CD_DWH_APPLIC]"
+                          lineageId="Package\02 - TM_KNCAP_CAP_CT\INSERT TM_KNCAP_CAP_CT\Colonna derivata.Outputs[Output colonna derivata].Columns[DWH_APPLIC]" />
+                        <inputColumn
+                          refId="Package\02 - TM_KNCAP_CAP_CT\INSERT TM_KNCAP_CAP_CT\Destinazione SqlServer INPS.Inputs[Input destinazione OLE DB].Columns[KNA25_CD_CAP]"
+                          cachedDataType="wstr"
+                          cachedLength="5"
+                          cachedName="KNA25_CD_CAP"
+                          externalMetadataColumnId="Package\02 - TM_KNCAP_CAP_CT\INSERT TM_KNCAP_CAP_CT\Destinazione SqlServer INPS.Inputs[Input destinazione OLE DB].ExternalColumns[KNCAP_CD_CAP]"
+                          lineageId="Package\02 - TM_KNCAP_CAP_CT\INSERT TM_KNCAP_CAP_CT\Sorgente Oracle INPS.Outputs[Output origine OLE DB].Columns[KNA25_CD_CAP]" />
+                        <inputColumn
+                          refId="Package\02 - TM_KNCAP_CAP_CT\INSERT TM_KNCAP_CAP_CT\Destinazione SqlServer INPS.Inputs[Input destinazione OLE DB].Columns[KNA25_NR_SEQ_CAP]"
+                          cachedDataType="numeric"
+                          cachedName="KNA25_NR_SEQ_CAP"
+                          cachedPrecision="12"
+                          externalMetadataColumnId="Package\02 - TM_KNCAP_CAP_CT\INSERT TM_KNCAP_CAP_CT\Destinazione SqlServer INPS.Inputs[Input destinazione OLE DB].ExternalColumns[KNCAP_NR_CAP_PK]"
+                          lineageId="Package\02 - TM_KNCAP_CAP_CT\INSERT TM_KNCAP_CAP_CT\Sorgente Oracle INPS.Outputs[Output origine OLE DB].Columns[KNA25_NR_SEQ_CAP]" />
+                        <inputColumn
+                          refId="Package\02 - TM_KNCAP_CAP_CT\INSERT TM_KNCAP_CAP_CT\Destinazione SqlServer INPS.Inputs[Input destinazione OLE DB].Columns[var_DATA_RIF]"
+                          cachedDataType="dbTimeStamp"
+                          cachedName="var_DATA_RIF"
+                          externalMetadataColumnId="Package\02 - TM_KNCAP_CAP_CT\INSERT TM_KNCAP_CAP_CT\Destinazione SqlServer INPS.Inputs[Input destinazione OLE DB].ExternalColumns[KNCAP_DT_RIF]"
+                          lineageId="Package\02 - TM_KNCAP_CAP_CT\INSERT TM_KNCAP_CAP_CT\Colonna derivata.Outputs[Output colonna derivata].Columns[var_DATA_RIF]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\02 - TM_KNCAP_CAP_CT\INSERT TM_KNCAP_CAP_CT\Destinazione SqlServer INPS.Inputs[Input destinazione OLE DB].ExternalColumns[KNCAP_NR_CAP_PK]"
+                          dataType="numeric"
+                          name="KNCAP_NR_CAP_PK"
+                          precision="12" />
+                        <externalMetadataColumn
+                          refId="Package\02 - TM_KNCAP_CAP_CT\INSERT TM_KNCAP_CAP_CT\Destinazione SqlServer INPS.Inputs[Input destinazione OLE DB].ExternalColumns[KNCAP_CD_CAP]"
+                          dataType="wstr"
+                          length="5"
+                          name="KNCAP_CD_CAP" />
+                        <externalMetadataColumn
+                          refId="Package\02 - TM_KNCAP_CAP_CT\INSERT TM_KNCAP_CAP_CT\Destinazione SqlServer INPS.Inputs[Input destinazione OLE DB].ExternalColumns[KNCAP_DT_INIZ]"
+                          dataType="dbTimeStamp"
+                          name="KNCAP_DT_INIZ" />
+                        <externalMetadataColumn
+                          refId="Package\02 - TM_KNCAP_CAP_CT\INSERT TM_KNCAP_CAP_CT\Destinazione SqlServer INPS.Inputs[Input destinazione OLE DB].ExternalColumns[KNCAP_DT_FINE]"
+                          dataType="dbTimeStamp"
+                          name="KNCAP_DT_FINE" />
+                        <externalMetadataColumn
+                          refId="Package\02 - TM_KNCAP_CAP_CT\INSERT TM_KNCAP_CAP_CT\Destinazione SqlServer INPS.Inputs[Input destinazione OLE DB].ExternalColumns[KNCAP_DT_RIF]"
+                          dataType="dbTimeStamp"
+                          name="KNCAP_DT_RIF" />
+                        <externalMetadataColumn
+                          refId="Package\02 - TM_KNCAP_CAP_CT\INSERT TM_KNCAP_CAP_CT\Destinazione SqlServer INPS.Inputs[Input destinazione OLE DB].ExternalColumns[KNCAP_CD_DWH_UTENTE]"
+                          dataType="wstr"
+                          length="100"
+                          name="KNCAP_CD_DWH_UTENTE" />
+                        <externalMetadataColumn
+                          refId="Package\02 - TM_KNCAP_CAP_CT\INSERT TM_KNCAP_CAP_CT\Destinazione SqlServer INPS.Inputs[Input destinazione OLE DB].ExternalColumns[KNCAP_DT_DWH_ANNULL]"
+                          dataType="dbTimeStamp"
+                          name="KNCAP_DT_DWH_ANNULL" />
+                        <externalMetadataColumn
+                          refId="Package\02 - TM_KNCAP_CAP_CT\INSERT TM_KNCAP_CAP_CT\Destinazione SqlServer INPS.Inputs[Input destinazione OLE DB].ExternalColumns[KNCAP_DT_DWH_INS]"
+                          dataType="dbTimeStamp"
+                          name="KNCAP_DT_DWH_INS" />
+                        <externalMetadataColumn
+                          refId="Package\02 - TM_KNCAP_CAP_CT\INSERT TM_KNCAP_CAP_CT\Destinazione SqlServer INPS.Inputs[Input destinazione OLE DB].ExternalColumns[KNCAP_DT_DWH_AGGIORN]"
+                          dataType="dbTimeStamp"
+                          name="KNCAP_DT_DWH_AGGIORN" />
+                        <externalMetadataColumn
+                          refId="Package\02 - TM_KNCAP_CAP_CT\INSERT TM_KNCAP_CAP_CT\Destinazione SqlServer INPS.Inputs[Input destinazione OLE DB].ExternalColumns[KNCAP_CD_DWH_APPLIC]"
+                          dataType="wstr"
+                          length="100"
+                          name="KNCAP_CD_DWH_APPLIC" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\02 - TM_KNCAP_CAP_CT\INSERT TM_KNCAP_CAP_CT\Destinazione SqlServer INPS.Outputs[Output errori destinazione OLE DB]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Output errori destinazione OLE DB"
+                      synchronousInputId="Package\02 - TM_KNCAP_CAP_CT\INSERT TM_KNCAP_CAP_CT\Destinazione SqlServer INPS.Inputs[Input destinazione OLE DB]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\02 - TM_KNCAP_CAP_CT\INSERT TM_KNCAP_CAP_CT\Destinazione SqlServer INPS.Outputs[Output errori destinazione OLE DB].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\02 - TM_KNCAP_CAP_CT\INSERT TM_KNCAP_CAP_CT\Destinazione SqlServer INPS.Outputs[Output errori destinazione OLE DB].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\02 - TM_KNCAP_CAP_CT\INSERT TM_KNCAP_CAP_CT\Destinazione SqlServer INPS.Outputs[Output errori destinazione OLE DB].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\02 - TM_KNCAP_CAP_CT\INSERT TM_KNCAP_CAP_CT\Destinazione SqlServer INPS.Outputs[Output errori destinazione OLE DB].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\02 - TM_KNCAP_CAP_CT\INSERT TM_KNCAP_CAP_CT\Sorgente Oracle INPS"
+                  componentClassID="Microsoft.OLEDBSource"
+                  contactInfo="Origine OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tutti i diritti sono riservati; http://www.microsoft.com/sql/support;7"
+                  description="Origine OLE DB"
+                  name="Sorgente Oracle INPS"
+                  usesDispositions="true"
+                  version="7">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="Numero di secondi prima del timeout di un comando. Il valore 0 indica nessun timeout."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifica il nome dell'oggetto di database utilizzato per aprire un set di righe."
+                      name="OpenRowset"></property>
+                    <property
+                      dataType="System.String"
+                      description="Specifica la variabile contenente il nome dell'oggetto di database utilizzato per aprire un set di righe."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="Comando SQL da eseguire."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.String"
+                      description="Variabile che contiene il comando SQL da eseguire."
+                      name="SqlCommandVariable">User::SelectSource02</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifica la tabella codici della colonna da utilizzare quando l'origine dati non rende disponibili informazioni sulla tabella codici."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forza l'utilizzo del valore della proprietà DefaultCodePage per la descrizione di dati di tipo carattere."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifica la modalità utilizzata per accedere al database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">3</property>
+                    <property
+                      dataType="System.String"
+                      description="Mapping tra i parametri nel comando SQL e le variabili."
+                      name="ParameterMapping"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\02 - TM_KNCAP_CAP_CT\INSERT TM_KNCAP_CAP_CT\Sorgente Oracle INPS.Connections[OleDbConnection]"
+                      connectionManagerID="{FC7512B7-7177-4111-B69B-C52974713116}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[SqlServer_INPS]"
+                      description="Connessione di run-time OLE DB utilizzata per accedere al database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\02 - TM_KNCAP_CAP_CT\INSERT TM_KNCAP_CAP_CT\Sorgente Oracle INPS.Outputs[Output origine OLE DB]"
+                      name="Output origine OLE DB">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\02 - TM_KNCAP_CAP_CT\INSERT TM_KNCAP_CAP_CT\Sorgente Oracle INPS.Outputs[Output origine OLE DB].Columns[KNA25_NR_SEQ_CAP]"
+                          dataType="numeric"
+                          errorOrTruncationOperation="Conversione"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\02 - TM_KNCAP_CAP_CT\INSERT TM_KNCAP_CAP_CT\Sorgente Oracle INPS.Outputs[Output origine OLE DB].ExternalColumns[KNA25_NR_SEQ_CAP]"
+                          lineageId="Package\02 - TM_KNCAP_CAP_CT\INSERT TM_KNCAP_CAP_CT\Sorgente Oracle INPS.Outputs[Output origine OLE DB].Columns[KNA25_NR_SEQ_CAP]"
+                          name="KNA25_NR_SEQ_CAP"
+                          precision="12"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\02 - TM_KNCAP_CAP_CT\INSERT TM_KNCAP_CAP_CT\Sorgente Oracle INPS.Outputs[Output origine OLE DB].Columns[KNA25_CD_CAP]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversione"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\02 - TM_KNCAP_CAP_CT\INSERT TM_KNCAP_CAP_CT\Sorgente Oracle INPS.Outputs[Output origine OLE DB].ExternalColumns[KNA25_CD_CAP]"
+                          length="5"
+                          lineageId="Package\02 - TM_KNCAP_CAP_CT\INSERT TM_KNCAP_CAP_CT\Sorgente Oracle INPS.Outputs[Output origine OLE DB].Columns[KNA25_CD_CAP]"
+                          name="KNA25_CD_CAP"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\02 - TM_KNCAP_CAP_CT\INSERT TM_KNCAP_CAP_CT\Sorgente Oracle INPS.Outputs[Output origine OLE DB].Columns[KNA25_DT_INIZ]"
+                          dataType="dbTimeStamp"
+                          errorOrTruncationOperation="Conversione"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\02 - TM_KNCAP_CAP_CT\INSERT TM_KNCAP_CAP_CT\Sorgente Oracle INPS.Outputs[Output origine OLE DB].ExternalColumns[KNA25_DT_INIZ]"
+                          lineageId="Package\02 - TM_KNCAP_CAP_CT\INSERT TM_KNCAP_CAP_CT\Sorgente Oracle INPS.Outputs[Output origine OLE DB].Columns[KNA25_DT_INIZ]"
+                          name="KNA25_DT_INIZ"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\02 - TM_KNCAP_CAP_CT\INSERT TM_KNCAP_CAP_CT\Sorgente Oracle INPS.Outputs[Output origine OLE DB].Columns[KNA25_DT_FINE]"
+                          dataType="dbTimeStamp"
+                          errorOrTruncationOperation="Conversione"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\02 - TM_KNCAP_CAP_CT\INSERT TM_KNCAP_CAP_CT\Sorgente Oracle INPS.Outputs[Output origine OLE DB].ExternalColumns[KNA25_DT_FINE]"
+                          lineageId="Package\02 - TM_KNCAP_CAP_CT\INSERT TM_KNCAP_CAP_CT\Sorgente Oracle INPS.Outputs[Output origine OLE DB].Columns[KNA25_DT_FINE]"
+                          name="KNA25_DT_FINE"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\02 - TM_KNCAP_CAP_CT\INSERT TM_KNCAP_CAP_CT\Sorgente Oracle INPS.Outputs[Output origine OLE DB].Columns[KNA25_DT_RIF]"
+                          dataType="dbTimeStamp"
+                          errorOrTruncationOperation="Conversione"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\02 - TM_KNCAP_CAP_CT\INSERT TM_KNCAP_CAP_CT\Sorgente Oracle INPS.Outputs[Output origine OLE DB].ExternalColumns[KNA25_DT_RIF]"
+                          lineageId="Package\02 - TM_KNCAP_CAP_CT\INSERT TM_KNCAP_CAP_CT\Sorgente Oracle INPS.Outputs[Output origine OLE DB].Columns[KNA25_DT_RIF]"
+                          name="KNA25_DT_RIF"
+                          truncationRowDisposition="FailComponent" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\02 - TM_KNCAP_CAP_CT\INSERT TM_KNCAP_CAP_CT\Sorgente Oracle INPS.Outputs[Output origine OLE DB].ExternalColumns[KNA25_NR_SEQ_CAP]"
+                          dataType="numeric"
+                          name="KNA25_NR_SEQ_CAP"
+                          precision="12" />
+                        <externalMetadataColumn
+                          refId="Package\02 - TM_KNCAP_CAP_CT\INSERT TM_KNCAP_CAP_CT\Sorgente Oracle INPS.Outputs[Output origine OLE DB].ExternalColumns[KNA25_CD_CAP]"
+                          dataType="wstr"
+                          length="5"
+                          name="KNA25_CD_CAP" />
+                        <externalMetadataColumn
+                          refId="Package\02 - TM_KNCAP_CAP_CT\INSERT TM_KNCAP_CAP_CT\Sorgente Oracle INPS.Outputs[Output origine OLE DB].ExternalColumns[KNA25_DT_INIZ]"
+                          dataType="dbTimeStamp"
+                          name="KNA25_DT_INIZ" />
+                        <externalMetadataColumn
+                          refId="Package\02 - TM_KNCAP_CAP_CT\INSERT TM_KNCAP_CAP_CT\Sorgente Oracle INPS.Outputs[Output origine OLE DB].ExternalColumns[KNA25_DT_FINE]"
+                          dataType="dbTimeStamp"
+                          name="KNA25_DT_FINE" />
+                        <externalMetadataColumn
+                          refId="Package\02 - TM_KNCAP_CAP_CT\INSERT TM_KNCAP_CAP_CT\Sorgente Oracle INPS.Outputs[Output origine OLE DB].ExternalColumns[KNA25_DT_RIF]"
+                          dataType="dbTimeStamp"
+                          name="KNA25_DT_RIF" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\02 - TM_KNCAP_CAP_CT\INSERT TM_KNCAP_CAP_CT\Sorgente Oracle INPS.Outputs[Output errori origine OLE DB]"
+                      isErrorOut="true"
+                      name="Output errori origine OLE DB">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\02 - TM_KNCAP_CAP_CT\INSERT TM_KNCAP_CAP_CT\Sorgente Oracle INPS.Outputs[Output errori origine OLE DB].Columns[KNA25_NR_SEQ_CAP]"
+                          dataType="numeric"
+                          lineageId="Package\02 - TM_KNCAP_CAP_CT\INSERT TM_KNCAP_CAP_CT\Sorgente Oracle INPS.Outputs[Output errori origine OLE DB].Columns[KNA25_NR_SEQ_CAP]"
+                          name="KNA25_NR_SEQ_CAP"
+                          precision="12" />
+                        <outputColumn
+                          refId="Package\02 - TM_KNCAP_CAP_CT\INSERT TM_KNCAP_CAP_CT\Sorgente Oracle INPS.Outputs[Output errori origine OLE DB].Columns[KNA25_CD_CAP]"
+                          dataType="wstr"
+                          length="5"
+                          lineageId="Package\02 - TM_KNCAP_CAP_CT\INSERT TM_KNCAP_CAP_CT\Sorgente Oracle INPS.Outputs[Output errori origine OLE DB].Columns[KNA25_CD_CAP]"
+                          name="KNA25_CD_CAP" />
+                        <outputColumn
+                          refId="Package\02 - TM_KNCAP_CAP_CT\INSERT TM_KNCAP_CAP_CT\Sorgente Oracle INPS.Outputs[Output errori origine OLE DB].Columns[KNA25_DT_INIZ]"
+                          dataType="dbTimeStamp"
+                          lineageId="Package\02 - TM_KNCAP_CAP_CT\INSERT TM_KNCAP_CAP_CT\Sorgente Oracle INPS.Outputs[Output errori origine OLE DB].Columns[KNA25_DT_INIZ]"
+                          name="KNA25_DT_INIZ" />
+                        <outputColumn
+                          refId="Package\02 - TM_KNCAP_CAP_CT\INSERT TM_KNCAP_CAP_CT\Sorgente Oracle INPS.Outputs[Output errori origine OLE DB].Columns[KNA25_DT_FINE]"
+                          dataType="dbTimeStamp"
+                          lineageId="Package\02 - TM_KNCAP_CAP_CT\INSERT TM_KNCAP_CAP_CT\Sorgente Oracle INPS.Outputs[Output errori origine OLE DB].Columns[KNA25_DT_FINE]"
+                          name="KNA25_DT_FINE" />
+                        <outputColumn
+                          refId="Package\02 - TM_KNCAP_CAP_CT\INSERT TM_KNCAP_CAP_CT\Sorgente Oracle INPS.Outputs[Output errori origine OLE DB].Columns[KNA25_DT_RIF]"
+                          dataType="dbTimeStamp"
+                          lineageId="Package\02 - TM_KNCAP_CAP_CT\INSERT TM_KNCAP_CAP_CT\Sorgente Oracle INPS.Outputs[Output errori origine OLE DB].Columns[KNA25_DT_RIF]"
+                          name="KNA25_DT_RIF" />
+                        <outputColumn
+                          refId="Package\02 - TM_KNCAP_CAP_CT\INSERT TM_KNCAP_CAP_CT\Sorgente Oracle INPS.Outputs[Output errori origine OLE DB].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\02 - TM_KNCAP_CAP_CT\INSERT TM_KNCAP_CAP_CT\Sorgente Oracle INPS.Outputs[Output errori origine OLE DB].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\02 - TM_KNCAP_CAP_CT\INSERT TM_KNCAP_CAP_CT\Sorgente Oracle INPS.Outputs[Output errori origine OLE DB].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\02 - TM_KNCAP_CAP_CT\INSERT TM_KNCAP_CAP_CT\Sorgente Oracle INPS.Outputs[Output errori origine OLE DB].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\02 - TM_KNCAP_CAP_CT\INSERT TM_KNCAP_CAP_CT.Paths[Output colonna derivata]"
+                  endId="Package\02 - TM_KNCAP_CAP_CT\INSERT TM_KNCAP_CAP_CT\Destinazione SqlServer INPS.Inputs[Input destinazione OLE DB]"
+                  name="Output colonna derivata"
+                  startId="Package\02 - TM_KNCAP_CAP_CT\INSERT TM_KNCAP_CAP_CT\Colonna derivata.Outputs[Output colonna derivata]" />
+                <path
+                  refId="Package\02 - TM_KNCAP_CAP_CT\INSERT TM_KNCAP_CAP_CT.Paths[Output origine OLE DB]"
+                  endId="Package\02 - TM_KNCAP_CAP_CT\INSERT TM_KNCAP_CAP_CT\Colonna derivata.Inputs[Input colonna derivata]"
+                  name="Output origine OLE DB"
+                  startId="Package\02 - TM_KNCAP_CAP_CT\INSERT TM_KNCAP_CAP_CT\Sorgente Oracle INPS.Outputs[Output origine OLE DB]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\02 - TM_KNCAP_CAP_CT.PrecedenceConstraints[Vincolo]"
+          DTS:CreationName=""
+          DTS:DTSID="{152b84f0-a3be-4ed0-be1d-1a2e7d1d1374}"
+          DTS:From="Package\02 - TM_KNCAP_CAP_CT\Esegui Delete Tipologiche"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Vincolo"
+          DTS:To="Package\02 - TM_KNCAP_CAP_CT\INSERT TM_KNCAP_CAP_CT" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:EventHandlers>
+    <DTS:EventHandler
+      DTS:refId="Package.EventHandlers[OnError]"
+      DTS:CreationName="OnError"
+      DTS:DTSID="{FE6928C7-B2BF-490A-9342-7A390CDBD644}"
+      DTS:EventID="0"
+      DTS:EventName="OnError"
+      DTS:LocaleID="-1">
+      <DTS:Variables>
+        <DTS:Variable
+          DTS:CreationName=""
+          DTS:Description="Proprietà di propagazione dell'evento"
+          DTS:DTSID="{BEE38C7F-897E-4510-A3D9-5B7AFF4D7D56}"
+          DTS:IncludeInDebugDump="6789"
+          DTS:Namespace="System"
+          DTS:ObjectName="Propagate">
+          <DTS:VariableValue
+            DTS:DataType="11">-1</DTS:VariableValue>
+        </DTS:Variable>
+      </DTS:Variables>
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package.EventHandlers[OnError]\On Error Log"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Attività Esegui SQL"
+          DTS:DTSID="{431855f5-6830-4d0d-b8a1-db123c66781a}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="On Error Log"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:PropertyExpression
+            DTS:Name="SqlStatementSource">"EXEC " + @[$Project::Schema_Log] + ".ELT_prPckError ?, ?, ?, 0, ?, ?"</DTS:PropertyExpression>
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{FC7512B7-7177-4111-B69B-C52974713116}"
+              SQLTask:SqlStatementSource="EXEC ELT.ELT_prPckError ?, ?, ?, 0, ?, ?" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="1"
+                SQLTask:DtsVariableName="System::SourceID"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="100" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="2"
+                SQLTask:DtsVariableName="System::ExecutionInstanceGUID"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="72"
+                SQLTask:ParameterSize="100" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="System::PackageName"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="100" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="3"
+                SQLTask:DtsVariableName="System::ErrorDescription"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="1000" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="4"
+                SQLTask:DtsVariableName="System::PackageID"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="100" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+    </DTS:EventHandler>
+    <DTS:EventHandler
+      DTS:refId="Package.EventHandlers[OnPostExecute]"
+      DTS:CreationName="OnPostExecute"
+      DTS:DTSID="{88CDEB39-5FF2-49E7-9CED-769AA1EAD896}"
+      DTS:EventID="0"
+      DTS:EventName="OnPostExecute"
+      DTS:LocaleID="-1">
+      <DTS:Variables>
+        <DTS:Variable
+          DTS:CreationName=""
+          DTS:Description="Proprietà di propagazione dell'evento"
+          DTS:DTSID="{6EF5364E-FC6C-499C-9E6B-3A3FA990544F}"
+          DTS:IncludeInDebugDump="6789"
+          DTS:Namespace="System"
+          DTS:ObjectName="Propagate">
+          <DTS:VariableValue
+            DTS:DataType="11">-1</DTS:VariableValue>
+        </DTS:Variable>
+      </DTS:Variables>
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package.EventHandlers[OnPostExecute]\On Post Execute Log"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Attività Esegui SQL"
+          DTS:DTSID="{54f986e2-58bf-4a12-bcac-3439eec8b744}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="On Post Execute Log"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:PropertyExpression
+            DTS:Name="SqlStatementSource">"EXEC " + @[$Project::Schema_Log] +".ELT_prPckEnd ?, ?, ?,1, 'Success'"</DTS:PropertyExpression>
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{FC7512B7-7177-4111-B69B-C52974713116}"
+              SQLTask:SqlStatementSource="EXEC ELT.ELT_prPckEnd ?, ?, ?,1, 'Success'" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="1"
+                SQLTask:DtsVariableName="System::SourceID"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="100" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="2"
+                SQLTask:DtsVariableName="System::ExecutionInstanceGUID"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="72"
+                SQLTask:ParameterSize="100" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="System::PackageID"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="100" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+    </DTS:EventHandler>
+    <DTS:EventHandler
+      DTS:refId="Package.EventHandlers[OnPreExecute]"
+      DTS:CreationName="OnPreExecute"
+      DTS:DTSID="{8F92C92F-8921-4E82-BA89-CE0CA7138648}"
+      DTS:EventID="0"
+      DTS:EventName="OnPreExecute"
+      DTS:LocaleID="-1">
+      <DTS:Variables>
+        <DTS:Variable
+          DTS:CreationName=""
+          DTS:Description="Proprietà di propagazione dell'evento"
+          DTS:DTSID="{9AD37757-189D-4A41-AF97-3599FBD023D5}"
+          DTS:IncludeInDebugDump="6789"
+          DTS:Namespace="System"
+          DTS:ObjectName="Propagate">
+          <DTS:VariableValue
+            DTS:DataType="11">-1</DTS:VariableValue>
+        </DTS:Variable>
+      </DTS:Variables>
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package.EventHandlers[OnPreExecute]\On Pre Execute Log"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Attività Esegui SQL"
+          DTS:DTSID="{eb60e40a-ceb4-492f-9b27-0af18e9ab828}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="On Pre Execute Log"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:PropertyExpression
+            DTS:Name="SqlStatementSource">"EXEC " +  @[$Project::Schema_Log] +  ".ELT_prPckStart ?, ?, ?, ?, ?, ?"</DTS:PropertyExpression>
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{FC7512B7-7177-4111-B69B-C52974713116}"
+              SQLTask:SqlStatementSource="EXEC ELT.ELT_prPckStart ?, ?, ?, ?, ?, ?" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="2"
+                SQLTask:DtsVariableName="System::SourceName"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="50" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="3"
+                SQLTask:DtsVariableName="System::ExecutionInstanceGUID"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="72"
+                SQLTask:ParameterSize="50" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="System::PackageName"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="100" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="1"
+                SQLTask:DtsVariableName="System::SourceParentGUID"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="72"
+                SQLTask:ParameterSize="50" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="4"
+                SQLTask:DtsVariableName="System::SourceID"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="100" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="5"
+                SQLTask:DtsVariableName="System::PackageID"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="100" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+    </DTS:EventHandler>
+  </DTS:EventHandlers>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--Questa sezione CDATA contiene le informazioni sul layout del pacchetto e include informazioni quali coordinate (x,y), larghezza e altezza.-->
+<!--Se si modifica manualmente la sezione e si commette un errore, è possibile eliminarla. -->
+<!--Sarà comunque possibile caricare manualmente il pacchetto, ma le informazioni precedenti sul layout verranno perse e gli elementi verranno nuovamente disposti nell'area di progettazione all'interno dell'apposita finestra.-->
+<Objects
+  Version="8">
+  <!--Ogni nodo seguente conterrà proprietà che non influiscono sul comportamento di runtime.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="207,42"
+          Id="Package\01 - TM_KNATC_ATECO_CT\Esegui Delete Tipologiche"
+          TopLeft="65.028580223298,17.2323544506795" />
+        <NodeLayout
+          Size="246,42"
+          Id="Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT"
+          TopLeft="48.7142857142857,95.1428571428571" />
+        <EdgeLayout
+          Id="Package\01 - TM_KNATC_ATECO_CT.PrecedenceConstraints[Vincolo]"
+          TopLeft="170.121432968792,59.2323544506795">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,35.9105026921776"
+              Start="0,0"
+              End="0,28.4105026921776">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,28.4105026921776" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="350,190"
+          Size="350,233"
+          Id="Package\01 - TM_KNATC_ATECO_CT"
+          TopLeft="46.428571428572,30.8571428571428" />
+        <NodeLayout
+          Size="207,42"
+          Id="Package\02 - TM_KNCAP_CAP_CT\Esegui Delete Tipologiche"
+          TopLeft="71.0285802232979,18.2323544506795" />
+        <NodeLayout
+          Size="232,42"
+          Id="Package\02 - TM_KNCAP_CAP_CT\INSERT TM_KNCAP_CAP_CT"
+          TopLeft="48.7142857142857,95.1428571428571" />
+        <EdgeLayout
+          Id="Package\02 - TM_KNCAP_CAP_CT.PrecedenceConstraints[Vincolo]"
+          TopLeft="174.528580223298,60.2323544506795">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-9.81429450901223,34.9105026921776"
+              Start="0,0"
+              End="-9.81429450901223,27.4105026921776">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,13.4552513460888" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,13.4552513460888"
+                    Point2="0,17.4552513460888"
+                    Point3="-4,17.4552513460888" />
+                  <mssgle:LineSegment
+                    End="-5.81429450901223,17.4552513460888" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-5.81429450901223,17.4552513460888"
+                    Point2="-9.81429450901223,17.4552513460888"
+                    Point3="-9.81429450901223,21.4552513460888" />
+                  <mssgle:LineSegment
+                    End="-9.81429450901223,27.4105026921776" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="350,190"
+          Size="350,233"
+          Id="Package\02 - TM_KNCAP_CAP_CT"
+          TopLeft="430,33" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <DtsEventHandler
+    design-time-name="Package.EventHandlers[OnError]">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="139,42"
+          Id="Package.EventHandlers[OnError]\On Error Log"
+          TopLeft="60,60" />
+      </GraphLayout>
+    </LayoutInfo>
+  </DtsEventHandler>
+  <DtsEventHandler
+    design-time-name="Package.EventHandlers[OnPostExecute]">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="176,42"
+          Id="Package.EventHandlers[OnPostExecute]\On Post Execute Log"
+          TopLeft="60,60" />
+      </GraphLayout>
+    </LayoutInfo>
+  </DtsEventHandler>
+  <DtsEventHandler
+    design-time-name="Package.EventHandlers[OnPreExecute]">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="171,42"
+          Id="Package.EventHandlers[OnPreExecute]\On Pre Execute Log"
+          TopLeft="60,60" />
+      </GraphLayout>
+    </LayoutInfo>
+  </DtsEventHandler>
+  <TaskHost
+    design-time-name="Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="188,42"
+          Id="Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT\Sorgente Oracle INPS"
+          TopLeft="60,62" />
+        <NodeLayout
+          Size="223,42"
+          Id="Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT\Destinazione SqlServer INPS"
+          TopLeft="539,61" />
+        <NodeLayout
+          Size="162,42"
+          Id="Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT\Colonna derivata"
+          TopLeft="314,62" />
+        <EdgeLayout
+          Id="Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT.Paths[Output origine OLE DB]"
+          TopLeft="248,83">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="66,0"
+              Start="0,0"
+              End="58.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="58.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT.Paths[Output colonna derivata]"
+          TopLeft="476,82.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="63,0"
+              Start="0,0"
+              End="55.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="55.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT\Sorgente Oracle INPS">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT\Destinazione SqlServer INPS">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\02 - TM_KNCAP_CAP_CT\INSERT TM_KNCAP_CAP_CT">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="188,42"
+          Id="Package\02 - TM_KNCAP_CAP_CT\INSERT TM_KNCAP_CAP_CT\Sorgente Oracle INPS"
+          TopLeft="60,62" />
+        <NodeLayout
+          Size="162,42"
+          Id="Package\02 - TM_KNCAP_CAP_CT\INSERT TM_KNCAP_CAP_CT\Colonna derivata"
+          TopLeft="314,62" />
+        <NodeLayout
+          Size="223,42"
+          Id="Package\02 - TM_KNCAP_CAP_CT\INSERT TM_KNCAP_CAP_CT\Destinazione SqlServer INPS"
+          TopLeft="539,61" />
+        <EdgeLayout
+          Id="Package\02 - TM_KNCAP_CAP_CT\INSERT TM_KNCAP_CAP_CT.Paths[Output origine OLE DB]"
+          TopLeft="248,83">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="66,0"
+              Start="0,0"
+              End="58.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="58.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\02 - TM_KNCAP_CAP_CT\INSERT TM_KNCAP_CAP_CT.Paths[Output colonna derivata]"
+          TopLeft="476,82.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="63,0"
+              Start="0,0"
+              End="55.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="55.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\02 - TM_KNCAP_CAP_CT\INSERT TM_KNCAP_CAP_CT\Sorgente Oracle INPS">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\02 - TM_KNCAP_CAP_CT\INSERT TM_KNCAP_CAP_CT\Destinazione SqlServer INPS">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

@@ -1,0 +1,1933 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="2/25/2022 10:54:30 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="PC"
+  DTS:CreatorName="PC\pdebo"
+  DTS:DTSID="{796435A7-0415-4AED-93C3-F67668FFD6DE}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.2000.170"
+  DTS:LocaleID="1040"
+  DTS:ObjectName="Package1"
+  DTS:PackageType="5"
+  DTS:VersionBuild="4"
+  DTS:VersionGUID="{601CA979-0108-413D-A20B-233666A14FC9}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Anagrafica]"
+      DTS:CreationName="ADO.NET:SQL"
+      DTS:DTSID="{C076964E-0813-4B61-8AD3-C24CEE3C2A53}"
+      DTS:ObjectName="Anagrafica">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=sqlinpssvil305.ser-test.inps,1433;User ID=DBDS0520000 ;Connect Timeout=30;">
+          <DTS:Password
+            DTS:Name="PWD"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAApQvzHLjht0aEn55lnNQtqQAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAATjP26Os5GSrpnAe4MEDHPTRghujbxue5AE1LLk29GNQAAAAAOgAAAAAIAACAAAABDVksPNsu+s2DC/tqicGZH0TlqDE74uryOSN8+YzwCBiAAAADpXQDnk4mMAx23T5+gOQ5ty0352jAMnXb2R6rRXDWuXkAAAAAk28GbbrvZ3vO2l3VPpW4RbQ86A9n04bL8AyKVy2Qw8gXCg5Von0cp6ArNVPZf9lUxlRChcHIa0gNauHpUvxM0</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{6D6888F2-26F2-426B-9CD1-A611A0AA34F4}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="CD_ATECO">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{9C454CA3-D299-43DB-A6E8-8ECEB87A870C}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="DESCR_ATECO">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{8362CA72-90D5-47E2-B822-92873BF62E02}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="DT_FINE">
+      <DTS:VariableValue
+        DTS:DataType="7">2/25/2022 3:05:27 PM</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{017F7DDA-C65C-43BB-AEA9-EA432E515F04}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="DT_INIZ">
+      <DTS:VariableValue
+        DTS:DataType="7">2/25/2022 3:05:08 PM</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{F5FBB486-AD30-4021-B3AA-AFCA800A2F1E}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="DT_RIFERIMENTO">
+      <DTS:VariableValue
+        DTS:DataType="7">2/25/2022 3:05:51 PM</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{224518E0-5842-47BA-8C70-B0E34C63FFFD}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="NR_SEQ_ATECO">
+      <DTS:VariableValue
+        DTS:DataType="20">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{43934023-D01F-4B48-B1EE-99D36A500057}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="OB">
+      <DTS:VariableValue
+        DTS:DataSubType="ManagedSerializable"
+        DTS:DataType="13">
+        <SOAP-ENV:Envelope xmlns:clr="http://schemas.microsoft.com/soap/encoding/clr/1.0" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+          <SOAP-ENV:Body>
+            <xsd:anyType
+              id="ref-1"></xsd:anyType>
+          </SOAP-ENV:Body>
+        </SOAP-ENV:Envelope>
+      </DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{15CE3EFD-373B-4D6E-833C-F07D47394E2B}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="&quot;SELECT KNA03_CD_ATECO, KNA03_LD_DESCR_ATECO, KNA03_DT_INIZ, KNA03_DT_FINE, KNA03_DT_RIFERIMENTO FROM &quot;+ @[$Project::Schema_Source] +&quot;.TS_KNA03_ATECO_CT&quot;"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="Select_Source01">
+      <DTS:VariableValue
+        DTS:DataType="8">SELECT KNA03_CD_ATECO, KNA03_LD_DESCR_ATECO, KNA03_DT_INIZ, KNA03_DT_FINE, KNA03_DT_RIFERIMENTO FROM DPRE_ANSTG.TS_KNA03_ATECO_CT</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{AB563BE8-9343-47EA-A553-D6E0F10A62E4}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="&quot;SELECT KNA03_CD_ATECO, KNA03_LD_DESCR_ATECO, KNA03_DT_INIZ, KNA03_DT_FINE FROM &quot;+ @[$Project::Schema_Source] +&quot;.TS_KNA03_ATECO_CT&quot;"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="Select_Source02">
+      <DTS:VariableValue
+        DTS:DataType="8">SELECT KNA03_CD_ATECO, KNA03_LD_DESCR_ATECO, KNA03_DT_INIZ, KNA03_DT_FINE FROM DPRE_ANSTG.TS_KNA03_ATECO_CT</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{1D616A16-F745-44F3-B7CD-1500BE73964C}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="@[$Project::Schema_Target] + &quot;.TM_KNATC_ATECO_CT&quot;"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="Taget01">
+      <DTS:VariableValue
+        DTS:DataType="8">DPRE_ANEDW.TM_KNATC_ATECO_CT</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\01 - TM_KNATC_ATECO_CT"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Contenitore Sequenza"
+      DTS:DTSID="{6c27f02f-2716-4009-9805-3b8d399c281e}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="01 - TM_KNATC_ATECO_CT">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\01 - TM_KNATC_ATECO_CT\Esegui Delete Tipologiche"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Attività Esegui SQL"
+          DTS:DTSID="{788d4b99-c470-4a9f-99c9-06b384cd2492}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Esegui Delete Tipologiche"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:PropertyExpression
+            DTS:Name="SqlStatementSource">"Delete " +   @[$Project::Schema_Target] + ".TM_KNATC_ATECO_CT  where KNATC_NR_SEQ_ATECO_PK  &lt;&gt;'-1'"</DTS:PropertyExpression>
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{FC7512B7-7177-4111-B69B-C52974713116}"
+              SQLTask:SqlStatementSource="Delete DPRE_ANEDW.TM_KNATC_ATECO_CT  where KNATC_NR_SEQ_ATECO_PK  &lt;&gt;'-1'" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Attività Flusso di dati"
+          DTS:DTSID="{bde322f0-711f-402f-9cd5-364e7d8165e0}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="INSERT TM_KNATC_ATECO_CT"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT\Colonna derivata"
+                  componentClassID="Microsoft.DerivedColumn"
+                  contactInfo="Colonna derivata;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tutti i diritti sono riservati; http://www.microsoft.com/sql/support;0"
+                  description="Crea nuovi valori di colonna applicando espressioni alle colonne di input della trasformazione. Creare nuove colonne oppure sovrascrivere quelle esistenti. Ad esempio, concatenare i valori delle colonne 'first name' e 'last name' per creare una colonna 'full name'."
+                  name="Colonna derivata"
+                  usesDispositions="true">
+                  <inputs>
+                    <input
+                      refId="Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT\Colonna derivata.Inputs[Input colonna derivata]"
+                      description="Input della trasformazione Colonna derivata"
+                      name="Input colonna derivata">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT\Colonna derivata.Inputs[Input colonna derivata].Columns[KNA03_DT_INIZ]"
+                          cachedDataType="dbTimeStamp"
+                          cachedName="KNA03_DT_INIZ"
+                          lineageId="Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT\Sorgente Oracle INPS.Outputs[Output origine OLE DB].Columns[KNA03_DT_INIZ]" />
+                        <inputColumn
+                          refId="Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT\Colonna derivata.Inputs[Input colonna derivata].Columns[KNA03_DT_FINE]"
+                          cachedDataType="dbTimeStamp"
+                          cachedName="KNA03_DT_FINE"
+                          lineageId="Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT\Sorgente Oracle INPS.Outputs[Output origine OLE DB].Columns[KNA03_DT_FINE]" />
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT\Colonna derivata.Outputs[Output colonna derivata]"
+                      description="Output predefinito della trasformazione Colonna derivata"
+                      exclusionGroup="1"
+                      name="Output colonna derivata"
+                      synchronousInputId="Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT\Colonna derivata.Inputs[Input colonna derivata]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT\Colonna derivata.Outputs[Output colonna derivata].Columns[DWH_UTENTE]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Calcolo"
+                          errorRowDisposition="FailComponent"
+                          length="18"
+                          lineageId="Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT\Colonna derivata.Outputs[Output colonna derivata].Columns[DWH_UTENTE]"
+                          name="DWH_UTENTE"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Espressione colonna derivata"
+                              name="Expression">@[System::UserName]</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Espressione descrittiva colonna derivata"
+                              expressionType="Notify"
+                              name="FriendlyExpression">@[System::UserName]</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT\Colonna derivata.Outputs[Output colonna derivata].Columns[DWH_INS]"
+                          dataType="date"
+                          errorOrTruncationOperation="Calcolo"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT\Colonna derivata.Outputs[Output colonna derivata].Columns[DWH_INS]"
+                          name="DWH_INS"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Espressione colonna derivata"
+                              name="Expression">@[System::StartTime]</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Espressione descrittiva colonna derivata"
+                              expressionType="Notify"
+                              name="FriendlyExpression">@[System::StartTime]</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT\Colonna derivata.Outputs[Output colonna derivata].Columns[DWH_APPLIC]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Calcolo"
+                          errorRowDisposition="FailComponent"
+                          length="5"
+                          lineageId="Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT\Colonna derivata.Outputs[Output colonna derivata].Columns[DWH_APPLIC]"
+                          name="DWH_APPLIC"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Espressione colonna derivata"
+                              name="Expression">"ANEDW"</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Espressione descrittiva colonna derivata"
+                              expressionType="Notify"
+                              name="FriendlyExpression">"ANEDW"</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT\Colonna derivata.Outputs[Output colonna derivata].Columns[var_DATA_INIZ]"
+                          dataType="dbDate"
+                          errorOrTruncationOperation="Calcolo"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT\Colonna derivata.Outputs[Output colonna derivata].Columns[var_DATA_INIZ]"
+                          name="var_DATA_INIZ"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Espressione colonna derivata"
+                              name="Expression">[ISNULL](#{Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT\Sorgente Oracle INPS.Outputs[Output origine OLE DB].Columns[KNA03_DT_INIZ]}) ? (DT_DBDATE)#{Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT\Sorgente Oracle INPS.Outputs[Output origine OLE DB].Columns[KNA03_DT_INIZ]} : (DT_DBDATE)"31-12-9999"</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Espressione descrittiva colonna derivata"
+                              expressionType="Notify"
+                              name="FriendlyExpression">ISNULL(KNA03_DT_INIZ) ? (DT_DBDATE)KNA03_DT_INIZ : (DT_DBDATE)"31-12-9999"</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT\Colonna derivata.Outputs[Output colonna derivata].Columns[var_DATA_FINE]"
+                          dataType="dbDate"
+                          errorOrTruncationOperation="Calcolo"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT\Colonna derivata.Outputs[Output colonna derivata].Columns[var_DATA_FINE]"
+                          name="var_DATA_FINE"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Espressione colonna derivata"
+                              name="Expression">[ISNULL](#{Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT\Sorgente Oracle INPS.Outputs[Output origine OLE DB].Columns[KNA03_DT_FINE]}) ? (DT_DBDATE)#{Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT\Sorgente Oracle INPS.Outputs[Output origine OLE DB].Columns[KNA03_DT_FINE]} : (DT_DBDATE)"31-12-9999"</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Espressione descrittiva colonna derivata"
+                              expressionType="Notify"
+                              name="FriendlyExpression">ISNULL(KNA03_DT_FINE) ? (DT_DBDATE)KNA03_DT_FINE : (DT_DBDATE)"31-12-9999"</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT\Colonna derivata.Outputs[Output errori colonna derivata]"
+                      description="Output degli errori della trasformazione Colonna derivata"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Output errori colonna derivata"
+                      synchronousInputId="Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT\Colonna derivata.Inputs[Input colonna derivata]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT\Colonna derivata.Outputs[Output errori colonna derivata].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT\Colonna derivata.Outputs[Output errori colonna derivata].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT\Colonna derivata.Outputs[Output errori colonna derivata].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT\Colonna derivata.Outputs[Output errori colonna derivata].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT\Destinazione SqlServer INPS"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="Destinazione OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tutti i diritti sono riservati; http://www.microsoft.com/sql/support;4"
+                  description="Destinazione OLE DB"
+                  name="Destinazione SqlServer INPS"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="Numero di secondi prima del timeout di un comando. Il valore 0 indica nessun timeout."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifica il nome dell'oggetto di database utilizzato per aprire un set di righe."
+                      name="OpenRowset">[DPRE_STG].[TS_RSCDE_DETERMINAZIONE_CL]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifica la variabile contenente il nome dell'oggetto di database utilizzato per aprire un set di righe."
+                      name="OpenRowsetVariable">User::Taget01</property>
+                    <property
+                      dataType="System.String"
+                      description="Comando SQL da eseguire."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifica la tabella codici della colonna da utilizzare quando l'origine dati non rende disponibili informazioni sulla tabella codici."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forza l'utilizzo del valore della proprietà DefaultCodePage per la descrizione di dati di tipo carattere."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifica la modalità utilizzata per accedere al database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">4</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indica se i valori specificati per le colonne Identity verranno copiati nella destinazione. Se false, i valori delle colonne Identity verranno generati automaticamente nella destinazione. Applicabile solo se è abilitato il caricamento rapido."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indica se per le colonne con valori Null, tali valori verranno inseriti nella destinazione. Se false, per le colonne con valori Null verranno inseriti i valori predefiniti corrispondenti nella destinazione. Applicabile solo se è attivato il caricamento rapido."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifica le opzioni da utilizzare con il caricamento rapido. Applicabile solo se è attivato il caricamento rapido."
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifica se vengono eseguiti commit durante l'inserimento dei dati. Il valore 0 indica che verrà eseguito un solo commit al termine dell'inserimento dei dati. Applicabile solo se è attivato il caricamento rapido."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT\Destinazione SqlServer INPS.Connections[OleDbConnection]"
+                      connectionManagerID="{FC7512B7-7177-4111-B69B-C52974713116}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[SqlServer_INPS]"
+                      description="Connessione di run-time OLE DB utilizzata per accedere al database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT\Destinazione SqlServer INPS.Inputs[Input destinazione OLE DB]"
+                      errorOrTruncationOperation="Inserimento"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="Input destinazione OLE DB">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT\Destinazione SqlServer INPS.Inputs[Input destinazione OLE DB].Columns[DWH_UTENTE]"
+                          cachedDataType="wstr"
+                          cachedLength="18"
+                          cachedName="DWH_UTENTE"
+                          externalMetadataColumnId="Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT\Destinazione SqlServer INPS.Inputs[Input destinazione OLE DB].ExternalColumns[KNATC_CD_DWH_UTENTE]"
+                          lineageId="Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT\Colonna derivata.Outputs[Output colonna derivata].Columns[DWH_UTENTE]" />
+                        <inputColumn
+                          refId="Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT\Destinazione SqlServer INPS.Inputs[Input destinazione OLE DB].Columns[DWH_INS]"
+                          cachedDataType="date"
+                          cachedName="DWH_INS"
+                          externalMetadataColumnId="Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT\Destinazione SqlServer INPS.Inputs[Input destinazione OLE DB].ExternalColumns[KNATC_DT_DWH_INS]"
+                          lineageId="Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT\Colonna derivata.Outputs[Output colonna derivata].Columns[DWH_INS]" />
+                        <inputColumn
+                          refId="Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT\Destinazione SqlServer INPS.Inputs[Input destinazione OLE DB].Columns[DWH_APPLIC]"
+                          cachedDataType="wstr"
+                          cachedLength="5"
+                          cachedName="DWH_APPLIC"
+                          externalMetadataColumnId="Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT\Destinazione SqlServer INPS.Inputs[Input destinazione OLE DB].ExternalColumns[KNATC_CD_DWH_APPLIC]"
+                          lineageId="Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT\Colonna derivata.Outputs[Output colonna derivata].Columns[DWH_APPLIC]" />
+                        <inputColumn
+                          refId="Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT\Destinazione SqlServer INPS.Inputs[Input destinazione OLE DB].Columns[KNA03_CD_ATECO]"
+                          cachedDataType="wstr"
+                          cachedLength="5"
+                          cachedName="KNA03_CD_ATECO"
+                          externalMetadataColumnId="Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT\Destinazione SqlServer INPS.Inputs[Input destinazione OLE DB].ExternalColumns[KNATC_SD_CD_SOURCEATC]"
+                          lineageId="Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT\Sorgente Oracle INPS.Outputs[Output origine OLE DB].Columns[KNA03_CD_ATECO]" />
+                        <inputColumn
+                          refId="Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT\Destinazione SqlServer INPS.Inputs[Input destinazione OLE DB].Columns[var_DATA_INIZ]"
+                          cachedDataType="dbDate"
+                          cachedName="var_DATA_INIZ"
+                          externalMetadataColumnId="Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT\Destinazione SqlServer INPS.Inputs[Input destinazione OLE DB].ExternalColumns[KNATC_DT_INIZ]"
+                          lineageId="Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT\Colonna derivata.Outputs[Output colonna derivata].Columns[var_DATA_INIZ]" />
+                        <inputColumn
+                          refId="Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT\Destinazione SqlServer INPS.Inputs[Input destinazione OLE DB].Columns[var_DATA_FINE]"
+                          cachedDataType="dbDate"
+                          cachedName="var_DATA_FINE"
+                          externalMetadataColumnId="Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT\Destinazione SqlServer INPS.Inputs[Input destinazione OLE DB].ExternalColumns[KNATC_DT_FINE]"
+                          lineageId="Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT\Colonna derivata.Outputs[Output colonna derivata].Columns[var_DATA_FINE]" />
+                        <inputColumn
+                          refId="Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT\Destinazione SqlServer INPS.Inputs[Input destinazione OLE DB].Columns[KNA03_LD_DESCR_ATECO]"
+                          cachedDataType="wstr"
+                          cachedLength="260"
+                          cachedName="KNA03_LD_DESCR_ATECO"
+                          externalMetadataColumnId="Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT\Destinazione SqlServer INPS.Inputs[Input destinazione OLE DB].ExternalColumns[KNATC_LD_DESCR_ATECO]"
+                          lineageId="Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT\Sorgente Oracle INPS.Outputs[Output origine OLE DB].Columns[KNA03_LD_DESCR_ATECO]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT\Destinazione SqlServer INPS.Inputs[Input destinazione OLE DB].ExternalColumns[KNATC_NR_SEQ_ATECO_PK]"
+                          dataType="numeric"
+                          name="KNATC_NR_SEQ_ATECO_PK"
+                          precision="12" />
+                        <externalMetadataColumn
+                          refId="Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT\Destinazione SqlServer INPS.Inputs[Input destinazione OLE DB].ExternalColumns[KNATC_SD_CD_SOURCEATC]"
+                          dataType="wstr"
+                          length="5"
+                          name="KNATC_SD_CD_SOURCEATC" />
+                        <externalMetadataColumn
+                          refId="Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT\Destinazione SqlServer INPS.Inputs[Input destinazione OLE DB].ExternalColumns[KNATC_LD_DESCR_ATECO]"
+                          dataType="wstr"
+                          length="260"
+                          name="KNATC_LD_DESCR_ATECO" />
+                        <externalMetadataColumn
+                          refId="Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT\Destinazione SqlServer INPS.Inputs[Input destinazione OLE DB].ExternalColumns[KNATC_DT_INIZ]"
+                          dataType="dbTimeStamp"
+                          name="KNATC_DT_INIZ" />
+                        <externalMetadataColumn
+                          refId="Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT\Destinazione SqlServer INPS.Inputs[Input destinazione OLE DB].ExternalColumns[KNATC_DT_FINE]"
+                          dataType="dbTimeStamp"
+                          name="KNATC_DT_FINE" />
+                        <externalMetadataColumn
+                          refId="Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT\Destinazione SqlServer INPS.Inputs[Input destinazione OLE DB].ExternalColumns[KNATC_CD_DWH_UTENTE]"
+                          dataType="wstr"
+                          length="100"
+                          name="KNATC_CD_DWH_UTENTE" />
+                        <externalMetadataColumn
+                          refId="Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT\Destinazione SqlServer INPS.Inputs[Input destinazione OLE DB].ExternalColumns[KNATC_DT_DWH_ANNULL]"
+                          dataType="dbTimeStamp"
+                          name="KNATC_DT_DWH_ANNULL" />
+                        <externalMetadataColumn
+                          refId="Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT\Destinazione SqlServer INPS.Inputs[Input destinazione OLE DB].ExternalColumns[KNATC_DT_DWH_INS]"
+                          dataType="dbTimeStamp"
+                          name="KNATC_DT_DWH_INS" />
+                        <externalMetadataColumn
+                          refId="Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT\Destinazione SqlServer INPS.Inputs[Input destinazione OLE DB].ExternalColumns[KNATC_DT_DWH_AGGIORN]"
+                          dataType="dbTimeStamp"
+                          name="KNATC_DT_DWH_AGGIORN" />
+                        <externalMetadataColumn
+                          refId="Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT\Destinazione SqlServer INPS.Inputs[Input destinazione OLE DB].ExternalColumns[KNATC_CD_DWH_APPLIC]"
+                          dataType="wstr"
+                          length="100"
+                          name="KNATC_CD_DWH_APPLIC" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT\Destinazione SqlServer INPS.Outputs[Output errori destinazione OLE DB]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Output errori destinazione OLE DB"
+                      synchronousInputId="Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT\Destinazione SqlServer INPS.Inputs[Input destinazione OLE DB]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT\Destinazione SqlServer INPS.Outputs[Output errori destinazione OLE DB].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT\Destinazione SqlServer INPS.Outputs[Output errori destinazione OLE DB].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT\Destinazione SqlServer INPS.Outputs[Output errori destinazione OLE DB].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT\Destinazione SqlServer INPS.Outputs[Output errori destinazione OLE DB].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT\Sorgente Oracle INPS"
+                  componentClassID="Microsoft.OLEDBSource"
+                  contactInfo="Origine OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tutti i diritti sono riservati; http://www.microsoft.com/sql/support;7"
+                  description="Origine OLE DB"
+                  name="Sorgente Oracle INPS"
+                  usesDispositions="true"
+                  version="7">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="Numero di secondi prima del timeout di un comando. Il valore 0 indica nessun timeout."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifica il nome dell'oggetto di database utilizzato per aprire un set di righe."
+                      name="OpenRowset"></property>
+                    <property
+                      dataType="System.String"
+                      description="Specifica la variabile contenente il nome dell'oggetto di database utilizzato per aprire un set di righe."
+                      name="OpenRowsetVariable">User::Source01</property>
+                    <property
+                      dataType="System.String"
+                      description="Comando SQL da eseguire."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.String"
+                      description="Variabile che contiene il comando SQL da eseguire."
+                      name="SqlCommandVariable">User::Select_Source01</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifica la tabella codici della colonna da utilizzare quando l'origine dati non rende disponibili informazioni sulla tabella codici."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forza l'utilizzo del valore della proprietà DefaultCodePage per la descrizione di dati di tipo carattere."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifica la modalità utilizzata per accedere al database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">3</property>
+                    <property
+                      dataType="System.String"
+                      description="Mapping tra i parametri nel comando SQL e le variabili."
+                      name="ParameterMapping"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT\Sorgente Oracle INPS.Connections[OleDbConnection]"
+                      connectionManagerID="{FC7512B7-7177-4111-B69B-C52974713116}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[SqlServer_INPS]"
+                      description="Connessione di run-time OLE DB utilizzata per accedere al database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT\Sorgente Oracle INPS.Outputs[Output origine OLE DB]"
+                      name="Output origine OLE DB">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT\Sorgente Oracle INPS.Outputs[Output origine OLE DB].Columns[KNA03_CD_ATECO]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversione"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT\Sorgente Oracle INPS.Outputs[Output origine OLE DB].ExternalColumns[KNA03_CD_ATECO]"
+                          length="5"
+                          lineageId="Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT\Sorgente Oracle INPS.Outputs[Output origine OLE DB].Columns[KNA03_CD_ATECO]"
+                          name="KNA03_CD_ATECO"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT\Sorgente Oracle INPS.Outputs[Output origine OLE DB].Columns[KNA03_LD_DESCR_ATECO]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversione"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT\Sorgente Oracle INPS.Outputs[Output origine OLE DB].ExternalColumns[KNA03_LD_DESCR_ATECO]"
+                          length="260"
+                          lineageId="Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT\Sorgente Oracle INPS.Outputs[Output origine OLE DB].Columns[KNA03_LD_DESCR_ATECO]"
+                          name="KNA03_LD_DESCR_ATECO"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT\Sorgente Oracle INPS.Outputs[Output origine OLE DB].Columns[KNA03_DT_INIZ]"
+                          dataType="dbTimeStamp"
+                          errorOrTruncationOperation="Conversione"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT\Sorgente Oracle INPS.Outputs[Output origine OLE DB].ExternalColumns[KNA03_DT_INIZ]"
+                          lineageId="Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT\Sorgente Oracle INPS.Outputs[Output origine OLE DB].Columns[KNA03_DT_INIZ]"
+                          name="KNA03_DT_INIZ"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT\Sorgente Oracle INPS.Outputs[Output origine OLE DB].Columns[KNA03_DT_FINE]"
+                          dataType="dbTimeStamp"
+                          errorOrTruncationOperation="Conversione"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT\Sorgente Oracle INPS.Outputs[Output origine OLE DB].ExternalColumns[KNA03_DT_FINE]"
+                          lineageId="Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT\Sorgente Oracle INPS.Outputs[Output origine OLE DB].Columns[KNA03_DT_FINE]"
+                          name="KNA03_DT_FINE"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT\Sorgente Oracle INPS.Outputs[Output origine OLE DB].Columns[KNA03_DT_RIFERIMENTO]"
+                          dataType="dbTimeStamp"
+                          errorOrTruncationOperation="Conversione"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT\Sorgente Oracle INPS.Outputs[Output origine OLE DB].ExternalColumns[KNA03_DT_RIFERIMENTO]"
+                          lineageId="Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT\Sorgente Oracle INPS.Outputs[Output origine OLE DB].Columns[KNA03_DT_RIFERIMENTO]"
+                          name="KNA03_DT_RIFERIMENTO"
+                          truncationRowDisposition="FailComponent" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT\Sorgente Oracle INPS.Outputs[Output origine OLE DB].ExternalColumns[KNA03_CD_ATECO]"
+                          dataType="wstr"
+                          length="5"
+                          name="KNA03_CD_ATECO" />
+                        <externalMetadataColumn
+                          refId="Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT\Sorgente Oracle INPS.Outputs[Output origine OLE DB].ExternalColumns[KNA03_LD_DESCR_ATECO]"
+                          dataType="wstr"
+                          length="260"
+                          name="KNA03_LD_DESCR_ATECO" />
+                        <externalMetadataColumn
+                          refId="Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT\Sorgente Oracle INPS.Outputs[Output origine OLE DB].ExternalColumns[KNA03_DT_INIZ]"
+                          dataType="dbTimeStamp"
+                          name="KNA03_DT_INIZ" />
+                        <externalMetadataColumn
+                          refId="Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT\Sorgente Oracle INPS.Outputs[Output origine OLE DB].ExternalColumns[KNA03_DT_FINE]"
+                          dataType="dbTimeStamp"
+                          name="KNA03_DT_FINE" />
+                        <externalMetadataColumn
+                          refId="Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT\Sorgente Oracle INPS.Outputs[Output origine OLE DB].ExternalColumns[KNA03_DT_RIFERIMENTO]"
+                          dataType="dbTimeStamp"
+                          name="KNA03_DT_RIFERIMENTO" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT\Sorgente Oracle INPS.Outputs[Output errori origine OLE DB]"
+                      isErrorOut="true"
+                      name="Output errori origine OLE DB">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT\Sorgente Oracle INPS.Outputs[Output errori origine OLE DB].Columns[KNA03_CD_ATECO]"
+                          dataType="wstr"
+                          length="5"
+                          lineageId="Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT\Sorgente Oracle INPS.Outputs[Output errori origine OLE DB].Columns[KNA03_CD_ATECO]"
+                          name="KNA03_CD_ATECO" />
+                        <outputColumn
+                          refId="Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT\Sorgente Oracle INPS.Outputs[Output errori origine OLE DB].Columns[KNA03_LD_DESCR_ATECO]"
+                          dataType="wstr"
+                          length="260"
+                          lineageId="Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT\Sorgente Oracle INPS.Outputs[Output errori origine OLE DB].Columns[KNA03_LD_DESCR_ATECO]"
+                          name="KNA03_LD_DESCR_ATECO" />
+                        <outputColumn
+                          refId="Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT\Sorgente Oracle INPS.Outputs[Output errori origine OLE DB].Columns[KNA03_DT_INIZ]"
+                          dataType="dbTimeStamp"
+                          lineageId="Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT\Sorgente Oracle INPS.Outputs[Output errori origine OLE DB].Columns[KNA03_DT_INIZ]"
+                          name="KNA03_DT_INIZ" />
+                        <outputColumn
+                          refId="Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT\Sorgente Oracle INPS.Outputs[Output errori origine OLE DB].Columns[KNA03_DT_FINE]"
+                          dataType="dbTimeStamp"
+                          lineageId="Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT\Sorgente Oracle INPS.Outputs[Output errori origine OLE DB].Columns[KNA03_DT_FINE]"
+                          name="KNA03_DT_FINE" />
+                        <outputColumn
+                          refId="Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT\Sorgente Oracle INPS.Outputs[Output errori origine OLE DB].Columns[KNA03_DT_RIFERIMENTO]"
+                          dataType="dbTimeStamp"
+                          lineageId="Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT\Sorgente Oracle INPS.Outputs[Output errori origine OLE DB].Columns[KNA03_DT_RIFERIMENTO]"
+                          name="KNA03_DT_RIFERIMENTO" />
+                        <outputColumn
+                          refId="Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT\Sorgente Oracle INPS.Outputs[Output errori origine OLE DB].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT\Sorgente Oracle INPS.Outputs[Output errori origine OLE DB].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT\Sorgente Oracle INPS.Outputs[Output errori origine OLE DB].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT\Sorgente Oracle INPS.Outputs[Output errori origine OLE DB].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT.Paths[Output colonna derivata]"
+                  endId="Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT\Destinazione SqlServer INPS.Inputs[Input destinazione OLE DB]"
+                  name="Output colonna derivata"
+                  startId="Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT\Colonna derivata.Outputs[Output colonna derivata]" />
+                <path
+                  refId="Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT.Paths[Output origine OLE DB]"
+                  endId="Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT\Colonna derivata.Inputs[Input colonna derivata]"
+                  name="Output origine OLE DB"
+                  startId="Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT\Sorgente Oracle INPS.Outputs[Output origine OLE DB]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\01 - TM_KNATC_ATECO_CT.PrecedenceConstraints[Vincolo]"
+          DTS:CreationName=""
+          DTS:DTSID="{449cf066-ff50-4537-be21-634ff52ffb0a}"
+          DTS:From="Package\01 - TM_KNATC_ATECO_CT\Esegui Delete Tipologiche"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Vincolo"
+          DTS:To="Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Attività Esegui istruzione T-SQL"
+      DTS:CreationName="Microsoft.DbMaintenanceTSQLExecuteTask"
+      DTS:Description="Attività Esegui istruzione T-SQL"
+      DTS:DTSID="{2C2FDA65-8FE3-4455-9944-7D268C703C50}"
+      DTS:ExecutableType="Microsoft.DbMaintenanceTSQLExecuteTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Attività Esegui istruzione T-SQL"
+      DTS:TaskContact="Execute T-SQL Statement Task; Microsoft Corporation; Microsoft SQL Server v9; © 2004 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="3">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{C076964E-0813-4B61-8AD3-C24CEE3C2A53}"
+          SQLTask:SqlStatementSource="SELECT KNA03_CD_ATECO, KNA03_LD_DESCR_ATECO, KNA03_DT_INIZ, KNA03_DT_FINE, KNA03_DT_RIFERIMENTO FROM DPRE_ANSTG.TS_KNA03_ATECO_CT"
+          SQLTask:ServerVersion="9"
+          SQLTask:ExtendedLogging="True"
+          SQLTask:LocalConnectionForLogging=""
+          SQLTask:TaskName=""
+          SQLTask:IgnoreDatabasesInNotOnlineState="False" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Contenitore Ciclo Foreach"
+      DTS:CreationName="STOCK:FOREACHLOOP"
+      DTS:Description="Contenitore Ciclo Foreach"
+      DTS:DTSID="{D04BD14E-85E4-4F5A-A399-E9C8C2806F43}"
+      DTS:ExecutableType="STOCK:FOREACHLOOP"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Contenitore Ciclo Foreach">
+      <DTS:ForEachEnumerator
+        DTS:CreationName="Microsoft.ForEachADOEnumerator"
+        DTS:DTSID="{EC5D3127-D052-4FDF-840E-C690E0C7DF9C}"
+        DTS:ObjectName="{EC5D3127-D052-4FDF-840E-C690E0C7DF9C}">
+        <DTS:ObjectData>
+          <FEEADO
+            EnumType="EnumerateRowsInFirstTable"
+            VarName="User::OB" />
+        </DTS:ObjectData>
+      </DTS:ForEachEnumerator>
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Contenitore Ciclo Foreach\Attività Esegui SQL"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Attività Esegui SQL"
+          DTS:DTSID="{4B19F0DF-654C-44A1-AB58-0FA01D4ABF06}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Attività Esegui SQL"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="1">
+          <DTS:Variables />
+          <DTS:PropertyExpression
+            DTS:Name="SqlStatementSource">"INSERT INTO [DPRE_ANEDW].[TM_KNATC_ATECO_CT]
+           ([KNATC_SD_CD_SOURCEATC]
+           ,[KNATC_LD_DESCR_ATECO]
+           ,[KNATC_DT_INIZ]
+           ,[KNATC_DT_FINE]
+           ,[KNATC_CD_DWH_UTENTE]
+           ,[KNATC_DT_DWH_INS]
+           ,[KNATC_CD_DWH_APPLIC])
+     VALUES
+           (?
+           ,?
+           ,?
+           ,?
+           ,'ADMIN'
+           ,GETDATE()
+           ,'ANEDW')
+"</DTS:PropertyExpression>
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{FC7512B7-7177-4111-B69B-C52974713116}"
+              SQLTask:SqlStatementSource="INSERT INTO [DPRE_ANEDW].[TM_KNATC_ATECO_CT]&#xA;           ([KNATC_SD_CD_SOURCEATC]&#xA;           ,[KNATC_LD_DESCR_ATECO]&#xA;           ,[KNATC_DT_INIZ]&#xA;           ,[KNATC_DT_FINE]&#xA;           ,[KNATC_CD_DWH_UTENTE]&#xA;           ,[KNATC_DT_DWH_INS]&#xA;           ,[KNATC_CD_DWH_APPLIC])&#xA;     VALUES&#xA;           (?&#xA;           ,?&#xA;           ,?&#xA;           ,?&#xA;           ,'ADMIN'&#xA;           ,GETDATE()&#xA;           ,'ANEDW')&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Contenitore Ciclo Foreach\INSERT TM_KNATC_ATECO_CT con loop"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Attività Flusso di dati"
+          DTS:Disabled="True"
+          DTS:DTSID="{c823bee2-71e7-4f31-ad22-dab606a23f93}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="INSERT TM_KNATC_ATECO_CT con loop"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\Contenitore Ciclo Foreach\INSERT TM_KNATC_ATECO_CT con loop\Colonna derivata"
+                  componentClassID="Microsoft.DerivedColumn"
+                  contactInfo="Colonna derivata;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tutti i diritti sono riservati; http://www.microsoft.com/sql/support;0"
+                  description="Crea nuovi valori di colonna applicando espressioni alle colonne di input della trasformazione. Creare nuove colonne oppure sovrascrivere quelle esistenti. Ad esempio, concatenare i valori delle colonne 'first name' e 'last name' per creare una colonna 'full name'."
+                  name="Colonna derivata"
+                  usesDispositions="true">
+                  <inputs>
+                    <input
+                      refId="Package\Contenitore Ciclo Foreach\INSERT TM_KNATC_ATECO_CT con loop\Colonna derivata.Inputs[Input colonna derivata]"
+                      description="Input della trasformazione Colonna derivata"
+                      name="Input colonna derivata">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Contenitore Ciclo Foreach\INSERT TM_KNATC_ATECO_CT con loop\Colonna derivata.Inputs[Input colonna derivata].Columns[KNA03_DT_INIZ]"
+                          cachedDataType="dbTimeStamp"
+                          cachedName="KNA03_DT_INIZ"
+                          lineageId="Package\Contenitore Ciclo Foreach\INSERT TM_KNATC_ATECO_CT con loop\Sorgente Oracle INPS.Outputs[Output origine OLE DB].Columns[KNA03_DT_INIZ]" />
+                        <inputColumn
+                          refId="Package\Contenitore Ciclo Foreach\INSERT TM_KNATC_ATECO_CT con loop\Colonna derivata.Inputs[Input colonna derivata].Columns[KNA03_DT_FINE]"
+                          cachedDataType="dbTimeStamp"
+                          cachedName="KNA03_DT_FINE"
+                          lineageId="Package\Contenitore Ciclo Foreach\INSERT TM_KNATC_ATECO_CT con loop\Sorgente Oracle INPS.Outputs[Output origine OLE DB].Columns[KNA03_DT_FINE]" />
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Contenitore Ciclo Foreach\INSERT TM_KNATC_ATECO_CT con loop\Colonna derivata.Outputs[Output colonna derivata]"
+                      description="Output predefinito della trasformazione Colonna derivata"
+                      exclusionGroup="1"
+                      name="Output colonna derivata"
+                      synchronousInputId="Package\Contenitore Ciclo Foreach\INSERT TM_KNATC_ATECO_CT con loop\Colonna derivata.Inputs[Input colonna derivata]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Contenitore Ciclo Foreach\INSERT TM_KNATC_ATECO_CT con loop\Colonna derivata.Outputs[Output colonna derivata].Columns[DWH_UTENTE]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Calcolo"
+                          errorRowDisposition="FailComponent"
+                          length="18"
+                          lineageId="Package\Contenitore Ciclo Foreach\INSERT TM_KNATC_ATECO_CT con loop\Colonna derivata.Outputs[Output colonna derivata].Columns[DWH_UTENTE]"
+                          name="DWH_UTENTE"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Espressione colonna derivata"
+                              name="Expression">@[System::UserName]</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Espressione descrittiva colonna derivata"
+                              expressionType="Notify"
+                              name="FriendlyExpression">@[System::UserName]</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Contenitore Ciclo Foreach\INSERT TM_KNATC_ATECO_CT con loop\Colonna derivata.Outputs[Output colonna derivata].Columns[DWH_INS]"
+                          dataType="date"
+                          errorOrTruncationOperation="Calcolo"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\Contenitore Ciclo Foreach\INSERT TM_KNATC_ATECO_CT con loop\Colonna derivata.Outputs[Output colonna derivata].Columns[DWH_INS]"
+                          name="DWH_INS"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Espressione colonna derivata"
+                              name="Expression">@[System::StartTime]</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Espressione descrittiva colonna derivata"
+                              expressionType="Notify"
+                              name="FriendlyExpression">@[System::StartTime]</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Contenitore Ciclo Foreach\INSERT TM_KNATC_ATECO_CT con loop\Colonna derivata.Outputs[Output colonna derivata].Columns[DWH_APPLIC]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Calcolo"
+                          errorRowDisposition="FailComponent"
+                          length="5"
+                          lineageId="Package\Contenitore Ciclo Foreach\INSERT TM_KNATC_ATECO_CT con loop\Colonna derivata.Outputs[Output colonna derivata].Columns[DWH_APPLIC]"
+                          name="DWH_APPLIC"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Espressione colonna derivata"
+                              name="Expression">"ANEDW"</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Espressione descrittiva colonna derivata"
+                              expressionType="Notify"
+                              name="FriendlyExpression">"ANEDW"</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Contenitore Ciclo Foreach\INSERT TM_KNATC_ATECO_CT con loop\Colonna derivata.Outputs[Output colonna derivata].Columns[var_DATA_INIZ]"
+                          dataType="dbDate"
+                          errorOrTruncationOperation="Calcolo"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\Contenitore Ciclo Foreach\INSERT TM_KNATC_ATECO_CT con loop\Colonna derivata.Outputs[Output colonna derivata].Columns[var_DATA_INIZ]"
+                          name="var_DATA_INIZ"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Espressione colonna derivata"
+                              name="Expression">[ISNULL](#{Package\Contenitore Ciclo Foreach\INSERT TM_KNATC_ATECO_CT con loop\Sorgente Oracle INPS.Outputs[Output origine OLE DB].Columns[KNA03_DT_INIZ]}) ? (DT_DBDATE)#{Package\Contenitore Ciclo Foreach\INSERT TM_KNATC_ATECO_CT con loop\Sorgente Oracle INPS.Outputs[Output origine OLE DB].Columns[KNA03_DT_INIZ]} : (DT_DBDATE)"31-12-9999"</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Espressione descrittiva colonna derivata"
+                              expressionType="Notify"
+                              name="FriendlyExpression">ISNULL(KNA03_DT_INIZ) ? (DT_DBDATE)KNA03_DT_INIZ : (DT_DBDATE)"31-12-9999"</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Contenitore Ciclo Foreach\INSERT TM_KNATC_ATECO_CT con loop\Colonna derivata.Outputs[Output colonna derivata].Columns[var_DATA_FINE]"
+                          dataType="dbDate"
+                          errorOrTruncationOperation="Calcolo"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\Contenitore Ciclo Foreach\INSERT TM_KNATC_ATECO_CT con loop\Colonna derivata.Outputs[Output colonna derivata].Columns[var_DATA_FINE]"
+                          name="var_DATA_FINE"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Espressione colonna derivata"
+                              name="Expression">[ISNULL](#{Package\Contenitore Ciclo Foreach\INSERT TM_KNATC_ATECO_CT con loop\Sorgente Oracle INPS.Outputs[Output origine OLE DB].Columns[KNA03_DT_FINE]}) ? (DT_DBDATE)#{Package\Contenitore Ciclo Foreach\INSERT TM_KNATC_ATECO_CT con loop\Sorgente Oracle INPS.Outputs[Output origine OLE DB].Columns[KNA03_DT_FINE]} : (DT_DBDATE)"31-12-9999"</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Espressione descrittiva colonna derivata"
+                              expressionType="Notify"
+                              name="FriendlyExpression">ISNULL(KNA03_DT_FINE) ? (DT_DBDATE)KNA03_DT_FINE : (DT_DBDATE)"31-12-9999"</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Contenitore Ciclo Foreach\INSERT TM_KNATC_ATECO_CT con loop\Colonna derivata.Outputs[Output errori colonna derivata]"
+                      description="Output degli errori della trasformazione Colonna derivata"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Output errori colonna derivata"
+                      synchronousInputId="Package\Contenitore Ciclo Foreach\INSERT TM_KNATC_ATECO_CT con loop\Colonna derivata.Inputs[Input colonna derivata]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Contenitore Ciclo Foreach\INSERT TM_KNATC_ATECO_CT con loop\Colonna derivata.Outputs[Output errori colonna derivata].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Contenitore Ciclo Foreach\INSERT TM_KNATC_ATECO_CT con loop\Colonna derivata.Outputs[Output errori colonna derivata].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Contenitore Ciclo Foreach\INSERT TM_KNATC_ATECO_CT con loop\Colonna derivata.Outputs[Output errori colonna derivata].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Contenitore Ciclo Foreach\INSERT TM_KNATC_ATECO_CT con loop\Colonna derivata.Outputs[Output errori colonna derivata].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Contenitore Ciclo Foreach\INSERT TM_KNATC_ATECO_CT con loop\Colonna derivata 1"
+                  componentClassID="Microsoft.DerivedColumn"
+                  contactInfo="Colonna derivata;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tutti i diritti sono riservati; http://www.microsoft.com/sql/support;0"
+                  description="Crea nuovi valori di colonna applicando espressioni alle colonne di input della trasformazione. Creare nuove colonne oppure sovrascrivere quelle esistenti. Ad esempio, concatenare i valori delle colonne 'first name' e 'last name' per creare una colonna 'full name'."
+                  name="Colonna derivata 1"
+                  usesDispositions="true">
+                  <inputs>
+                    <input
+                      refId="Package\Contenitore Ciclo Foreach\INSERT TM_KNATC_ATECO_CT con loop\Colonna derivata 1.Inputs[Input colonna derivata]"
+                      description="Input della trasformazione Colonna derivata"
+                      name="Input colonna derivata">
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Contenitore Ciclo Foreach\INSERT TM_KNATC_ATECO_CT con loop\Colonna derivata 1.Outputs[Output colonna derivata]"
+                      description="Output predefinito della trasformazione Colonna derivata"
+                      exclusionGroup="1"
+                      name="Output colonna derivata"
+                      synchronousInputId="Package\Contenitore Ciclo Foreach\INSERT TM_KNATC_ATECO_CT con loop\Colonna derivata 1.Inputs[Input colonna derivata]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Contenitore Ciclo Foreach\INSERT TM_KNATC_ATECO_CT con loop\Colonna derivata 1.Outputs[Output errori colonna derivata]"
+                      description="Output degli errori della trasformazione Colonna derivata"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Output errori colonna derivata"
+                      synchronousInputId="Package\Contenitore Ciclo Foreach\INSERT TM_KNATC_ATECO_CT con loop\Colonna derivata 1.Inputs[Input colonna derivata]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Contenitore Ciclo Foreach\INSERT TM_KNATC_ATECO_CT con loop\Colonna derivata 1.Outputs[Output errori colonna derivata].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Contenitore Ciclo Foreach\INSERT TM_KNATC_ATECO_CT con loop\Colonna derivata 1.Outputs[Output errori colonna derivata].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Contenitore Ciclo Foreach\INSERT TM_KNATC_ATECO_CT con loop\Colonna derivata 1.Outputs[Output errori colonna derivata].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Contenitore Ciclo Foreach\INSERT TM_KNATC_ATECO_CT con loop\Colonna derivata 1.Outputs[Output errori colonna derivata].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Contenitore Ciclo Foreach\INSERT TM_KNATC_ATECO_CT con loop\Destinazione SqlServer INPS"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="Destinazione OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tutti i diritti sono riservati; http://www.microsoft.com/sql/support;4"
+                  description="Destinazione OLE DB"
+                  name="Destinazione SqlServer INPS"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="Numero di secondi prima del timeout di un comando. Il valore 0 indica nessun timeout."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifica il nome dell'oggetto di database utilizzato per aprire un set di righe."
+                      name="OpenRowset">[DPRE_STG].[TS_RSCDE_DETERMINAZIONE_CL]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifica la variabile contenente il nome dell'oggetto di database utilizzato per aprire un set di righe."
+                      name="OpenRowsetVariable">User::Taget01</property>
+                    <property
+                      dataType="System.String"
+                      description="Comando SQL da eseguire."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifica la tabella codici della colonna da utilizzare quando l'origine dati non rende disponibili informazioni sulla tabella codici."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forza l'utilizzo del valore della proprietà DefaultCodePage per la descrizione di dati di tipo carattere."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifica la modalità utilizzata per accedere al database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">4</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indica se i valori specificati per le colonne Identity verranno copiati nella destinazione. Se false, i valori delle colonne Identity verranno generati automaticamente nella destinazione. Applicabile solo se è abilitato il caricamento rapido."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indica se per le colonne con valori Null, tali valori verranno inseriti nella destinazione. Se false, per le colonne con valori Null verranno inseriti i valori predefiniti corrispondenti nella destinazione. Applicabile solo se è attivato il caricamento rapido."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifica le opzioni da utilizzare con il caricamento rapido. Applicabile solo se è attivato il caricamento rapido."
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifica se vengono eseguiti commit durante l'inserimento dei dati. Il valore 0 indica che verrà eseguito un solo commit al termine dell'inserimento dei dati. Applicabile solo se è attivato il caricamento rapido."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Contenitore Ciclo Foreach\INSERT TM_KNATC_ATECO_CT con loop\Destinazione SqlServer INPS.Connections[OleDbConnection]"
+                      connectionManagerID="{FC7512B7-7177-4111-B69B-C52974713116}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[SqlServer_INPS]"
+                      description="Connessione di run-time OLE DB utilizzata per accedere al database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Contenitore Ciclo Foreach\INSERT TM_KNATC_ATECO_CT con loop\Destinazione SqlServer INPS.Inputs[Input destinazione OLE DB]"
+                      errorOrTruncationOperation="Inserimento"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="Input destinazione OLE DB">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Contenitore Ciclo Foreach\INSERT TM_KNATC_ATECO_CT con loop\Destinazione SqlServer INPS.Inputs[Input destinazione OLE DB].Columns[DWH_UTENTE]"
+                          cachedDataType="wstr"
+                          cachedLength="18"
+                          cachedName="DWH_UTENTE"
+                          externalMetadataColumnId="Package\Contenitore Ciclo Foreach\INSERT TM_KNATC_ATECO_CT con loop\Destinazione SqlServer INPS.Inputs[Input destinazione OLE DB].ExternalColumns[KNATC_CD_DWH_UTENTE]"
+                          lineageId="Package\Contenitore Ciclo Foreach\INSERT TM_KNATC_ATECO_CT con loop\Colonna derivata.Outputs[Output colonna derivata].Columns[DWH_UTENTE]" />
+                        <inputColumn
+                          refId="Package\Contenitore Ciclo Foreach\INSERT TM_KNATC_ATECO_CT con loop\Destinazione SqlServer INPS.Inputs[Input destinazione OLE DB].Columns[DWH_INS]"
+                          cachedDataType="date"
+                          cachedName="DWH_INS"
+                          externalMetadataColumnId="Package\Contenitore Ciclo Foreach\INSERT TM_KNATC_ATECO_CT con loop\Destinazione SqlServer INPS.Inputs[Input destinazione OLE DB].ExternalColumns[KNATC_DT_DWH_INS]"
+                          lineageId="Package\Contenitore Ciclo Foreach\INSERT TM_KNATC_ATECO_CT con loop\Colonna derivata.Outputs[Output colonna derivata].Columns[DWH_INS]" />
+                        <inputColumn
+                          refId="Package\Contenitore Ciclo Foreach\INSERT TM_KNATC_ATECO_CT con loop\Destinazione SqlServer INPS.Inputs[Input destinazione OLE DB].Columns[DWH_APPLIC]"
+                          cachedDataType="wstr"
+                          cachedLength="5"
+                          cachedName="DWH_APPLIC"
+                          externalMetadataColumnId="Package\Contenitore Ciclo Foreach\INSERT TM_KNATC_ATECO_CT con loop\Destinazione SqlServer INPS.Inputs[Input destinazione OLE DB].ExternalColumns[KNATC_CD_DWH_APPLIC]"
+                          lineageId="Package\Contenitore Ciclo Foreach\INSERT TM_KNATC_ATECO_CT con loop\Colonna derivata.Outputs[Output colonna derivata].Columns[DWH_APPLIC]" />
+                        <inputColumn
+                          refId="Package\Contenitore Ciclo Foreach\INSERT TM_KNATC_ATECO_CT con loop\Destinazione SqlServer INPS.Inputs[Input destinazione OLE DB].Columns[KNA03_CD_ATECO]"
+                          cachedDataType="wstr"
+                          cachedLength="5"
+                          cachedName="KNA03_CD_ATECO"
+                          externalMetadataColumnId="Package\Contenitore Ciclo Foreach\INSERT TM_KNATC_ATECO_CT con loop\Destinazione SqlServer INPS.Inputs[Input destinazione OLE DB].ExternalColumns[KNATC_SD_CD_SOURCEATC]"
+                          lineageId="Package\Contenitore Ciclo Foreach\INSERT TM_KNATC_ATECO_CT con loop\Sorgente Oracle INPS.Outputs[Output origine OLE DB].Columns[KNA03_CD_ATECO]" />
+                        <inputColumn
+                          refId="Package\Contenitore Ciclo Foreach\INSERT TM_KNATC_ATECO_CT con loop\Destinazione SqlServer INPS.Inputs[Input destinazione OLE DB].Columns[var_DATA_INIZ]"
+                          cachedDataType="dbDate"
+                          cachedName="var_DATA_INIZ"
+                          externalMetadataColumnId="Package\Contenitore Ciclo Foreach\INSERT TM_KNATC_ATECO_CT con loop\Destinazione SqlServer INPS.Inputs[Input destinazione OLE DB].ExternalColumns[KNATC_DT_INIZ]"
+                          lineageId="Package\Contenitore Ciclo Foreach\INSERT TM_KNATC_ATECO_CT con loop\Colonna derivata.Outputs[Output colonna derivata].Columns[var_DATA_INIZ]" />
+                        <inputColumn
+                          refId="Package\Contenitore Ciclo Foreach\INSERT TM_KNATC_ATECO_CT con loop\Destinazione SqlServer INPS.Inputs[Input destinazione OLE DB].Columns[var_DATA_FINE]"
+                          cachedDataType="dbDate"
+                          cachedName="var_DATA_FINE"
+                          externalMetadataColumnId="Package\Contenitore Ciclo Foreach\INSERT TM_KNATC_ATECO_CT con loop\Destinazione SqlServer INPS.Inputs[Input destinazione OLE DB].ExternalColumns[KNATC_DT_FINE]"
+                          lineageId="Package\Contenitore Ciclo Foreach\INSERT TM_KNATC_ATECO_CT con loop\Colonna derivata.Outputs[Output colonna derivata].Columns[var_DATA_FINE]" />
+                        <inputColumn
+                          refId="Package\Contenitore Ciclo Foreach\INSERT TM_KNATC_ATECO_CT con loop\Destinazione SqlServer INPS.Inputs[Input destinazione OLE DB].Columns[KNA03_LD_DESCR_ATECO]"
+                          cachedDataType="wstr"
+                          cachedLength="260"
+                          cachedName="KNA03_LD_DESCR_ATECO"
+                          externalMetadataColumnId="Package\Contenitore Ciclo Foreach\INSERT TM_KNATC_ATECO_CT con loop\Destinazione SqlServer INPS.Inputs[Input destinazione OLE DB].ExternalColumns[KNATC_LD_DESCR_ATECO]"
+                          lineageId="Package\Contenitore Ciclo Foreach\INSERT TM_KNATC_ATECO_CT con loop\Sorgente Oracle INPS.Outputs[Output origine OLE DB].Columns[KNA03_LD_DESCR_ATECO]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Contenitore Ciclo Foreach\INSERT TM_KNATC_ATECO_CT con loop\Destinazione SqlServer INPS.Inputs[Input destinazione OLE DB].ExternalColumns[KNATC_NR_SEQ_ATECO_PK]"
+                          dataType="numeric"
+                          name="KNATC_NR_SEQ_ATECO_PK"
+                          precision="12" />
+                        <externalMetadataColumn
+                          refId="Package\Contenitore Ciclo Foreach\INSERT TM_KNATC_ATECO_CT con loop\Destinazione SqlServer INPS.Inputs[Input destinazione OLE DB].ExternalColumns[KNATC_SD_CD_SOURCEATC]"
+                          dataType="wstr"
+                          length="5"
+                          name="KNATC_SD_CD_SOURCEATC" />
+                        <externalMetadataColumn
+                          refId="Package\Contenitore Ciclo Foreach\INSERT TM_KNATC_ATECO_CT con loop\Destinazione SqlServer INPS.Inputs[Input destinazione OLE DB].ExternalColumns[KNATC_LD_DESCR_ATECO]"
+                          dataType="wstr"
+                          length="260"
+                          name="KNATC_LD_DESCR_ATECO" />
+                        <externalMetadataColumn
+                          refId="Package\Contenitore Ciclo Foreach\INSERT TM_KNATC_ATECO_CT con loop\Destinazione SqlServer INPS.Inputs[Input destinazione OLE DB].ExternalColumns[KNATC_DT_INIZ]"
+                          dataType="dbTimeStamp"
+                          name="KNATC_DT_INIZ" />
+                        <externalMetadataColumn
+                          refId="Package\Contenitore Ciclo Foreach\INSERT TM_KNATC_ATECO_CT con loop\Destinazione SqlServer INPS.Inputs[Input destinazione OLE DB].ExternalColumns[KNATC_DT_FINE]"
+                          dataType="dbTimeStamp"
+                          name="KNATC_DT_FINE" />
+                        <externalMetadataColumn
+                          refId="Package\Contenitore Ciclo Foreach\INSERT TM_KNATC_ATECO_CT con loop\Destinazione SqlServer INPS.Inputs[Input destinazione OLE DB].ExternalColumns[KNATC_CD_DWH_UTENTE]"
+                          dataType="wstr"
+                          length="100"
+                          name="KNATC_CD_DWH_UTENTE" />
+                        <externalMetadataColumn
+                          refId="Package\Contenitore Ciclo Foreach\INSERT TM_KNATC_ATECO_CT con loop\Destinazione SqlServer INPS.Inputs[Input destinazione OLE DB].ExternalColumns[KNATC_DT_DWH_ANNULL]"
+                          dataType="dbTimeStamp"
+                          name="KNATC_DT_DWH_ANNULL" />
+                        <externalMetadataColumn
+                          refId="Package\Contenitore Ciclo Foreach\INSERT TM_KNATC_ATECO_CT con loop\Destinazione SqlServer INPS.Inputs[Input destinazione OLE DB].ExternalColumns[KNATC_DT_DWH_INS]"
+                          dataType="dbTimeStamp"
+                          name="KNATC_DT_DWH_INS" />
+                        <externalMetadataColumn
+                          refId="Package\Contenitore Ciclo Foreach\INSERT TM_KNATC_ATECO_CT con loop\Destinazione SqlServer INPS.Inputs[Input destinazione OLE DB].ExternalColumns[KNATC_DT_DWH_AGGIORN]"
+                          dataType="dbTimeStamp"
+                          name="KNATC_DT_DWH_AGGIORN" />
+                        <externalMetadataColumn
+                          refId="Package\Contenitore Ciclo Foreach\INSERT TM_KNATC_ATECO_CT con loop\Destinazione SqlServer INPS.Inputs[Input destinazione OLE DB].ExternalColumns[KNATC_CD_DWH_APPLIC]"
+                          dataType="wstr"
+                          length="100"
+                          name="KNATC_CD_DWH_APPLIC" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Contenitore Ciclo Foreach\INSERT TM_KNATC_ATECO_CT con loop\Destinazione SqlServer INPS.Outputs[Output errori destinazione OLE DB]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Output errori destinazione OLE DB"
+                      synchronousInputId="Package\Contenitore Ciclo Foreach\INSERT TM_KNATC_ATECO_CT con loop\Destinazione SqlServer INPS.Inputs[Input destinazione OLE DB]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Contenitore Ciclo Foreach\INSERT TM_KNATC_ATECO_CT con loop\Destinazione SqlServer INPS.Outputs[Output errori destinazione OLE DB].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Contenitore Ciclo Foreach\INSERT TM_KNATC_ATECO_CT con loop\Destinazione SqlServer INPS.Outputs[Output errori destinazione OLE DB].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Contenitore Ciclo Foreach\INSERT TM_KNATC_ATECO_CT con loop\Destinazione SqlServer INPS.Outputs[Output errori destinazione OLE DB].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Contenitore Ciclo Foreach\INSERT TM_KNATC_ATECO_CT con loop\Destinazione SqlServer INPS.Outputs[Output errori destinazione OLE DB].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Contenitore Ciclo Foreach\INSERT TM_KNATC_ATECO_CT con loop\Multicast"
+                  componentClassID="Microsoft.Multicast"
+                  contactInfo="Multicast;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tutti i diritti sono riservati; http://www.microsoft.com/sql/support;0"
+                  description="Distribuisce ogni riga di input a ogni riga di uno o più output. Ad esempio, creare un nuovo ramo del flusso di dati per creare una copia dei dati in modo che sia possibile mascherare alcuni valori prima di condividerli con partner esterni."
+                  name="Multicast">
+                  <inputs>
+                    <input
+                      refId="Package\Contenitore Ciclo Foreach\INSERT TM_KNATC_ATECO_CT con loop\Multicast.Inputs[Multicast Input 1]"
+                      name="Multicast Input 1">
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Contenitore Ciclo Foreach\INSERT TM_KNATC_ATECO_CT con loop\Multicast.Outputs[Multicast Output 1]"
+                      deleteOutputOnPathDetached="true"
+                      name="Multicast Output 1"
+                      synchronousInputId="Package\Contenitore Ciclo Foreach\INSERT TM_KNATC_ATECO_CT con loop\Multicast.Inputs[Multicast Input 1]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Contenitore Ciclo Foreach\INSERT TM_KNATC_ATECO_CT con loop\Multicast.Outputs[Output multicast 1]"
+                      deleteOutputOnPathDetached="true"
+                      name="Output multicast 1"
+                      synchronousInputId="Package\Contenitore Ciclo Foreach\INSERT TM_KNATC_ATECO_CT con loop\Multicast.Inputs[Multicast Input 1]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Contenitore Ciclo Foreach\INSERT TM_KNATC_ATECO_CT con loop\Multicast.Outputs[Output multicast 2]"
+                      dangling="true"
+                      deleteOutputOnPathDetached="true"
+                      name="Output multicast 2"
+                      synchronousInputId="Package\Contenitore Ciclo Foreach\INSERT TM_KNATC_ATECO_CT con loop\Multicast.Inputs[Multicast Input 1]">
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Contenitore Ciclo Foreach\INSERT TM_KNATC_ATECO_CT con loop\Sorgente Oracle INPS"
+                  componentClassID="Microsoft.OLEDBSource"
+                  contactInfo="Origine OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tutti i diritti sono riservati; http://www.microsoft.com/sql/support;7"
+                  description="Origine OLE DB"
+                  name="Sorgente Oracle INPS"
+                  usesDispositions="true"
+                  version="7">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="Numero di secondi prima del timeout di un comando. Il valore 0 indica nessun timeout."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifica il nome dell'oggetto di database utilizzato per aprire un set di righe."
+                      name="OpenRowset"></property>
+                    <property
+                      dataType="System.String"
+                      description="Specifica la variabile contenente il nome dell'oggetto di database utilizzato per aprire un set di righe."
+                      name="OpenRowsetVariable">User::Source01</property>
+                    <property
+                      dataType="System.String"
+                      description="Comando SQL da eseguire."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.String"
+                      description="Variabile che contiene il comando SQL da eseguire."
+                      name="SqlCommandVariable">User::Select_Source01</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifica la tabella codici della colonna da utilizzare quando l'origine dati non rende disponibili informazioni sulla tabella codici."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forza l'utilizzo del valore della proprietà DefaultCodePage per la descrizione di dati di tipo carattere."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifica la modalità utilizzata per accedere al database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">3</property>
+                    <property
+                      dataType="System.String"
+                      description="Mapping tra i parametri nel comando SQL e le variabili."
+                      name="ParameterMapping"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Contenitore Ciclo Foreach\INSERT TM_KNATC_ATECO_CT con loop\Sorgente Oracle INPS.Connections[OleDbConnection]"
+                      connectionManagerID="{FC7512B7-7177-4111-B69B-C52974713116}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[SqlServer_INPS]"
+                      description="Connessione di run-time OLE DB utilizzata per accedere al database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\Contenitore Ciclo Foreach\INSERT TM_KNATC_ATECO_CT con loop\Sorgente Oracle INPS.Outputs[Output origine OLE DB]"
+                      name="Output origine OLE DB">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Contenitore Ciclo Foreach\INSERT TM_KNATC_ATECO_CT con loop\Sorgente Oracle INPS.Outputs[Output origine OLE DB].Columns[KNA03_CD_ATECO]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversione"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Contenitore Ciclo Foreach\INSERT TM_KNATC_ATECO_CT con loop\Sorgente Oracle INPS.Outputs[Output origine OLE DB].ExternalColumns[KNA03_CD_ATECO]"
+                          length="5"
+                          lineageId="Package\Contenitore Ciclo Foreach\INSERT TM_KNATC_ATECO_CT con loop\Sorgente Oracle INPS.Outputs[Output origine OLE DB].Columns[KNA03_CD_ATECO]"
+                          name="KNA03_CD_ATECO"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Contenitore Ciclo Foreach\INSERT TM_KNATC_ATECO_CT con loop\Sorgente Oracle INPS.Outputs[Output origine OLE DB].Columns[KNA03_LD_DESCR_ATECO]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversione"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Contenitore Ciclo Foreach\INSERT TM_KNATC_ATECO_CT con loop\Sorgente Oracle INPS.Outputs[Output origine OLE DB].ExternalColumns[KNA03_LD_DESCR_ATECO]"
+                          length="260"
+                          lineageId="Package\Contenitore Ciclo Foreach\INSERT TM_KNATC_ATECO_CT con loop\Sorgente Oracle INPS.Outputs[Output origine OLE DB].Columns[KNA03_LD_DESCR_ATECO]"
+                          name="KNA03_LD_DESCR_ATECO"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Contenitore Ciclo Foreach\INSERT TM_KNATC_ATECO_CT con loop\Sorgente Oracle INPS.Outputs[Output origine OLE DB].Columns[KNA03_DT_INIZ]"
+                          dataType="dbTimeStamp"
+                          errorOrTruncationOperation="Conversione"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Contenitore Ciclo Foreach\INSERT TM_KNATC_ATECO_CT con loop\Sorgente Oracle INPS.Outputs[Output origine OLE DB].ExternalColumns[KNA03_DT_INIZ]"
+                          lineageId="Package\Contenitore Ciclo Foreach\INSERT TM_KNATC_ATECO_CT con loop\Sorgente Oracle INPS.Outputs[Output origine OLE DB].Columns[KNA03_DT_INIZ]"
+                          name="KNA03_DT_INIZ"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Contenitore Ciclo Foreach\INSERT TM_KNATC_ATECO_CT con loop\Sorgente Oracle INPS.Outputs[Output origine OLE DB].Columns[KNA03_DT_FINE]"
+                          dataType="dbTimeStamp"
+                          errorOrTruncationOperation="Conversione"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Contenitore Ciclo Foreach\INSERT TM_KNATC_ATECO_CT con loop\Sorgente Oracle INPS.Outputs[Output origine OLE DB].ExternalColumns[KNA03_DT_FINE]"
+                          lineageId="Package\Contenitore Ciclo Foreach\INSERT TM_KNATC_ATECO_CT con loop\Sorgente Oracle INPS.Outputs[Output origine OLE DB].Columns[KNA03_DT_FINE]"
+                          name="KNA03_DT_FINE"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Contenitore Ciclo Foreach\INSERT TM_KNATC_ATECO_CT con loop\Sorgente Oracle INPS.Outputs[Output origine OLE DB].Columns[KNA03_DT_RIFERIMENTO]"
+                          dataType="dbTimeStamp"
+                          errorOrTruncationOperation="Conversione"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Contenitore Ciclo Foreach\INSERT TM_KNATC_ATECO_CT con loop\Sorgente Oracle INPS.Outputs[Output origine OLE DB].ExternalColumns[KNA03_DT_RIFERIMENTO]"
+                          lineageId="Package\Contenitore Ciclo Foreach\INSERT TM_KNATC_ATECO_CT con loop\Sorgente Oracle INPS.Outputs[Output origine OLE DB].Columns[KNA03_DT_RIFERIMENTO]"
+                          name="KNA03_DT_RIFERIMENTO"
+                          truncationRowDisposition="FailComponent" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Contenitore Ciclo Foreach\INSERT TM_KNATC_ATECO_CT con loop\Sorgente Oracle INPS.Outputs[Output origine OLE DB].ExternalColumns[KNA03_CD_ATECO]"
+                          dataType="wstr"
+                          length="5"
+                          name="KNA03_CD_ATECO" />
+                        <externalMetadataColumn
+                          refId="Package\Contenitore Ciclo Foreach\INSERT TM_KNATC_ATECO_CT con loop\Sorgente Oracle INPS.Outputs[Output origine OLE DB].ExternalColumns[KNA03_LD_DESCR_ATECO]"
+                          dataType="wstr"
+                          length="260"
+                          name="KNA03_LD_DESCR_ATECO" />
+                        <externalMetadataColumn
+                          refId="Package\Contenitore Ciclo Foreach\INSERT TM_KNATC_ATECO_CT con loop\Sorgente Oracle INPS.Outputs[Output origine OLE DB].ExternalColumns[KNA03_DT_INIZ]"
+                          dataType="dbTimeStamp"
+                          name="KNA03_DT_INIZ" />
+                        <externalMetadataColumn
+                          refId="Package\Contenitore Ciclo Foreach\INSERT TM_KNATC_ATECO_CT con loop\Sorgente Oracle INPS.Outputs[Output origine OLE DB].ExternalColumns[KNA03_DT_FINE]"
+                          dataType="dbTimeStamp"
+                          name="KNA03_DT_FINE" />
+                        <externalMetadataColumn
+                          refId="Package\Contenitore Ciclo Foreach\INSERT TM_KNATC_ATECO_CT con loop\Sorgente Oracle INPS.Outputs[Output origine OLE DB].ExternalColumns[KNA03_DT_RIFERIMENTO]"
+                          dataType="dbTimeStamp"
+                          name="KNA03_DT_RIFERIMENTO" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\Contenitore Ciclo Foreach\INSERT TM_KNATC_ATECO_CT con loop\Sorgente Oracle INPS.Outputs[Output errori origine OLE DB]"
+                      isErrorOut="true"
+                      name="Output errori origine OLE DB">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Contenitore Ciclo Foreach\INSERT TM_KNATC_ATECO_CT con loop\Sorgente Oracle INPS.Outputs[Output errori origine OLE DB].Columns[KNA03_CD_ATECO]"
+                          dataType="wstr"
+                          length="5"
+                          lineageId="Package\Contenitore Ciclo Foreach\INSERT TM_KNATC_ATECO_CT con loop\Sorgente Oracle INPS.Outputs[Output errori origine OLE DB].Columns[KNA03_CD_ATECO]"
+                          name="KNA03_CD_ATECO" />
+                        <outputColumn
+                          refId="Package\Contenitore Ciclo Foreach\INSERT TM_KNATC_ATECO_CT con loop\Sorgente Oracle INPS.Outputs[Output errori origine OLE DB].Columns[KNA03_LD_DESCR_ATECO]"
+                          dataType="wstr"
+                          length="260"
+                          lineageId="Package\Contenitore Ciclo Foreach\INSERT TM_KNATC_ATECO_CT con loop\Sorgente Oracle INPS.Outputs[Output errori origine OLE DB].Columns[KNA03_LD_DESCR_ATECO]"
+                          name="KNA03_LD_DESCR_ATECO" />
+                        <outputColumn
+                          refId="Package\Contenitore Ciclo Foreach\INSERT TM_KNATC_ATECO_CT con loop\Sorgente Oracle INPS.Outputs[Output errori origine OLE DB].Columns[KNA03_DT_INIZ]"
+                          dataType="dbTimeStamp"
+                          lineageId="Package\Contenitore Ciclo Foreach\INSERT TM_KNATC_ATECO_CT con loop\Sorgente Oracle INPS.Outputs[Output errori origine OLE DB].Columns[KNA03_DT_INIZ]"
+                          name="KNA03_DT_INIZ" />
+                        <outputColumn
+                          refId="Package\Contenitore Ciclo Foreach\INSERT TM_KNATC_ATECO_CT con loop\Sorgente Oracle INPS.Outputs[Output errori origine OLE DB].Columns[KNA03_DT_FINE]"
+                          dataType="dbTimeStamp"
+                          lineageId="Package\Contenitore Ciclo Foreach\INSERT TM_KNATC_ATECO_CT con loop\Sorgente Oracle INPS.Outputs[Output errori origine OLE DB].Columns[KNA03_DT_FINE]"
+                          name="KNA03_DT_FINE" />
+                        <outputColumn
+                          refId="Package\Contenitore Ciclo Foreach\INSERT TM_KNATC_ATECO_CT con loop\Sorgente Oracle INPS.Outputs[Output errori origine OLE DB].Columns[KNA03_DT_RIFERIMENTO]"
+                          dataType="dbTimeStamp"
+                          lineageId="Package\Contenitore Ciclo Foreach\INSERT TM_KNATC_ATECO_CT con loop\Sorgente Oracle INPS.Outputs[Output errori origine OLE DB].Columns[KNA03_DT_RIFERIMENTO]"
+                          name="KNA03_DT_RIFERIMENTO" />
+                        <outputColumn
+                          refId="Package\Contenitore Ciclo Foreach\INSERT TM_KNATC_ATECO_CT con loop\Sorgente Oracle INPS.Outputs[Output errori origine OLE DB].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Contenitore Ciclo Foreach\INSERT TM_KNATC_ATECO_CT con loop\Sorgente Oracle INPS.Outputs[Output errori origine OLE DB].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Contenitore Ciclo Foreach\INSERT TM_KNATC_ATECO_CT con loop\Sorgente Oracle INPS.Outputs[Output errori origine OLE DB].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Contenitore Ciclo Foreach\INSERT TM_KNATC_ATECO_CT con loop\Sorgente Oracle INPS.Outputs[Output errori origine OLE DB].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\Contenitore Ciclo Foreach\INSERT TM_KNATC_ATECO_CT con loop.Paths[Multicast Output 1]"
+                  endId="Package\Contenitore Ciclo Foreach\INSERT TM_KNATC_ATECO_CT con loop\Destinazione SqlServer INPS.Inputs[Input destinazione OLE DB]"
+                  name="Multicast Output 1"
+                  startId="Package\Contenitore Ciclo Foreach\INSERT TM_KNATC_ATECO_CT con loop\Multicast.Outputs[Multicast Output 1]" />
+                <path
+                  refId="Package\Contenitore Ciclo Foreach\INSERT TM_KNATC_ATECO_CT con loop.Paths[Output colonna derivata]"
+                  endId="Package\Contenitore Ciclo Foreach\INSERT TM_KNATC_ATECO_CT con loop\Multicast.Inputs[Multicast Input 1]"
+                  name="Output colonna derivata"
+                  startId="Package\Contenitore Ciclo Foreach\INSERT TM_KNATC_ATECO_CT con loop\Colonna derivata.Outputs[Output colonna derivata]" />
+                <path
+                  refId="Package\Contenitore Ciclo Foreach\INSERT TM_KNATC_ATECO_CT con loop.Paths[Output multicast 1]"
+                  endId="Package\Contenitore Ciclo Foreach\INSERT TM_KNATC_ATECO_CT con loop\Colonna derivata 1.Inputs[Input colonna derivata]"
+                  name="Output multicast 1"
+                  startId="Package\Contenitore Ciclo Foreach\INSERT TM_KNATC_ATECO_CT con loop\Multicast.Outputs[Output multicast 1]" />
+                <path
+                  refId="Package\Contenitore Ciclo Foreach\INSERT TM_KNATC_ATECO_CT con loop.Paths[Output origine OLE DB]"
+                  endId="Package\Contenitore Ciclo Foreach\INSERT TM_KNATC_ATECO_CT con loop\Colonna derivata.Inputs[Input colonna derivata]"
+                  name="Output origine OLE DB"
+                  startId="Package\Contenitore Ciclo Foreach\INSERT TM_KNATC_ATECO_CT con loop\Sorgente Oracle INPS.Outputs[Output origine OLE DB]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:ForEachVariableMappings>
+        <DTS:ForEachVariableMapping
+          DTS:CreationName=""
+          DTS:DTSID="{A8360784-1750-49B3-8F25-F6B99FF13A36}"
+          DTS:ObjectName="{A8360784-1750-49B3-8F25-F6B99FF13A36}"
+          DTS:ValueIndex="0"
+          DTS:VariableName="User::CD_ATECO" />
+        <DTS:ForEachVariableMapping
+          DTS:CreationName=""
+          DTS:DTSID="{43EAEC05-0EFD-40E6-ADCC-A095FCB48ED1}"
+          DTS:ObjectName="{43EAEC05-0EFD-40E6-ADCC-A095FCB48ED1}"
+          DTS:ValueIndex="1"
+          DTS:VariableName="User::DESCR_ATECO" />
+        <DTS:ForEachVariableMapping
+          DTS:CreationName=""
+          DTS:DTSID="{87AE676E-224F-4A75-9B0F-2C647F47DEAF}"
+          DTS:ObjectName="{87AE676E-224F-4A75-9B0F-2C647F47DEAF}"
+          DTS:ValueIndex="2"
+          DTS:VariableName="User::DT_INIZ" />
+        <DTS:ForEachVariableMapping
+          DTS:CreationName=""
+          DTS:DTSID="{DBE7CCBF-150A-47EE-AD0B-C6C54458B7A5}"
+          DTS:ObjectName="{DBE7CCBF-150A-47EE-AD0B-C6C54458B7A5}"
+          DTS:ValueIndex="3"
+          DTS:VariableName="User::DT_FINE" />
+      </DTS:ForEachVariableMappings>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Esegui Delete Tipologiche"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Attività Esegui SQL"
+      DTS:DTSID="{5b7691a1-c933-49fe-a5a2-03d9fd2291c4}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Esegui Delete Tipologiche"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="2">
+      <DTS:Variables />
+      <DTS:PropertyExpression
+        DTS:Name="SqlStatementSource">"Delete " +   @[$Project::Schema_Target] + ".TM_KNATC_ATECO_CT  where KNATC_NR_SEQ_ATECO_PK  &lt;&gt;'-1'"</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{FC7512B7-7177-4111-B69B-C52974713116}"
+          SQLTask:SqlStatementSource="Delete DPRE_ANEDW.TM_KNATC_ATECO_CT  where KNATC_NR_SEQ_ATECO_PK  &lt;&gt;'-1'" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Esegui query sorgente"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Attività Esegui SQL"
+      DTS:DTSID="{c2a85694-eb50-4a2f-9309-a14d0b97e53f}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Esegui query sorgente"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="1">
+      <DTS:Variables />
+      <DTS:PropertyExpression
+        DTS:Name="SqlStatementSource">@[User::Select_Source02]</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{FC7512B7-7177-4111-B69B-C52974713116}"
+          SQLTask:SqlStatementSource="SELECT KNA03_CD_ATECO, KNA03_LD_DESCR_ATECO, KNA03_DT_INIZ, KNA03_DT_FINE FROM DPRE_ANSTG.TS_KNA03_ATECO_CT"
+          SQLTask:ResultType="ResultSetType_Rowset" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Vincolo]"
+      DTS:CreationName=""
+      DTS:DTSID="{D287D6F6-8275-4F3F-A2B0-91BC7D891943}"
+      DTS:From="Package\Esegui query sorgente"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Vincolo"
+      DTS:To="Package\Contenitore Ciclo Foreach" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--Questa sezione CDATA contiene le informazioni sul layout del pacchetto e include informazioni quali coordinate (x,y), larghezza e altezza.-->
+<!--Se si modifica manualmente la sezione e si commette un errore, è possibile eliminarla. -->
+<!--Sarà comunque possibile caricare manualmente il pacchetto, ma le informazioni precedenti sul layout verranno perse e gli elementi verranno nuovamente disposti nell'area di progettazione all'interno dell'apposita finestra.-->
+<Objects
+  Version="8">
+  <!--Ogni nodo seguente conterrà proprietà che non influiscono sul comportamento di runtime.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="199.2,41.6"
+          Id="Package\01 - TM_KNATC_ATECO_CT\Esegui Delete Tipologiche"
+          TopLeft="65.028580223298,17.2323544506795" />
+        <NodeLayout
+          Size="236.8,41.6"
+          Id="Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT"
+          TopLeft="48.7142857142857,95.1428571428571" />
+        <EdgeLayout
+          Id="Package\01 - TM_KNATC_ATECO_CT.PrecedenceConstraints[Vincolo]"
+          TopLeft="165.871432968792,58.8323544506795">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,36.3105026921776"
+              Start="0,0"
+              End="0,28.8105026921776">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,28.8105026921776" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="350.4,189.6"
+          Size="350.4,232.8"
+          Id="Package\01 - TM_KNATC_ATECO_CT"
+          TopLeft="92.4999963243804,71.9333339050081" />
+        <NodeLayout
+          Size="199.2,41.6"
+          Id="Package\Esegui Delete Tipologiche"
+          TopLeft="505.766646632884,52.1333334297604" />
+        <NodeLayout
+          Size="236.8,41.6"
+          Id="Package\Contenitore Ciclo Foreach\INSERT TM_KNATC_ATECO_CT con loop"
+          TopLeft="15.3916559461093,58.8500035385292" />
+        <NodeLayout
+          Size="168,41.6"
+          Id="Package\Contenitore Ciclo Foreach\Attività Esegui SQL"
+          TopLeft="321.641643776829,21.6000030994414" />
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="764,312"
+          Size="764,355.2"
+          Id="Package\Contenitore Ciclo Foreach"
+          TopLeft="254.166656566991,343.416669395897" />
+        <NodeLayout
+          Size="224.8,41.6"
+          Id="Package\Attività Esegui istruzione T-SQL"
+          TopLeft="508.333313133982,136.500001084805" />
+        <NodeLayout
+          Size="182.4,41.6"
+          Id="Package\Esegui query sorgente"
+          TopLeft="870.833298729527,138.66666776869" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Vincolo]"
+          TopLeft="962.033298729527,180.26666776869">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-325.866642162536,163.150001627207"
+              Start="0,0"
+              End="-325.866642162536,155.650001627207">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,77.5750008136035" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,77.5750008136035"
+                    Point2="0,81.5750008136035"
+                    Point3="-4,81.5750008136035" />
+                  <mssgle:LineSegment
+                    End="-321.866642162536,81.5750008136035" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-321.866642162536,81.5750008136035"
+                    Point2="-325.866642162536,81.5750008136035"
+                    Point3="-325.866642162536,85.5750008136035" />
+                  <mssgle:LineSegment
+                    End="-325.866642162536,155.650001627207" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="223.2,41.6"
+          Id="Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT\Destinazione SqlServer INPS"
+          TopLeft="539,61" />
+        <NodeLayout
+          Size="188,41.6"
+          Id="Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT\Sorgente Oracle INPS"
+          TopLeft="60,62" />
+        <NodeLayout
+          Size="161.6,41.6"
+          Id="Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT\Colonna derivata"
+          TopLeft="314,62" />
+        <EdgeLayout
+          Id="Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT.Paths[Output colonna derivata]"
+          TopLeft="476,82.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="63,0"
+              Start="0,0"
+              End="55.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="55.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT.Paths[Output origine OLE DB]"
+          TopLeft="248,83">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="66,0"
+              Start="0,0"
+              End="58.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="58.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT\Destinazione SqlServer INPS">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\01 - TM_KNATC_ATECO_CT\INSERT TM_KNATC_ATECO_CT\Sorgente Oracle INPS">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Contenitore Ciclo Foreach\INSERT TM_KNATC_ATECO_CT con loop">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="223.2,41.6"
+          Id="Package\Contenitore Ciclo Foreach\INSERT TM_KNATC_ATECO_CT con loop\Destinazione SqlServer INPS"
+          TopLeft="729,114" />
+        <NodeLayout
+          Size="188,41.6"
+          Id="Package\Contenitore Ciclo Foreach\INSERT TM_KNATC_ATECO_CT con loop\Sorgente Oracle INPS"
+          TopLeft="60,62" />
+        <NodeLayout
+          Size="161.6,41.6"
+          Id="Package\Contenitore Ciclo Foreach\INSERT TM_KNATC_ATECO_CT con loop\Colonna derivata"
+          TopLeft="314,62" />
+        <EdgeLayout
+          Id="Package\Contenitore Ciclo Foreach\INSERT TM_KNATC_ATECO_CT con loop.Paths[Output origine OLE DB]"
+          TopLeft="248,83">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="66,0"
+              Start="0,0"
+              End="58.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="58.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="165.6,41.6"
+          Id="Package\Contenitore Ciclo Foreach\INSERT TM_KNATC_ATECO_CT con loop\Colonna derivata 1"
+          TopLeft="436,253" />
+        <NodeLayout
+          Size="119.2,41.6"
+          Id="Package\Contenitore Ciclo Foreach\INSERT TM_KNATC_ATECO_CT con loop\Multicast"
+          TopLeft="475,112" />
+        <EdgeLayout
+          Id="Package\Contenitore Ciclo Foreach\INSERT TM_KNATC_ATECO_CT con loop.Paths[Output colonna derivata]"
+          TopLeft="475.6,82.8">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="59,29.2"
+              Start="0,0"
+              End="59,21.7">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="55,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="55,0"
+                    Point2="59,0"
+                    Point3="59,4" />
+                  <mssgle:LineSegment
+                    End="59,21.7" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Contenitore Ciclo Foreach\INSERT TM_KNATC_ATECO_CT con loop.Paths[Multicast Output 1]"
+          TopLeft="594.2,133.8">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="134.8,0"
+              Start="0,0"
+              End="127.3,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="127.3,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Contenitore Ciclo Foreach\INSERT TM_KNATC_ATECO_CT con loop.Paths[Output multicast 1]"
+          TopLeft="534.6,153.6">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-15.8000000000001,99.4"
+              Start="0,0"
+              End="-15.8000000000001,91.9">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,45.7" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,45.7"
+                    Point2="0,49.7"
+                    Point3="-4,49.7" />
+                  <mssgle:LineSegment
+                    End="-11.8000000000001,49.7" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-11.8000000000001,49.7"
+                    Point2="-15.8000000000001,49.7"
+                    Point3="-15.8000000000001,53.7" />
+                  <mssgle:LineSegment
+                    End="-15.8000000000001,91.9" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
